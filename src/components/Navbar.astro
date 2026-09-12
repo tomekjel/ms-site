@@ -103,34 +103,38 @@ const isHomePage = cleanPath === "" || cleanPath === "/" || cleanPath === "/en" 
         <LanguageSwitcher currentLang={lang} currentPath={cleanPath} />
         <ThemeToggle />
 
-        <!-- 3 Kreski / Hamburger Button -->
-        <button
-          type="button"
-          class="mobile-hamburger-btn"
-          id="mobile-menu-btn"
-          aria-label={lang === "pl" ? "Menu nawigacji (3 kreski)" : (lang === "en" ? "Navigation menu" : "Меню навігації")}
-          aria-expanded="false"
-        >
-          <span class="hamburger-icon-wrap" aria-hidden="true">
-            <span class="hamburger-bar bar-1"></span>
-            <span class="hamburger-bar bar-2"></span>
-            <span class="hamburger-bar bar-3"></span>
-          </span>
-          <span class="hamburger-label">Menu</span>
-        </button>
+        <div class="nav-menu-button-wrap">
+          <div
+            role="button"
+            tabindex="0"
+            class="nav-menu-button"
+            aria-label={lang === "pl" ? "Menu nawigacji" : "Menu"}
+            aria-expanded="false"
+          >
+            <div class="button-content">
+              <span class="nav-hamburger-icon" aria-hidden="true">
+                <span class="nav-hamburger-bar"></span>
+                <span class="nav-hamburger-bar"></span>
+                <span class="nav-hamburger-bar"></span>
+              </span>
+              <p class="button-text">Menu</p>
+            </div>
+          </div>
+          <div
+            role="button"
+            tabindex="0"
+            class="nav-menu-button close"
+            aria-label={lang === "pl" ? "Zamknij menu" : "Close"}
+          >
+            <div class="button-content">
+              <span class="nav-close-icon" aria-hidden="true">✕</span>
+              <p class="button-text">X</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="nav-dropdown-menu" id="nav-dropdown-menu">
-        <div class="dropdown-header-bar">
-          <span class="dropdown-header-title">Menu serwisu</span>
-          <button type="button" class="dropdown-close-btn" aria-label="Zamknij menu">✕</button>
-        </div>
-        <div class="dropdown-phone-cta">
-          <a href="tel:+48505012914" class="nav-phone-btn dropdown-phone-btn">
-            <span class="phone-icon">📞</span>
-            <span class="phone-text">505 012 914 – {lang === "pl" ? "Zadzwoń do serwisu" : (lang === "en" ? "Call Workshop" : "Зателефонувати")}</span>
-          </a>
-        </div>
+      <div class="nav-dropdown-menu">
         <a href={homePath} class={`navbar-link in-menu w-inline-block ${isHomePage ? "w--current" : ""}`}>
           <div class="nav">🏠 {lang === "pl" ? "Strona główna" : (lang === "en" ? "Home" : "Головна")}</div>
         </a>
@@ -153,13 +157,13 @@ const isHomePage = cleanPath === "" || cleanPath === "/" || cleanPath === "/en" 
     function bindNavbar() {
       var navbars = document.querySelectorAll('.navbar');
       navbars.forEach(function(navbar) {
-        var btn = navbar.querySelector('.mobile-hamburger-btn');
-        var closeBtn = navbar.querySelector('.dropdown-close-btn');
+        var menuBtn = navbar.querySelector('.nav-menu-button:not(.close)');
+        var closeBtn = navbar.querySelector('.nav-menu-button.close');
         var dropdown = navbar.querySelector('.nav-dropdown-menu');
-        if (!btn || !dropdown) return;
+        if (!menuBtn || !dropdown) return;
 
         var lastToggleTime = 0;
-        function toggle(e) {
+        function toggleMenu(e) {
           var now = Date.now();
           if (now - lastToggleTime < 350) {
             if (e) {
@@ -173,43 +177,31 @@ const isHomePage = cleanPath === "" || cleanPath === "/" || cleanPath === "/en" 
             e.preventDefault();
             e.stopPropagation();
           }
-          var isOpen = navbar.classList.contains('is-open');
-          if (isOpen) {
-            navbar.classList.remove('is-open');
-            btn.setAttribute('aria-expanded', 'false');
-            btn.classList.remove('is-active');
-          } else {
-            navbar.classList.add('is-open');
-            btn.setAttribute('aria-expanded', 'true');
-            btn.classList.add('is-active');
-          }
+          var isOpen = navbar.classList.toggle('is-open');
+          menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         }
 
-        function close(e) {
-          if (e && e.stopPropagation) {
-            e.stopPropagation();
-          }
+        function closeMenu(e) {
           navbar.classList.remove('is-open');
-          btn.setAttribute('aria-expanded', 'false');
-          btn.classList.remove('is-active');
+          menuBtn.setAttribute('aria-expanded', 'false');
         }
 
-        if (!btn.dataset.bound) {
-          btn.dataset.bound = 'true';
-          btn.addEventListener('click', toggle);
-          btn.addEventListener('touchend', toggle);
+        if (!menuBtn.dataset.bound) {
+          menuBtn.dataset.bound = 'true';
+          menuBtn.addEventListener('click', toggleMenu);
+          menuBtn.addEventListener('touchend', toggleMenu);
         }
 
         if (closeBtn && !closeBtn.dataset.bound) {
           closeBtn.dataset.bound = 'true';
-          closeBtn.addEventListener('click', close);
-          closeBtn.addEventListener('touchend', close);
+          closeBtn.addEventListener('click', closeMenu);
+          closeBtn.addEventListener('touchend', closeMenu);
         }
 
         dropdown.querySelectorAll('a').forEach(function(link) {
           if (!link.dataset.bound) {
             link.dataset.bound = 'true';
-            link.addEventListener('click', close);
+            link.addEventListener('click', closeMenu);
           }
         });
 
@@ -217,17 +209,17 @@ const isHomePage = cleanPath === "" || cleanPath === "/" || cleanPath === "/en" 
           navbar.dataset.outsideBound = 'true';
           document.addEventListener('click', function(e) {
             if (!navbar.contains(e.target)) {
-              close();
+              closeMenu();
             }
           });
           document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-              close();
+              closeMenu();
             }
           });
           window.addEventListener('resize', function() {
-            if (window.innerWidth >= 1200) {
-              close();
+            if (window.innerWidth >= 992) {
+              closeMenu();
             }
           });
         }

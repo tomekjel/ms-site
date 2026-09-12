@@ -859,8 +859,8 @@ html[data-theme="dark"] .nav-phone-btn:hover {
   box-shadow: 0 4px 16px rgba(255, 59, 59, 0.45) !important;
 }
 
-/* Desktop layout (>= 1200px) */
-@media screen and (min-width: 1200px) {
+/* Desktop layout (>= 992px) */
+@media screen and (min-width: 992px) {
   .nav-menu {
     display: flex !important;
     align-items: center !important;
@@ -891,8 +891,7 @@ html[data-theme="dark"] .nav-phone-btn:hover {
     background: rgba(229, 57, 53, 0.15) !important;
   }
 
-  .nav-menu-button-wrap,
-  .mobile-hamburger-btn {
+  .nav-menu-button-wrap {
     display: none !important;
   }
 
@@ -901,11 +900,13 @@ html[data-theme="dark"] .nav-phone-btn:hover {
   }
 }
 
-/* Tablet & Mobile layout (< 1200px) */
-@media screen and (max-width: 1199px) {
+/* Tablet & Mobile layout (< 992px) */
+@media screen and (max-width: 991px) {
   .nav-wrap {
     pointer-events: auto !important;
     overflow: visible !important;
+    padding: 0 12px !important;
+    top: 10px !important;
   }
 
   .navbar {
@@ -913,6 +914,7 @@ html[data-theme="dark"] .nav-phone-btn:hover {
     max-width: 680px !important;
     padding: 6px 12px 6px 14px !important;
     overflow: visible !important;
+    border-radius: 9999px !important;
   }
 
   .nav-wrapper {
@@ -923,116 +925,95 @@ html[data-theme="dark"] .nav-phone-btn:hover {
     display: none !important;
   }
 
-  /* 3 Kreski / Hamburger Button on Mobile */
-  .mobile-hamburger-btn {
+  .nav-menu-button-wrap {
+    display: flex !important;
+    align-items: center !important;
+    margin-left: 2px !important;
+    cursor: pointer !important;
+  }
+
+  .nav-menu-button {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 7px !important;
-    height: 38px !important;
+    height: 36px !important;
     padding: 0 12px !important;
     border-radius: 9999px !important;
-    background: rgba(211, 47, 47, 0.08) !important;
-    border: 1.5px solid #d32f2f !important;
-    color: #d32f2f !important;
-    font-family: inherit !important;
+    background-color: var(--neutral--neutral-02, #f0f0f0) !important;
+    color: var(--neutral--neutral-12, #111827) !important;
     font-size: 0.8125rem !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     cursor: pointer !important;
     user-select: none !important;
-    -webkit-tap-highlight-color: transparent !important;
-    touch-action: manipulation !important;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    flex-shrink: 0 !important;
+    border: none !important;
+    transition: all 0.2s ease !important;
     box-sizing: border-box !important;
     outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
   }
 
-  .mobile-hamburger-btn:hover {
-    background: rgba(211, 47, 47, 0.16) !important;
-    transform: scale(1.02) !important;
+  .nav-menu-button .button-content {
+    display: flex !important;
+    align-items: center !important;
+    gap: 7px !important;
   }
 
-  .mobile-hamburger-btn:active {
-    transform: scale(0.97) !important;
-  }
-
-  html[data-theme="dark"] .mobile-hamburger-btn {
-    background: rgba(229, 57, 53, 0.15) !important;
-    border-color: #ff5252 !important;
-    color: #ff5252 !important;
-  }
-
-  html[data-theme="dark"] .mobile-hamburger-btn:hover {
-    background: rgba(229, 57, 53, 0.25) !important;
-  }
-
-  /* 3 Horizontal Bars ("3 kreski") */
-  .hamburger-icon-wrap {
+  /* 3 Kreski icon */
+  .nav-hamburger-icon {
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    width: 18px !important;
-    height: 13px !important;
+    width: 14px !important;
+    height: 10px !important;
     flex-shrink: 0 !important;
-    position: relative !important;
   }
 
-  .hamburger-bar {
+  .nav-hamburger-bar {
     display: block !important;
     width: 100% !important;
-    height: 2px !important;
-    background-color: #d32f2f !important;
-    border-radius: 2px !important;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, background-color 0.2s ease !important;
-    transform-origin: center !important;
+    height: 1.75px !important;
+    background-color: currentColor !important;
+    border-radius: 1px !important;
   }
 
-  html[data-theme="dark"] .hamburger-bar {
-    background-color: #ff5252 !important;
-  }
-
-  .hamburger-label {
-    display: inline-block !important;
-    font-size: 0.8125rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.01em !important;
+  .nav-close-icon {
+    font-size: 0.875rem !important;
     line-height: 1 !important;
+    font-weight: 700 !important;
   }
 
-  /* When menu is OPEN - Transform 3 bars into clear active 'X' state */
-  .navbar.is-open .mobile-hamburger-btn {
-    background: #d32f2f !important;
-    border-color: #d32f2f !important;
-    color: #ffffff !important;
-    box-shadow: 0 4px 14px rgba(211, 47, 47, 0.35) !important;
+  .nav-menu-button:hover {
+    background-color: rgba(211, 47, 47, 0.1) !important;
+    color: #d32f2f !important;
   }
 
-  .navbar.is-open .mobile-hamburger-btn .hamburger-bar {
-    background-color: #ffffff !important;
+  html[data-theme="dark"] .nav-menu-button {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #f3f4f6 !important;
   }
 
-  .navbar.is-open .mobile-hamburger-btn .bar-1 {
-    transform: translateY(5.5px) rotate(45deg) !important;
+  html[data-theme="dark"] .nav-menu-button:hover {
+    background-color: rgba(229, 57, 53, 0.2) !important;
+    color: #ff5252 !important;
   }
 
-  .navbar.is-open .mobile-hamburger-btn .bar-2 {
-    opacity: 0 !important;
-    transform: scaleX(0) !important;
+  .nav-menu-button.close {
+    display: none !important;
+    background-color: rgba(211, 47, 47, 0.1) !important;
+    color: #d32f2f !important;
   }
 
-  .navbar.is-open .mobile-hamburger-btn .bar-3 {
-    transform: translateY(-5.5px) rotate(-45deg) !important;
+  html[data-theme="dark"] .nav-menu-button.close {
+    background-color: rgba(229, 57, 53, 0.2) !important;
+    color: #ff5252 !important;
   }
 
-  html[data-theme="dark"] .navbar.is-open .mobile-hamburger-btn {
-    background: #ff5252 !important;
-    border-color: #ff5252 !important;
-    color: #111827 !important;
+  .navbar.is-open .nav-menu-button:not(.close) {
+    display: none !important;
   }
 
-  html[data-theme="dark"] .navbar.is-open .mobile-hamburger-btn .hamburger-bar {
-    background-color: #111827 !important;
+  .navbar.is-open .nav-menu-button.close {
+    display: inline-flex !important;
   }
 
   /* Mobile Dropdown Menu */
@@ -1047,11 +1028,11 @@ html[data-theme="dark"] .nav-phone-btn:hover {
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
     background: rgba(255, 255, 255, 0.98) !important;
-    backdrop-filter: blur(24px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-    border: 1.5px solid rgba(211, 47, 47, 0.25) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
     border-radius: 1.25rem !important;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
     padding: 10px !important;
     box-sizing: border-box !important;
     flex-direction: column !important;
@@ -1065,91 +1046,9 @@ html[data-theme="dark"] .nav-phone-btn:hover {
   }
 
   html[data-theme="dark"] .nav-dropdown-menu {
-    background: rgba(18, 22, 31, 0.98) !important;
-    border: 1.5px solid rgba(229, 57, 53, 0.35) !important;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7) !important;
-  }
-
-  /* Dropdown Header Bar with Title & Close Button */
-  .dropdown-header-bar {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 6px 8px 10px 10px !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-    margin-bottom: 6px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  html[data-theme="dark"] .dropdown-header-bar {
-    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
-  }
-
-  .dropdown-header-title {
-    font-size: 0.95rem !important;
-    font-weight: 700 !important;
-    color: var(--neutral--neutral-12, #111827) !important;
-    letter-spacing: -0.01em !important;
-  }
-
-  html[data-theme="dark"] .dropdown-header-title {
-    color: #f3f4f6 !important;
-  }
-
-  .dropdown-close-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 32px !important;
-    height: 32px !important;
-    border-radius: 50% !important;
-    background: rgba(211, 47, 47, 0.1) !important;
-    border: 1px solid rgba(211, 47, 47, 0.25) !important;
-    color: #d32f2f !important;
-    font-size: 1rem !important;
-    font-weight: 700 !important;
-    cursor: pointer !important;
-    transition: all 0.2s ease !important;
-    padding: 0 !important;
-    line-height: 1 !important;
-  }
-
-  .dropdown-close-btn:hover {
-    background: #d32f2f !important;
-    color: #ffffff !important;
-  }
-
-  html[data-theme="dark"] .dropdown-close-btn {
-    background: rgba(229, 57, 53, 0.2) !important;
-    border-color: rgba(229, 57, 53, 0.4) !important;
-    color: #ff6b6b !important;
-  }
-
-  html[data-theme="dark"] .dropdown-close-btn:hover {
-    background: #ff5252 !important;
-    color: #111827 !important;
-  }
-
-  .dropdown-phone-cta {
-    width: 100% !important;
-    padding: 2px 0 8px 0 !important;
-    margin-bottom: 6px !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-    box-sizing: border-box !important;
-  }
-
-  html[data-theme="dark"] .dropdown-phone-cta {
-    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
-  }
-
-  .dropdown-phone-btn {
-    width: 100% !important;
-    height: 42px !important;
-    font-size: 0.9375rem !important;
-    border-radius: 12px !important;
-    justify-content: center !important;
-    box-sizing: border-box !important;
+    background: rgba(19, 23, 34, 0.98) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
   }
 
   .nav-dropdown-menu .navbar-link {
@@ -1159,19 +1058,17 @@ html[data-theme="dark"] .nav-phone-btn:hover {
     border-radius: 10px !important;
     font-size: 0.9375rem !important;
     font-weight: 600 !important;
-    color: var(--neutral--neutral-11, #1f2937) !important;
+    color: var(--neutral--neutral-11) !important;
     text-decoration: none !important;
     transition: all 0.2s ease !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    background: transparent !important;
   }
 
   .nav-dropdown-menu .navbar-link:hover,
   .nav-dropdown-menu .navbar-link.w--current {
-    background: rgba(211, 47, 47, 0.09) !important;
+    background: rgba(211, 47, 47, 0.08) !important;
     color: #d32f2f !important;
-    padding-left: 18px !important;
   }
 
   html[data-theme="dark"] .nav-dropdown-menu .navbar-link {
@@ -1180,9 +1077,8 @@ html[data-theme="dark"] .nav-phone-btn:hover {
 
   html[data-theme="dark"] .nav-dropdown-menu .navbar-link:hover,
   html[data-theme="dark"] .nav-dropdown-menu .navbar-link.w--current {
-    background: rgba(211, 47, 47, 0.22) !important;
+    background: rgba(211, 47, 47, 0.2) !important;
     color: #ff5252 !important;
-    padding-left: 18px !important;
   }
 }
 
@@ -1200,25 +1096,16 @@ html[data-theme="dark"] .nav-phone-btn:hover {
 /* Small mobile phones (< 480px) */
 @media screen and (max-width: 480px) {
   .nav-wrap {
-    padding: 0 6px !important;
-    top: 6px !important;
+    padding: 0 8px !important;
+    top: 8px !important;
   }
 
   .navbar {
-    padding: 4px 6px 4px 10px !important;
-    max-width: 100% !important;
-  }
-
-  .nav-wrapper {
-    gap: 6px !important;
+    padding: 4px 10px 4px 12px !important;
   }
 
   .nav-logo {
-    height: 24px !important;
-  }
-
-  .nav-actions-group {
-    gap: 4px !important;
+    height: 26px !important;
   }
 
   .nav-phone-btn {
@@ -1228,20 +1115,10 @@ html[data-theme="dark"] .nav-phone-btn:hover {
     gap: 4px !important;
   }
 
-  .mobile-hamburger-btn {
+  .nav-menu-button {
     height: 32px !important;
-    padding: 0 8px !important;
+    padding: 0 10px !important;
     font-size: 0.75rem !important;
-    gap: 5px !important;
-  }
-
-  .mobile-hamburger-btn .hamburger-icon-wrap {
-    width: 16px !important;
-    height: 11px !important;
-  }
-
-  .mobile-hamburger-btn .hamburger-bar {
-    height: 2px !important;
   }
 
   .theme-toggle-btn {
@@ -1274,11 +1151,11 @@ html[data-theme="dark"] .nav-phone-btn:hover {
     font-size: 1rem !important;
   }
 
-  .mobile-hamburger-btn .hamburger-label {
+  .nav-menu-button .button-text {
     display: none !important;
   }
 
-  .mobile-hamburger-btn {
+  .nav-menu-button {
     width: 34px !important;
     height: 32px !important;
     padding: 0 !important;
