@@ -95,7 +95,7 @@ const isHomePage = cleanPath === "" || cleanPath === "/" || cleanPath === "/en" 
       </div>
 
       <div class="nav-actions-group">
-        <a href="tel:+48505012914" class="nav-phone-btn">
+        <a href="tel:+48505012914" class="nav-phone-btn" aria-label={lang === "pl" ? "Zadzwoń: 505 012 914" : (lang === "en" ? "Call: 505 012 914" : "Зателефонувати: 505 012 914")}>
           <span class="phone-icon">📞</span>
           <span class="phone-text">505 012 914</span>
         </a>
@@ -103,7 +103,7 @@ const isHomePage = cleanPath === "" || cleanPath === "/" || cleanPath === "/en" 
         <LanguageSwitcher currentLang={lang} currentPath={cleanPath} />
         <ThemeToggle />
 
-        <div class="nav-menu-button-wrap">
+        <div class="nav-menu-button-wrap" aria-label="Menu">
           <div href="#" data-figma-id="156:103" data-w-id="aa6612f2-b0d5-f83c-935e-76485f130b37" class="nav-menu-button">
             <div class="button-content">
               <p data-figma-id="96:188" class="button-text">Menu</p>
@@ -118,6 +118,12 @@ const isHomePage = cleanPath === "" || cleanPath === "/" || cleanPath === "/en" 
       </div>
 
       <div class="nav-dropdown-menu">
+        <div class="dropdown-phone-cta">
+          <a href="tel:+48505012914" class="nav-phone-btn dropdown-phone-btn">
+            <span class="phone-icon">📞</span>
+            <span class="phone-text">505 012 914 – {lang === "pl" ? "Zadzwoń do serwisu" : (lang === "en" ? "Call Workshop" : "Зателефонувати")}</span>
+          </a>
+        </div>
         <a href={homePath} class={`navbar-link in-menu w-inline-block ${isHomePage ? "w--current" : ""}`}>
           <div class="nav">🏠 {lang === "pl" ? "Strona główna" : (lang === "en" ? "Home" : "Головна")}</div>
         </a>

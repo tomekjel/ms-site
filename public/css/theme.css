@@ -864,20 +864,21 @@ html[data-theme="dark"] .nav-phone-btn:hover {
   .nav-menu {
     display: flex !important;
     align-items: center !important;
-    gap: 2px !important;
+    gap: clamp(1px, 0.35vw, 6px) !important;
     margin: 0 4px !important;
     flex-wrap: nowrap !important;
   }
 
   .navbar-link {
-    padding: 5px 9px !important;
+    padding: 5px clamp(6px, 0.5vw, 10px) !important;
     border-radius: 9999px !important;
-    font-size: 0.8125rem !important;
+    font-size: clamp(0.75rem, 0.8vw, 0.825rem) !important;
     font-weight: 500 !important;
     color: var(--neutral--neutral-11) !important;
     transition: all 0.2s ease !important;
     text-decoration: none !important;
     white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
 
   .navbar-link:hover {
@@ -904,7 +905,7 @@ html[data-theme="dark"] .nav-phone-btn:hover {
   .navbar {
     width: 100% !important;
     max-width: 680px !important;
-    padding: 6px 12px 6px 14px !important;
+    padding: 6px 10px 6px 14px !important;
   }
 
   .nav-menu {
@@ -932,6 +933,7 @@ html[data-theme="dark"] .nav-phone-btn:hover {
     cursor: pointer !important;
     user-select: none !important;
     transition: all 0.2s ease !important;
+    flex-shrink: 0 !important;
   }
 
   .nav-menu-button:hover {
@@ -961,6 +963,9 @@ html[data-theme="dark"] .nav-phone-btn:hover {
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
+    max-height: calc(100vh - 90px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
     background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
@@ -983,6 +988,27 @@ html[data-theme="dark"] .nav-phone-btn:hover {
     background: rgba(19, 23, 34, 0.98) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .dropdown-phone-cta {
+    width: 100% !important;
+    padding: 4px 0 8px 0 !important;
+    margin-bottom: 6px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-sizing: border-box !important;
+  }
+
+  html[data-theme="dark"] .dropdown-phone-cta {
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .dropdown-phone-btn {
+    width: 100% !important;
+    height: 42px !important;
+    font-size: 0.9375rem !important;
+    border-radius: 12px !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
   }
 
   .nav-dropdown-menu .navbar-link {
@@ -1030,16 +1056,25 @@ html[data-theme="dark"] .nav-phone-btn:hover {
 /* Small mobile phones (< 480px) */
 @media screen and (max-width: 480px) {
   .nav-wrap {
-    padding: 0 8px !important;
-    top: 8px !important;
+    padding: 0 6px !important;
+    top: 6px !important;
   }
 
   .navbar {
-    padding: 4px 10px 4px 12px !important;
+    padding: 4px 6px 4px 10px !important;
+    max-width: 100% !important;
+  }
+
+  .nav-wrapper {
+    gap: 6px !important;
   }
 
   .nav-logo {
-    height: 26px !important;
+    height: 24px !important;
+  }
+
+  .nav-actions-group {
+    gap: 4px !important;
   }
 
   .nav-phone-btn {
@@ -1059,6 +1094,39 @@ html[data-theme="dark"] .nav-phone-btn:hover {
     width: 32px !important;
     height: 32px !important;
   }
+
+  .lang-switch-btn {
+    padding: 4px 6px !important;
+    font-size: 0.75rem !important;
+    height: 32px !important;
+  }
+}
+
+/* Extra small mobile phones (< 400px down to 320px) */
+@media screen and (max-width: 400px) {
+  .nav-phone-btn .phone-text {
+    display: none !important;
+  }
+
+  .nav-phone-btn {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+  }
+
+  .nav-phone-btn .phone-icon {
+    font-size: 1rem !important;
+  }
+
+  .nav-wrapper {
+    gap: 3px !important;
+  }
+
+  .nav-actions-group {
+    gap: 3px !important;
+  }
 }
 
 /* Hero quick stats - horizontal layout stretching from left to right */
@@ -1066,28 +1134,33 @@ html[data-theme="dark"] .nav-phone-btn:hover {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 10px 14px !important;
+  justify-content: center !important;
+  gap: 8px 12px !important;
   width: 100% !important;
+  max-width: 100% !important;
   margin: 2rem 0 0.5rem 0 !important;
   flex-wrap: wrap !important;
+  box-sizing: border-box !important;
 }
 
 /* ALL pills have RED border and RED text as requested */
 .hero-stat-pill {
   display: inline-flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 8px !important;
-  padding: 9px 18px !important;
+  padding: 8px 16px !important;
   background: #ffffff !important;
   border: 1.5px solid #d32f2f !important;
   border-radius: 9999px !important;
-  font-size: 0.9375rem !important;
+  font-size: clamp(0.78rem, 1vw, 0.9375rem) !important;
   font-weight: 700 !important;
   color: #d32f2f !important;
   box-shadow: 0 2px 10px rgba(211, 47, 47, 0.1) !important;
-  white-space: nowrap !important;
   transition: all 0.25s ease !important;
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  word-break: break-word !important;
 }
 
 .hero-stat-pill:hover {
@@ -1141,34 +1214,50 @@ html[data-theme="dark"] .hero-stat-pill.pill-cash-red:hover {
   transform: translateY(-2px) !important;
 }
 
+@media screen and (max-width: 640px) {
+  .hero-quick-stats {
+    gap: 6px 8px !important;
+    margin: 1.5rem 0 0.5rem 0 !important;
+  }
+  .hero-stat-pill {
+    white-space: normal !important;
+    text-align: center !important;
+    font-size: 0.8125rem !important;
+    padding: 6px 12px !important;
+    border-radius: 12px !important;
+  }
+}
+
 /* Hero UI and Logo Card Positioning */
 .hero-ui {
   position: relative !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 49% !important;
-  max-width: 520px !important;
+  width: 48% !important;
+  max-width: 500px !important;
   height: auto !important;
   aspect-ratio: auto !important;
   max-height: none !important;
   margin: 0 auto !important;
+  box-sizing: border-box !important;
 }
 
 .hero-ui-wrap {
   position: relative !important;
   display: inline-block !important;
   width: 100% !important;
-  max-width: 460px !important;
+  max-width: 440px !important;
+  box-sizing: border-box !important;
 }
 
 .hero-ui-card.hero-ui-logo {
   display: block !important;
   width: 100% !important;
-  max-width: 460px !important;
+  max-width: 440px !important;
   height: auto !important;
   background-color: #ffffff !important;
-  padding: 2.25rem 2rem !important;
+  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.25rem, 2.5vw, 2rem) !important;
   box-sizing: border-box !important;
   object-fit: contain !important;
   border-radius: 18px !important;
@@ -1190,11 +1279,12 @@ html[data-theme="dark"] .hero-ui-card.hero-ui-logo {
   border: 2px solid #d32f2f !important;
   border-radius: 14px !important;
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.16), 0 0 20px rgba(211, 47, 47, 0.2) !important;
-  width: 275px !important;
+  width: 270px !important;
+  max-width: 90% !important;
   box-sizing: border-box !important;
   position: absolute !important;
-  bottom: -75px !important;
-  right: -20px !important;
+  bottom: -30px !important;
+  right: 0px !important;
   top: auto !important;
   left: auto !important;
   transform: rotate(-2deg) !important;
@@ -1204,17 +1294,9 @@ html[data-theme="dark"] .hero-ui-card.hero-ui-logo {
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .hero-ui-card-2.hero-info-card {
-    bottom: -45px !important;
+    bottom: -25px !important;
     right: 0px !important;
     width: 245px !important;
-  }
-}
-
-/* Large desktop / 4K */
-@media screen and (min-width: 1400px) {
-  .hero-ui-card-2.hero-info-card {
-    bottom: -85px !important;
-    width: 290px !important;
   }
 }
 
@@ -1226,19 +1308,22 @@ html[data-theme="dark"] .hero-ui-card-2.hero-info-card {
 
 /* Prominent Cash Payment Notice - Strictly Red */
 .cash-notice-box {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 18px;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 10px 18px !important;
   background: #ffebee !important;
   border: 1.5px solid #d32f2f !important;
-  border-radius: 8px;
+  border-radius: 8px !important;
   color: #b71c1c !important;
-  font-weight: 700;
-  font-size: 0.875rem;
-  margin-top: 1rem;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+  margin-top: 1rem !important;
   transition: all 0.25s ease !important;
-  cursor: default;
+  cursor: default !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  flex-wrap: wrap !important;
 }
 
 .cash-notice-box:hover {
@@ -1479,14 +1564,17 @@ html[data-theme="dark"] .feature-tab-ui {
   transform: scale(1.02);
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 991px) {
   .process {
     flex-direction: column !important;
+    gap: 14px !important;
+    padding: 14px !important;
   }
   .process-card,
   .process-card:hover,
   .process-card.is-expanded {
     width: 100% !important;
+    max-width: 100% !important;
     flex: none !important;
     min-height: auto !important;
   }
@@ -2172,94 +2260,243 @@ html[data-theme="dark"] .footer-bottom {
 }
 
 /* ==========================================================================
-   Global Auto-Layout & Responsiveness (Mobile, Tablet, Laptop, Desktop, 4K)
+ /* ==========================================================================
+   Global Auto-Layout & Responsiveness Engine (Mobile, Laptop, Desktop, 4K TV)
    ========================================================================== */
+
+/* 1. Proportional Auto-Layout Scaling on Ultra-Wide Monitors & 4K TVs */
+@media screen and (min-width: 2000px) {
+  :root {
+    font-size: 18px !important;
+  }
+}
+
+@media screen and (min-width: 2800px) {
+  :root {
+    font-size: 21px !important;
+  }
+}
+
+/* 2. Global Zero-Overflow Guarantee */
 html, body {
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
   max-width: 100vw !important;
   width: 100% !important;
   box-sizing: border-box !important;
 }
 
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: border-box !important;
 }
 
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 3. Fluid Auto-Layout Container */
 .container {
   width: 100% !important;
-  max-width: 1200px !important;
+  max-width: min(1280px, 94vw) !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  padding-left: clamp(14px, 4vw, 32px) !important;
+  padding-right: clamp(14px, 4vw, 32px) !important;
+  box-sizing: border-box !important;
+  perspective: none !important;
+}
+
+/* Large Displays (QHD / 1600px - 1920px) */
+@media screen and (min-width: 1600px) {
+  .container {
+    max-width: min(1480px, 92vw) !important;
+  }
+}
+
+/* Ultra-Wide & 4K Displays (> 1920px up to 2560px) */
+@media screen and (min-width: 1921px) {
+  .container {
+    max-width: min(1720px, 90vw) !important;
+  }
+  .navbar {
+    max-width: min(1480px, 92vw) !important;
+  }
+}
+
+/* Full 4K TVs (> 2560px up to 3840px) */
+@media screen and (min-width: 2560px) {
+  .container {
+    max-width: min(2100px, 88vw) !important;
+  }
+  .navbar {
+    max-width: min(1720px, 90vw) !important;
+  }
+}
+
+/* 4. Webflow Destructive Property Overrides & Zero-Overflow Safety */
+body {
+  --_sizes---container--container-padding: clamp(14px, 4vw, 32px) !important;
+  --_sizes---container--container-padding-inverse-section: clamp(14px, 4vw, 32px) !important;
+}
+
+.tab-content {
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+  overflow: visible !important;
+}
+
+.feature-content {
+  width: 100% !important;
+  max-width: 560px !important;
+  min-width: 0 !important;
   box-sizing: border-box !important;
 }
 
-/* Ensure hero has breathing room below floating navbar */
+.section-image {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+}
+
+.metrics-card-wrap {
+  min-width: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.hero-ticker,
+.ticker-h {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* 5. Hero Section Auto-Layout */
 .section.hero {
-  padding-top: clamp(85px, 12vh, 120px) !important;
+  padding-top: clamp(80px, 11vh, 120px) !important;
+  padding-bottom: clamp(2rem, 5vh, 4rem) !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-/* Large Displays (4K / TV > 1600px) */
-@media screen and (min-width: 1600px) {
-  .container {
-    max-width: 1360px !important;
-  }
-  .navbar {
-    max-width: 1180px !important;
-  }
+.hero-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: clamp(1.5rem, 3vh, 2.5rem) !important;
+  box-sizing: border-box !important;
 }
 
-/* Laptops & Tablets (768px - 1024px) */
-@media screen and (max-width: 1024px) {
-  .hero-buttons {
-    flex-wrap: wrap !important;
-  }
-  .hero-ui {
-    max-width: 100% !important;
-  }
+.hero {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: clamp(24px, 4vw, 56px) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-/* Mobile Devices (< 768px) */
-@media screen and (max-width: 767px) {
+.hero-text {
+  flex: 1 1 52% !important;
+  width: auto !important;
+  max-width: 650px !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+.hero-heading {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+}
+
+.hero-heading .display-h1 {
+  font-size: clamp(2.1rem, 4vw, 3.4rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.025em !important;
+  margin: 0 !important;
+  word-wrap: break-word !important;
+}
+
+.hero-heading .large-paragraph {
+  font-size: clamp(1rem, 1.3vw, 1.25rem) !important;
+  line-height: 1.55 !important;
+  max-width: 580px !important;
+  margin: 0 !important;
+}
+
+.hero-buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Hero Tablets & Mobile (< 992px) */
+@media screen and (max-width: 991px) {
   .hero {
-    padding-top: 80px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 2rem !important;
   }
+
+  .hero-text {
+    width: 100% !important;
+    max-width: 620px !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .hero-heading {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
   .hero-heading .display-h1 {
-    font-size: 2rem !important;
-    line-height: 1.15 !important;
+    font-size: clamp(1.85rem, 6vw, 2.5rem) !important;
   }
-  .hero-quick-stats {
-    gap: 6px !important;
+
+  .hero-buttons {
+    justify-content: center !important;
   }
-  .hero-stat-pill {
-    padding: 6px 12px !important;
-    font-size: 0.8125rem !important;
-  }
+
   .hero-ui {
     width: 100% !important;
-    max-width: 440px !important;
-    height: auto !important;
-    aspect-ratio: auto !important;
-    margin: 2rem auto 0 auto !important;
+    max-width: 380px !important;
+    margin: 0.5rem auto 0 auto !important;
   }
-  .hero-ui-wrap {
-    max-width: 100% !important;
-  }
+
   .hero-ui-card.hero-ui-logo {
-    width: 100% !important;
-    padding: 1.75rem 1.25rem !important;
+    transform: none !important;
+    max-width: 360px !important;
   }
+
   .hero-ui-card-2.hero-info-card {
-    position: absolute !important;
-    bottom: -10px !important;
-    right: 4px !important;
-    width: 210px !important;
-    max-width: 75% !important;
-    padding: 10px 12px !important;
-    font-size: 0.8rem !important;
-    z-index: 10 !important;
-    transform: rotate(-1deg) !important;
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    margin: 14px auto 0 auto !important;
   }
 }
 
@@ -2324,31 +2561,8 @@ html[data-theme="dark"] .team-brand-logo {
 }
 
 /* ==========================================================================
-   Comprehensive Subpage Design System & Auto-Layout
+   Comprehensive Subpage Design System
    ========================================================================== */
-
-/* Global overflow containment */
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-/* Page container auto-layout padding */
-.container {
-  width: 100% !important;
-  max-width: 1240px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: clamp(1rem, 4vw, 2rem) !important;
-  padding-right: clamp(1rem, 4vw, 2rem) !important;
-  box-sizing: border-box !important;
-}
 
 /* Light Mode Contrast Enforcement: NEVER allow white or faint text on cream background, EXCLUDING buttons */
 html:not([data-theme="dark"]) .section:not(.inverse) .t---neutral-10:not(.button-text):not(.primary-button *):not(.filled-button *):not(.outline-button *):not(.hero-stat-pill *):not(.footer-badge *),
@@ -2870,8 +3084,8 @@ html[data-theme="dark"] .brand-pill:hover {
 /* Fluid Auto-Layout Grids */
 .subpage-grid-2 {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)) !important;
-  gap: 1.5rem !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)) !important;
+  gap: clamp(1rem, 2.5vw, 2rem) !important;
   width: 100% !important;
   box-sizing: border-box !important;
 }
@@ -2879,17 +3093,26 @@ html[data-theme="dark"] .brand-pill:hover {
 .subpage-grid-3 {
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)) !important;
-  gap: 1.5rem !important;
+  gap: clamp(1rem, 2.5vw, 1.75rem) !important;
   width: 100% !important;
   box-sizing: border-box !important;
 }
 
 .subpage-grid-4 {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)) !important;
-  gap: 1.5rem !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)) !important;
+  gap: clamp(1rem, 2vw, 1.5rem) !important;
   width: 100% !important;
   box-sizing: border-box !important;
+}
+
+@media (max-width: 680px) {
+  .subpage-grid-2,
+  .subpage-grid-3,
+  .subpage-grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
 }
 
 /* Breadcrumbs auto-layout & centering */
@@ -3337,6 +3560,65 @@ html:not([data-theme="dark"]) .section.inverse input[type="submit"] {
   box-shadow: 0 8px 28px rgba(211, 47, 47, 0.6) !important;
   color: #ffffff !important;
 }
+
+/* ==========================================================================
+   Pricing Cards Auto-Layout Grid
+   ========================================================================== */
+.pricing-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)) !important;
+  gap: clamp(1.25rem, 3vw, 2.5rem) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 680px) {
+  .pricing-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .pricing-card {
+    padding: 1.5rem 1.25rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ==========================================================================
+   Universal Auto-Layout & Mobile Zero-Blowout Safeguards
+   ========================================================================== */
+.contact-form,
+.contact-section-wrap,
+.page-header,
+.section-header,
+.cta-glass-card,
+.subpage-metrics-grid,
+.column-layout {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure no form input or textarea can ever stretch beyond its parent */
+input, textarea, select, button {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Responsive padding on all subpage cards */
+@media screen and (max-width: 640px) {
+  .subpage-card {
+    padding: 1.25rem 1rem !important;
+  }
+  .cash-notice-box {
+    padding: 8px 14px !important;
+    font-size: 0.8125rem !important;
+    border-radius: 8px !important;
+  }
+  .cta-glass-card {
+    padding: 1.75rem 1.25rem !important;
+  }
+}
+
 
 
 
