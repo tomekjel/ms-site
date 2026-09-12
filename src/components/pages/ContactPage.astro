@@ -1,0 +1,345 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../Navbar.astro";
+import Footer from "../Footer.astro";
+import type { Lang } from "../../i18n/translations";
+import "../../styles/ix/index.css";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pl" } = Astro.props;
+const prefix = lang === "pl" ? "" : `/${lang}`;
+const currentPath = `${prefix}/kontakt`;
+
+const content = {
+  pl: {
+    seoTitle: "Kontakt i Dojazd | Serwis Elektroniki Bydgoszcz Ku Wiatrakom 18 | Multi-Servis",
+    seoDesc: "Skontaktuj się z Multi-Servis Tomasz Jeliński w Bydgoszczy. Ul. Ku Wiatrakom 18 (Wyżyny). Tel: 505 012 914. Godziny: pon.-pt. 10:00 - 17:00. Płatność wyłącznie gotówką. Dojazd i formularz.",
+    heroBadge: "Bydgoszcz • Ku Wiatrakom 18 • Wyżyny",
+    heroTitle: "Kontakt z Serwisem i Dane Dojazdu",
+    heroSubtitle: "Warsztat serwisowy Multi-Servis Tomasz Jeliński mieści się w Bydgoszczy przy ulicy Ku Wiatrakom 18 (osiedle Wyżyny). Przyjmujemy sprzęt od poniedziałku do piątku w godzinach 10:00 – 17:00.",
+    pills: ["💵 Płatność tylko gotówka", "⚡ Szybka realizacja", "😊 Miła i fachowa obsługa", "🔍 Diagnoza usterki 50 zł", "🛡️ Gwarancja 3 miesiące", "🤝 Uczciwa wycena przed naprawą"],
+    card1Title: "Dane kontaktowe i adres",
+    addrLabel: "Adres warsztatu:",
+    addrVal: "ul. Ku Wiatrakom 18, 85-856 Bydgoszcz (Wyżyny)",
+    phoneLabel: "Telefon bezpośredni:",
+    emailLabel: "Adres e-mail:",
+    hoursLabel: "Godziny otwarcia:",
+    hoursWeek: "Poniedziałek – Piątek: 10:00 – 17:00",
+    hoursWeekend: "Sobota – Niedziela: Nieczynne",
+    cashTitle: "💵 Płatność wyłącznie gotówką:",
+    cashDesc: "Rozliczamy się gotówką (zarówno za diagnozę 50 zł, jak i odbiór naprawionego sprzętu). W promieniu 300 m od serwisu znajdują się bankomaty.",
+    card2Title: "Jak dojechać do Multi-Servis?",
+    carTitle: "🚗 Samochodem:",
+    carDesc: "Dojazd z centrum Bydgoszczy przez rondo Toruńskie lub Trasę Uniwersytecką, a następnie ulicą Wojska Polskiego w kierunku Wyżyn. Przy ulicy Ku Wiatrakom dostępne są bezpłatne miejsca postojowe bezpośrednio przed budynkiem serwisu.",
+    transitTitle: "🚌 Komunikacją miejską ZDMiKP:",
+    transitDesc: "Dogodny dojazd tramwajami linii 2, 9, 11 (przystanek Rondo Kujawskie lub Szarych Szeregów / Wojska Polskiego) oraz autobusami linii 53, 56, 68, 69 i 89. Kilka minut spacerem z głównych węzłów komunikacyjnych Wyżyn.",
+    areaTitle: "📍 Obszar obsługi:",
+    areaDesc: "Obsługujemy mieszkańców całej Bydgoszczy (Wyżyny, Wzgórze Wolności, Szwederowo, Bartodzieje, Fordon, Błonie, Kapuściska, Śródmieście, Bielawy) oraz okolicznych miejscowości (Białe Błota, Solec Kujawski, Osielsko, Nowa Wieś Wielka).",
+    formBadge: "Formularz online",
+    formTitle: "Zgłoś sprzęt do wstępnej konsultacji",
+    formDesc: "Opisz model sprzętu i objawy usterki. Tomasz Jeliński oddzwoni i przedstawi wstępną ocenę.",
+    fieldName: "Imię i nazwisko",
+    fieldPhone: "Numer telefonu kontaktowego*",
+    fieldDevice: "Rodzaj sprzętu i marka*",
+    fieldIssue: "Opis usterki i zachowania sprzętu*",
+    btnSend: "Wyślij zgłoszenie usterki",
+    rodoNotice: "Administratorem Twoich danych jest Multi-Servis Tomasz Jeliński (ul. Ku Wiatrakom 18, Bydgoszcz). Dane z formularza przetwarzamy wyłącznie w celu kontaktu i wyceny naprawy sprzętu."
+  },
+  en: {
+    seoTitle: "Contact & Directions | Multi-Servis Electronics Repair Bydgoszcz Ku Wiatrakom 18",
+    seoDesc: "Contact Multi-Servis Tomasz Jeliński in Bydgoszcz. Ku Wiatrakom 18 (Wyżyny). Phone: 505 012 914. Hours: Mon.-Fri. 10:00 - 17:00. Cash only payment. Directions & contact form.",
+    heroBadge: "Bydgoszcz • Ku Wiatrakom 18 • Wyżyny",
+    heroTitle: "Workshop Contact & Directions",
+    heroSubtitle: "The Multi-Servis Tomasz Jeliński repair workshop is located in Bydgoszcz at Ku Wiatrakom 18 (Wyżyny district). We accept equipment Monday through Friday, 10:00 – 17:00.",
+    pills: ["💵 Cash only payment", "⚡ Fast turnaround", "😊 Friendly & professional service", "🔍 Fault diagnosis 50 PLN", "🛡️ 3-month warranty", "🤝 Fair quote before repair"],
+    card1Title: "Contact Info & Address",
+    addrLabel: "Workshop Address:",
+    addrVal: "Ku Wiatrakom 18, 85-856 Bydgoszcz (Wyżyny)",
+    phoneLabel: "Direct Phone:",
+    emailLabel: "E-mail Address:",
+    hoursLabel: "Opening Hours:",
+    hoursWeek: "Monday – Friday: 10:00 – 17:00",
+    hoursWeekend: "Saturday – Sunday: Closed",
+    cashTitle: "💵 Cash only payment:",
+    cashDesc: "We settle exclusively in cash (both for the 50 PLN diagnosis and repair pickup). Several ATMs are located within 300 meters of the workshop.",
+    card2Title: "How to reach Multi-Servis?",
+    carTitle: "🚗 By car:",
+    carDesc: "Access from central Bydgoszcz via Toruńskie roundabout or Trasa Uniwersytecka, then Wojska Polskiego towards Wyżyny. Free parking spots are available right outside the shop on Ku Wiatrakom.",
+    transitTitle: "🚌 By public transport (ZDMiKP):",
+    transitDesc: "Easy access via trams 2, 9, 11 (Rondo Kujawskie or Szarych Szeregów / Wojska Polskiego stops) and bus lines 53, 56, 68, 69, 89. A short walk from major transport hubs in Wyżyny.",
+    areaTitle: "📍 Service Area:",
+    areaDesc: "We serve clients across all Bydgoszcz districts (Wyżyny, Wzgórze Wolności, Szwederowo, Bartodzieje, Fordon, Błonie, Kapuściska, Śródmieście, Bielawy) and nearby towns (Białe Błota, Solec Kujawski, Osielsko).",
+    formBadge: "Online Consultation",
+    formTitle: "Submit a Device for Consultation",
+    formDesc: "Describe the device model and symptoms. Tomasz Jeliński will call you back with an initial evaluation.",
+    fieldName: "Full Name",
+    fieldPhone: "Phone Number*",
+    fieldDevice: "Device Type & Brand*",
+    fieldIssue: "Description of the fault and symptoms*",
+    btnSend: "Send Consultation Request",
+    rodoNotice: "Your data controller is Multi-Servis Tomasz Jeliński (Ku Wiatrakom 18, Bydgoszcz). Form data is used solely to contact you and provide a repair estimate."
+  },
+  uk: {
+    seoTitle: "Контакти та маршрут | Сервіс електроніки Бидгощ Ku Wiatrakom 18 | Multi-Servis",
+    seoDesc: "Контакти Multi-Servis Томаш Єлінський у Бидгощі. Вул. Ku Wiatrakom 18 (Вижини). Тел: 505 012 914. Графік: пн.-пт. 10:00 - 17:00. Оплата тільки готівкою.",
+    heroBadge: "Бидгощ • Ku Wiatrakom 18 • Вижини",
+    heroTitle: "Контакти сервісу та схема доїзду",
+    heroSubtitle: "Майстерня Multi-Servis Томаша Єлінського розташована у Бидгощі на вулиці Ku Wiatrakom 18 (район Вижини). Приймаємо техніку з понеділка по п'ятницю з 10:00 до 17:00.",
+    pills: ["💵 Оплата тільки готівкою", "⚡ Швидке виконання", "😊 Привітне та професійне обслуговування", "🔍 Діагностика несправності 50 zł", "🛡️ Гарантія 3 місяці", "🤝 Чесна оцінка до ремонту"],
+    card1Title: "Контактні дані та адреса",
+    addrLabel: "Адреса майстерні:",
+    addrVal: "вул. Ku Wiatrakom 18, 85-856 Бидгощ (Вижини)",
+    phoneLabel: "Прямий телефон:",
+    emailLabel: "Електронна пошта:",
+    hoursLabel: "Години роботи:",
+    hoursWeek: "Понеділок – П'ятниця: 10:00 – 17:00",
+    hoursWeekend: "Субота – Неділя: Вихідний",
+    cashTitle: "💵 Оплата виключно готівкою:",
+    cashDesc: "Розрахунок проводиться готівкою (як за діагностику 50 zł, так і при отриманні техніки). За 300 метрів від сервісу є банкомати.",
+    card2Title: "Як доїхати до Multi-Servis?",
+    carTitle: "🚗 Автомобілем:",
+    carDesc: "Доїзд із центру Бидгоща через rondo Toruńskie або Trasę Uniwersytecką, далі вулицею Wojska Polskiego в напрямку Вижин. Біля майстерні на Ku Wiatrakom є безкоштовні паркомісця.",
+    transitTitle: "🚌 Громадським транспортом ZDMiKP:",
+    transitDesc: "Зручний доїзд трамваями № 2, 9, 11 (зупинка Rondo Kujawskie або Szarych Szeregów / Wojska Polskiego) та автобусами 53, 56, 68, 69, 89.",
+    areaTitle: "📍 Територія обслуговування:",
+    areaDesc: "Обслуговуємо жителів усіх районів Бидгоща (Wyżyny, Wzgórze Wolności, Szwederowo, Bartodzieje, Fordon, Błonie, Kapuściska, Śródmieście, Bielawy) та сусідніх містечок.",
+    formBadge: "Онлайн-заявка",
+    formTitle: "Попередня консультація щодо ремонту",
+    formDesc: "Опишіть модель техніки та симптоми поломки. Томаш Єлінський зв'яжеться з вами для консультації.",
+    fieldName: "Ім'я та прізвище",
+    fieldPhone: "Контактний номер телефону*",
+    fieldDevice: "Тип техніки та бренд*",
+    fieldIssue: "Опис несправності*",
+    btnSend: "Надіслати заявку",
+    rodoNotice: "Адміністратором ваших даних є Multi-Servis Tomasz Jeliński (Ku Wiatrakom 18, Бидгощ). Дані використовуються виключно для відповіді на запит та оцінки ремонту."
+  }
+};
+
+const c = content[lang] || content.pl;
+
+// LocalBusiness + BreadcrumbList JSON-LD
+const contactSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "ElectronicsRepair"],
+      "@id": "https://multi-servis.pl/#business",
+      "name": "Multi-Servis Tomasz Jeliński",
+      "legalName": "Multi-Servis Tomasz Jeliński",
+      "description": c.seoDesc,
+      "url": `https://multi-servis.pl${currentPath}`,
+      "telephone": "+48505012914",
+      "email": "kontakt@multi-servis.pl",
+      "priceRange": "$",
+      "paymentAccepted": "Cash",
+      "currenciesAccepted": "PLN",
+      "image": "https://multi-servis.pl/images/multi-servis-logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ku Wiatrakom 18",
+        "addressLocality": "Bydgoszcz",
+        "postalCode": "85-856",
+        "addressRegion": "Kujawsko-Pomorskie",
+        "addressCountry": "PL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 53.108951,
+        "longitude": 18.040959
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:00",
+          "closes": "17:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.google.com/maps/search/?api=1&query=Multi-Servis+Tomasz+Jeli%C5%84ski+Ku+Wiatrakom+18+Bydgoszcz",
+        "https://maps.google.com/?q=Multi-Servis+Tomasz+Jeli%C5%84ski+Ku+Wiatrakom+18+Bydgoszcz"
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Wyżyny, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Fordon, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Bartodzieje, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Bielawy, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Szwederowo, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Wzgórze Wolności, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Błonie, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Kapuściska, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Śródmieście, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Osowa Góra, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Solec Kujawski" },
+        { "@type": "AdministrativeArea", "name": "Białe Błota" },
+        { "@type": "AdministrativeArea", "name": "Osielsko" },
+        { "@type": "AdministrativeArea", "name": "Nowa Wieś Wielka" },
+        { "@type": "AdministrativeArea", "name": "Województwo kujawsko-pomorskie" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": lang === "pl" ? "Strona główna" : (lang === "en" ? "Home" : "Головна"), "item": `https://multi-servis.pl${prefix || "/"}` },
+        { "@type": "ListItem", "position": 2, "name": lang === "pl" ? "Kontakt" : (lang === "en" ? "Contact" : "Контакти"), "item": `https://multi-servis.pl${prefix}/kontakt` }
+      ]
+    }
+  ]
+});
+---
+
+<Layout
+  title={c.seoTitle}
+  description={c.seoDesc}
+  wfPage="kontakt"
+  ogImage="/images/social-20preview.avif"
+  lang={lang}
+  keywords={lang === "pl" ? "kontakt Multi-Servis, serwis Ku Wiatrakom 18, dojazd Bydgoszcz, telefon 505 012 914" : (lang === "en" ? "contact Multi-Servis, Ku Wiatrakom 18, directions Bydgoszcz, phone 505 012 914" : "контакти Multi-Servis, Ku Wiatrakom 18, проїзд Бидгощ, телефон 505 012 914")}
+>
+  <script slot="head" type="application/ld+json" is:inline set:html={contactSchema} />
+
+  <!-- Unified Navbar -->
+  <Navbar lang={lang} currentPath={currentPath} />
+
+  <!-- Hero Section -->
+  <section class="section" style="padding-top: 2rem;">
+    <div class="container centered">
+      <div class="page-header" style="text-align: center; max-width: 900px; margin: 0 auto 3rem auto;">
+        <nav aria-label="Breadcrumb" style="margin-bottom: 1rem; font-size: 0.875rem;">
+          <ol style="list-style: none; padding: 0; margin: 0; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <li><a href={prefix || "/"} style="color: inherit; opacity: 0.75; text-decoration: none;">{lang === "pl" ? "Główna" : (lang === "en" ? "Home" : "Головна")}</a></li>
+            <li aria-hidden="true" style="opacity: 0.4; font-size: 0.75rem;">/</li>
+            <li aria-current="page" style="color: #d32f2f; font-weight: 600;">{lang === "pl" ? "Kontakt" : (lang === "en" ? "Contact" : "Контакти")}</li>
+          </ol>
+        </nav>
+        <div class="section-badge">{c.heroBadge}</div>
+        <h1 class="display-h1" style="margin-top: 1rem; margin-bottom: 1.25rem;">
+          {c.heroTitle}
+        </h1>
+        <p class="large-paragraph t---neutral-10">
+          {c.heroSubtitle}
+        </p>
+        <div class="hero-stats-row" style="margin-top: 2rem;">
+          {c.pills.map((pill, i) => (
+            <div class={`hero-stat-pill ${i === 0 ? 'pill-cash-red' : ''}`}>
+              {pill}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dane kontaktowe i Dojazd -->
+  <section class="section" style="padding: 4.5rem 0;">
+    <div class="container">
+      <div class="subpage-grid-2">
+        <!-- Dane kontaktowe -->
+        <div class="subpage-card">
+          <h2 class="display-h5" style="color: #d32f2f; margin-bottom: 1.25rem;">{c.card1Title}</h2>
+          
+          <div style="display: flex; flex-direction: column; gap: 1.15rem; font-size: 1rem;">
+            <div>
+              <strong style="display: block; margin-bottom: 0.2rem;">{c.addrLabel}</strong>
+              <span>{c.addrVal}</span>
+            </div>
+
+            <div>
+              <strong style="display: block; margin-bottom: 0.2rem;">{c.phoneLabel}</strong>
+              <a href="tel:+48505012914" style="color: #d32f2f; font-weight: 700; font-size: 1.25rem; text-decoration: none;">505 012 914</a>
+            </div>
+
+            <div>
+              <strong style="display: block; margin-bottom: 0.2rem;">{c.emailLabel}</strong>
+              <a href="mailto:kontakt@multi-servis.pl" style="color: inherit; text-decoration: underline;">kontakt@multi-servis.pl</a>
+            </div>
+
+            <div>
+              <strong style="display: block; margin-bottom: 0.2rem;">{c.hoursLabel}</strong>
+              <span>{c.hoursWeek}</span><br />
+              <span class="paragraph t---neutral-10">{c.hoursWeekend}</span>
+            </div>
+
+            <div style="border-top: 1px solid rgba(211, 47, 47, 0.2); padding-top: 1rem;">
+              <strong style="display: block; color: #d32f2f; margin-bottom: 0.25rem;">{c.cashTitle}</strong>
+              <span style="font-size: 0.9375rem;" class="paragraph t---neutral-10">{c.cashDesc}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wskazówki dojazdu -->
+        <div class="subpage-card">
+          <h2 class="display-h5" style="color: #d32f2f; margin-bottom: 1.25rem;">{c.card2Title}</h2>
+          
+          <div style="display: flex; flex-direction: column; gap: 1.15rem; font-size: 0.9375rem;">
+            <div>
+              <strong style="display: block; font-size: 1rem; margin-bottom: 0.2rem;">{c.carTitle}</strong>
+              <p class="paragraph t---neutral-10" style="margin: 0;">{c.carDesc}</p>
+            </div>
+
+            <div>
+              <strong style="display: block; font-size: 1rem; margin-bottom: 0.2rem;">{c.transitTitle}</strong>
+              <p class="paragraph t---neutral-10" style="margin: 0;">{c.transitDesc}</p>
+            </div>
+
+            <div>
+              <strong style="display: block; font-size: 1rem; margin-bottom: 0.2rem;">{c.areaTitle}</strong>
+              <p class="paragraph t---neutral-10" style="margin: 0;">{c.areaDesc}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formularz zgłoszeniowy w sekcji ciemnej (inverse) -->
+  <section class="section inverse" style="padding: 4.5rem 0;">
+    <div class="container inverse-section">
+      <div class="contact-section-wrap" style="max-width: 860px; margin: 0 auto;">
+        <div class="contact-header" style="text-align: center; margin-bottom: 2.5rem;">
+          <div class="section-badge" style="background: rgba(255,255,255,0.1); color: #ffffff;">{c.formBadge}</div>
+          <h2 class="display-h2" style="margin-top: 0.5rem; color: #ffffff;">{c.formTitle}</h2>
+          <p class="large-paragraph" style="color: rgba(255, 255, 255, 0.85);">{c.formDesc}</p>
+        </div>
+
+        <div class="contact-grid-body">
+          <div class="contact-form-wrap w-form" style="width: 100%;">
+            <form method="get" name="wf-form-Form" data-name="Form" class="contact-form">
+              <div class="field-wrapper">
+                <div class="input-field">
+                  <label for="name" class="input-label" style="color: #ffffff;">{c.fieldName}</label>
+                  <input class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Jan Kowalski" type="text" required="" />
+                </div>
+                <div class="input-field">
+                  <label for="phone" class="input-label" style="color: #ffffff;">{c.fieldPhone}</label>
+                  <input class="text-field w-input" maxlength="256" name="phone" data-name="Phone" placeholder="np. 500 123 456" type="tel" required="" />
+                </div>
+                <div class="input-field">
+                  <label for="device" class="input-label" style="color: #ffffff;">{c.fieldDevice}</label>
+                  <input class="text-field w-input" maxlength="256" name="device" data-name="Device" placeholder="np. Telewizor Samsung 55 / Laptop Lenovo" type="text" required="" />
+                </div>
+                <div class="input-field">
+                  <label for="field" class="input-label" style="color: #ffffff;">{c.fieldIssue}</label>
+                  <textarea required="" placeholder="np. Brak obrazu, dioda miga 2 razy / laptop po zalaniu" maxlength="5000" id="field" name="field" data-name="Field" class="text-area w-input"></textarea>
+                </div>
+              </div>
+              <input type="submit" data-wait="Wysyłanie..." class="filled-button main w-button" style="color: #ffffff !important;" value={c.btnSend} />
+              <p style="font-size: 0.8125rem; color: rgba(255, 255, 255, 0.7); margin-top: 1rem; line-height: 1.4; text-align: center;">
+                🔒 {c.rodoNotice}
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="overlay-03"></div>
+    <div class="contact-bg"></div>
+  </section>
+
+  <!-- Modern Clean Footer -->
+  <Footer lang={lang} />
+</Layout>

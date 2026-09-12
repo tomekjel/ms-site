@@ -1,0 +1,454 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../Navbar.astro";
+import Footer from "../Footer.astro";
+import type { Lang } from "../../i18n/translations";
+import "../../styles/ix/index.css";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pl" } = Astro.props;
+const prefix = lang === "pl" ? "" : `/${lang}`;
+const currentPath = `${prefix}/cennik`;
+
+const content = {
+  pl: {
+    seoTitle: "Cennik Serwisu Elektroniki Bydgoszcz | Diagnoza 50 zł | Multi-Servis",
+    seoDesc: "Przejrzyste zasady serwisu elektroniki w Bydgoszczy (Ku Wiatrakom 18). Stała opłata za diagnozę 50 zł, każda naprawa wyceniana indywidualnie przed realizacją. Płatność wyłącznie gotówką, 3 m-ce gwarancji.",
+    heroBadge: "Przejrzyste zasady • Uczciwa wycena",
+    heroTitle: "Cennik i Zasady Napraw w Multi-Servis",
+    heroSubtitle: "W naszym serwisie nie stosujemy ukrytych kosztów ani sztucznych widełek cenowych. Jedyną stałą opłatą jest diagnoza usterki za 50 zł. Koszt każdej naprawy ustalamy indywidualnie na podstawie usterki i kosztu części — naprawę wykonujemy wyłącznie po Twojej telefonicznej akceptacji.",
+    pills: ["💵 Płatność tylko gotówka", "🔍 Diagnoza usterki 50 zł", "🤝 Uczciwa wycena przed naprawą", "🛡️ Gwarancja 3 miesiące", "⚡ Szybka realizacja", "😊 Miła i fachowa obsługa"],
+    pricingBadge: "Model rozliczeń",
+    pricingTitle: "Jak rozliczamy naprawy w warsztacie?",
+    pricingSubtitle: "O kosztach decydujesz sam po otrzymaniu wyceny. Jeśli cena nie będzie Ci odpowiadać, płacisz tylko 50 zł za diagnozę i odbierasz sprzęt.",
+    card1Badge: "Stała opłata diagnostyczna",
+    card1Title: "Diagnoza sprzętu",
+    card1Price: "50 zł",
+    card1Period: "/ jednorazowo",
+    card1Desc: "Dokładne sprawdzenie usterki w warsztacie i telefoniczna wycena.",
+    card1Btn: "Dostarcz sprzęt do serwisu →",
+    card1Features: [
+      "Lokalizacja uszkodzonego komponentu",
+      "Telefon z wyceną części i robocizny",
+      "Określenie czasu oczekiwania",
+      "Brak zgody na naprawę = koszt tylko 50 zł"
+    ],
+    card2Badge: "Indywidualna kalkulacja",
+    card2Title: "Naprawa TV / PC / Laptop",
+    card2Price: "Wycena",
+    card2Period: "/ po diagnozie",
+    card2Desc: "Naprawa realizowana wyłącznie po Twojej wcześniejszej zgodzie telefonicznej.",
+    card2Btn: "Zadzwoń: 505 012 914 →",
+    card2Features: [
+      "Oryginalne lub sprawdzone części OEM",
+      "Pisemna gwarancja na 3 miesiące",
+      "Testy obciążeniowe po wykonaniu usługi",
+      "Płatność gotówką przy odbiorze"
+    ],
+    cashTitle: "Płatność wyłącznie gotówką",
+    cashDesc: "W warsztacie przy ul. Ku Wiatrakom 18 w Bydgoszczy rozliczamy się wyłącznie gotówką (zarówno za diagnozę 50 zł, jak i odbiór naprawionego sprzętu). W pobliżu serwisu na osiedlu Wyżyny dostępne są bankomaty (Euronet, PKO BP, Santander).",
+    procBadge: "Procedura serwisu",
+    procTitle: "Jak wygląda naprawa krok po kroku?",
+    procSubtitle: "Brak ukrytych kosztów i pełna kontrola nad decyzją na każdym etapie.",
+    step1Title: "Diagnoza (50 zł)",
+    step1Desc: "Przynosisz sprzęt na ul. Ku Wiatrakom 18 w Bydgoszczy. Dokładnie sprawdzamy i mierzymy, co jest uszkodzone.",
+    step2Title: "Kontakt i Wycena",
+    step2Desc: "Dzwonimy do Ciebie z informacją: co uległo usterce, jak należy to naprawić, jaki będzie całkowity koszt i czas oczekiwania.",
+    step3Title: "Decyzja i Odbiór",
+    step3Desc: "Jeśli się zgadzasz – naprawiamy i otrzymujesz 3 m-ce gwarancji. Jeśli nie – płacisz tylko 50 zł za diagnozę. Płatność wyłącznie gotówką.",
+    hubsBadge: "Zakres usług",
+    hubsTitle: "Co naprawiamy w warsztacie Multi-Servis?",
+    hubsSubtitle: "Dowiedz się więcej o procesie diagnozy, metodach naprawy i typowych usterkach.",
+    hubTv: "Telewizory",
+    hubTvDesc: "Wymiana podświetlenia LED, naprawa zasilaczy, płyt głównych i modułów T-CON (LED, OLED, QLED).",
+    hubLaptop: "Laptopy",
+    hubLaptopDesc: "Naprawa po zalaniu cieczą, mikrolutowanie BGA, wymiana matryc, klawiatur, złącz zasilania i czyszczenie.",
+    hubPc: "Komputery PC",
+    hubPcDesc: "Diagnostyka zwarć płyt głównych i kart graficznych, komputery gamingowe, wymiana past i zasilaczy.",
+    hubConsole: "Konsole do gier",
+    hubConsoleDesc: "Wymiana portów HDMI w PS5 i Xbox Series, wymiana ciekłego metalu, czyszczenie i serwis zasilaczy.",
+    detailsLink: "Szczegóły →"
+  },
+  en: {
+    seoTitle: "Electronics Repair Pricing Bydgoszcz | 50 PLN Diagnosis | Multi-Servis",
+    seoDesc: "Transparent pricing at Multi-Servis electronics workshop in Bydgoszcz (Ku Wiatrakom 18). Fixed 50 PLN fault diagnosis, individual repair quotes beforehand. Cash only payment, 3-month warranty.",
+    heroBadge: "Transparent Rules • Fair Quotation",
+    heroTitle: "Pricing & Repair Policies at Multi-Servis",
+    heroSubtitle: "We have no hidden charges or misleading price tiers. The only fixed fee is a comprehensive 50 PLN fault diagnosis. The cost of every repair is determined individually based on the fault and component costs — work begins only after your phone confirmation.",
+    pills: ["💵 Cash only payment", "🔍 Fault diagnosis 50 PLN", "🤝 Fair quote before repair", "🛡️ 3-month warranty", "⚡ Fast turnaround", "😊 Friendly & professional service"],
+    pricingBadge: "Billing Model",
+    pricingTitle: "How we charge for repairs in our workshop",
+    pricingSubtitle: "You decide on costs after receiving our detailed quote. If you choose not to proceed, you only pay 50 PLN for the diagnosis.",
+    card1Badge: "Fixed Diagnostic Fee",
+    card1Title: "Hardware Diagnosis",
+    card1Price: "50 PLN",
+    card1Period: "/ one-time",
+    card1Desc: "Thorough electronic inspection in our workshop and a phone quotation.",
+    card1Btn: "Bring device to workshop →",
+    card1Features: [
+      "Precise fault localization",
+      "Phone call with parts & labor quote",
+      "Turnaround time estimate",
+      "Declining repair = cost is only 50 PLN"
+    ],
+    card2Badge: "Custom Calculation",
+    card2Title: "TV / PC / Laptop Repair",
+    card2Price: "Quotation",
+    card2Period: "/ after diagnosis",
+    card2Desc: "Repairs proceed only after your explicit verbal confirmation.",
+    card2Btn: "Call: 505 012 914 →",
+    card2Features: [
+      "Genuine OEM or high-grade components",
+      "3-month written warranty",
+      "Full load testing after service",
+      "Cash payment upon pickup"
+    ],
+    cashTitle: "Cash only payment",
+    cashDesc: "In our workshop at Ku Wiatrakom 18 in Bydgoszcz, we accept cash only (both for the 50 PLN diagnosis and repair pickup). Several ATMs (Euronet, PKO BP, Santander) are available within a 2-minute walk.",
+    procBadge: "Service Process",
+    procTitle: "How repairs work step by step",
+    procSubtitle: "Zero hidden costs and full control over every decision at every phase.",
+    step1Title: "Diagnosis (50 PLN)",
+    step1Desc: "Bring your device to Ku Wiatrakom 18, Bydgoszcz. We thoroughly inspect and measure all components.",
+    step2Title: "Contact & Quote",
+    step2Desc: "We call you with details: what broke down, how it can be fixed, the total price, and expected turnaround.",
+    step3Title: "Decision & Pickup",
+    step3Desc: "If you approve, we repair it with a 3-month warranty. If not, you pay only 50 PLN for diagnosis. Cash payment only.",
+    hubsBadge: "Service Range",
+    hubsTitle: "What electronics do we repair?",
+    hubsSubtitle: "Learn more about our diagnostic procedures, repair methods, and common issues.",
+    hubTv: "Televisions",
+    hubTvDesc: "LED backlight replacement, power supplies, logic boards, and T-CON boards (LED, OLED, QLED).",
+    hubLaptop: "Laptops",
+    hubLaptopDesc: "Liquid damage repairs, BGA micro-soldering, screens, keyboards, charging ports, and thermal maintenance.",
+    hubPc: "Desktop PCs",
+    hubPcDesc: "Motherboard and graphics card short-circuit repair, gaming computers, thermal repasting, and power supplies.",
+    hubConsole: "Game Consoles",
+    hubConsoleDesc: "HDMI port replacement in PS5 and Xbox Series, liquid metal repasting, cooling, and power supply repairs.",
+    detailsLink: "Details →"
+  },
+  uk: {
+    seoTitle: "Прайс на ремонт електроніки Бидгощ | Діагностика 50 zł | Multi-Servis",
+    seoDesc: "Прозорі правила сервісу електроніки в Бидгощі (Ku Wiatrakom 18). Фіксована плата за діагностику 50 zł, індивідуальна оцінка до початку ремонту. Оплата тільки готівкою, 3 міс. гарантії.",
+    heroBadge: "Прозорі правила • Чесна оцінка",
+    heroTitle: "Прайс та правила ремонту в Multi-Servis",
+    heroSubtitle: "У нашому сервісі немає прихованих комісій чи штучних розцінок. Єдиною фіксованою платою є діагностика несправності за 50 zł. Вартість кожного ремонту розраховується індивідуально — роботу починаємо лише після вашого узгодження телефоном.",
+    pills: ["💵 Оплата тільки готівкою", "🔍 Діагностика несправності 50 zł", "🤝 Чесна оцінка до ремонту", "🛡️ Гарантія 3 місяці", "⚡ Швидке виконання", "😊 Привітне та професійне обслуговування"],
+    pricingBadge: "Модель розрахунків",
+    pricingTitle: "Як розраховується вартість ремонту в майстерні?",
+    pricingSubtitle: "Ви самі приймаєте рішення щодо ремонту після оцінки. Якщо вартість вас не влаштує, ви сплачуєте лише 50 zł за діагностику і забираєте пристрій.",
+    card1Badge: "Фіксована діагностична плата",
+    card1Title: "Діагностика пристрою",
+    card1Price: "50 zł",
+    card1Period: "/ одноразово",
+    card1Desc: "Детальна перевірка несправності в майстерні та оцінка по телефону.",
+    card1Btn: "Привезти техніку до сервісу →",
+    card1Features: [
+      "Точна локалізація пошкодженого компонента",
+      "Дзвінок з вартістю запчастин та роботи",
+      "Узгодження термінів ремонту",
+      "Відмова від ремонту = вартість лише 50 zł"
+    ],
+    card2Badge: "Індивідуальний розрахунок",
+    card2Title: "Ремонт TV / PC / Ноутбука",
+    card2Price: "Оцінка",
+    card2Period: "/ після огляду",
+    card2Desc: "Ремонт виконується виключно після вашої згоди телефоном.",
+    card2Btn: "Зателефонувати: 505 012 914 →",
+    card2Features: [
+      "Оригінальні або надійні OEM-деталі",
+      "Письмова гарантія на 3 місяці",
+      "Навантажувальні тести після ремонту",
+      "Оплата готівкою при отриманні"
+    ],
+    cashTitle: "Оплата виключно готівкою",
+    cashDesc: "У майстерні на вул. Ku Wiatrakom 18 у Бидгощі розрахунок здійснюється виключно готівкою (як за діагностику 50 zł, так і при отриманні відремонтованої техніки). Поруч із сервісом є банкомати (Euronet, PKO BP, Santander).",
+    procBadge: "Процес ремонту",
+    procTitle: "Як відбувається ремонт крок за кроком?",
+    procSubtitle: "Жодних прихованих платежів та повний контроль над рішенням на кожному етапі.",
+    step1Title: "Діагностика (50 zł)",
+    step1Desc: "Ви привозите пристрій на вул. Ku Wiatrakom 18 у Бидгощі. Ми детально перевіряємо та вимірюємо, що вийшло з ладу.",
+    step2Title: "Дзвінок та оцінка",
+    step2Desc: "Ми телефонуємо вам із деталями: що зламалося, як це виправити, якою буде повна вартість та скільки часу знадобиться.",
+    step3Title: "Рішення та видача",
+    step3Desc: "Якщо ви згодні — ремонтуємо і надаємо гарантію на 3 місяці. Якщо ні — сплачуєте лише 50 zł за діагностику. Оплата тільки готівкою.",
+    hubsBadge: "Спектр послуг",
+    hubsTitle: "Що ми ремонтуємо в Multi-Servis?",
+    hubsSubtitle: "Дізнайтеся більше про процес діагностики, способи ремонту та типові несправності.",
+    hubTv: "Телевізори",
+    hubTvDesc: "Заміна LED-підсвічування, ремонт блоків живлення, материнських плат та модулів T-CON (LED, OLED, QLED).",
+    hubLaptop: "Ноутбуки",
+    hubLaptopDesc: "Ремонт після залиття, BGA-пайка, заміна матриць, клавіатур, роз'ємів живлення та чистка.",
+    hubPc: "Комп'ютери PC",
+    hubPcDesc: "Діагностика замикань материнських плат та відеокарт, ігрові комп'ютери, заміна паст та блоків живлення.",
+    hubConsole: "Ігрові консолі",
+    hubConsoleDesc: "Заміна портів HDMI у PS5 та Xbox Series, заміна рідкого металу, чистка та ремонт блоків живлення.",
+    detailsLink: "Детальніше →"
+  }
+};
+
+const c = content[lang] || content.pl;
+
+// Service Offer + BreadcrumbList JSON-LD
+const pricingSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": `https://multi-servis.pl${prefix}/cennik#diagnosis`,
+      "name": lang === "pl" ? "Diagnoza sprzętu elektronicznego Bydgoszcz" : "Hardware Diagnostics Bydgoszcz",
+      "provider": { "@id": "https://multi-servis.pl/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Wyżyny, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Województwo kujawsko-pomorskie" }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "50",
+        "priceCurrency": "PLN",
+        "name": lang === "pl" ? "Diagnoza sprzętu" : "Hardware Diagnostics",
+        "description": lang === "pl" ? "Precyzyjna diagnoza usterki telewizora, laptopa, PC lub konsoli w warsztacie, telefon z wyceną. Płatność wyłącznie gotówką." : "Hardware fault diagnostics at workshop with phone quote. Cash only.",
+        "priceValidUntil": "2027-12-31"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": lang === "pl" ? "Strona główna" : (lang === "en" ? "Home" : "Головна"), "item": `https://multi-servis.pl${prefix || "/"}` },
+        { "@type": "ListItem", "position": 2, "name": lang === "pl" ? "Cennik" : (lang === "en" ? "Pricing" : "Ціни"), "item": `https://multi-servis.pl${prefix}/cennik` }
+      ]
+    }
+  ]
+});
+---
+
+<Layout
+  title={c.seoTitle}
+  description={c.seoDesc}
+  wfPage="cennik"
+  ogImage="/images/social-20preview.avif"
+  lang={lang}
+  keywords={lang === "pl" ? "cennik serwis elektroniki Bydgoszcz, diagnoza 50 zł, cena naprawa telewizora, Multi-Servis cennik" : (lang === "en" ? "pricing electronics repair Bydgoszcz, diagnosis 50 PLN, TV repair cost, Multi-Servis pricing" : "ціни ремонт електроніки Бидгощ, діагностика 50 зл, Multi-Servis ціни")}
+>
+  <script slot="head" type="application/ld+json" is:inline set:html={pricingSchema} />
+
+  <!-- Unified Navbar -->
+  <Navbar lang={lang} currentPath={currentPath} />
+
+  <!-- Hero Section -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 3.5rem;">
+    <div class="container centered" style="max-width: 860px; margin: 0 auto; text-align: center;">
+      <nav aria-label="Breadcrumb" style="margin-bottom: 1rem; font-size: 0.875rem;">
+          <ol style="list-style: none; padding: 0; margin: 0; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <li><a href={prefix || "/"} style="color: inherit; opacity: 0.75; text-decoration: none;">{lang === "pl" ? "Główna" : (lang === "en" ? "Home" : "Головна")}</a></li>
+            <li aria-hidden="true" style="opacity: 0.4; font-size: 0.75rem;">/</li>
+            <li aria-current="page" style="color: #d32f2f; font-weight: 600;">{lang === "pl" ? "Cennik" : (lang === "en" ? "Pricing" : "Ціни")}</li>
+          </ol>
+        </nav>
+        <div class="section-badge">{c.heroBadge}</div>
+      <h1 class="display-h1" style="margin-top: 0.75rem; margin-bottom: 1.25rem;">
+        {c.heroTitle}
+      </h1>
+      <p class="large-paragraph t---neutral-10" style="max-width: 740px; margin: 0 auto 2rem auto;">
+        {c.heroSubtitle}
+      </p>
+
+      <!-- Trust Mini-Okienka Pills -->
+      <div class="hero-quick-stats" style="justify-content: center; margin: 0 auto;">
+        {c.pills.map((pill, i) => (
+          <div class={`hero-stat-pill ${i === 0 ? 'pill-cash-red' : ''}`}>
+            {pill}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Cards Section -->
+  <section class="section inverse" style="padding: 5rem 0;">
+    <div class="container centered">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 3.5rem auto;">
+        <div class="section-badge" style="background: rgba(255,255,255,0.1); color: #ffffff;">{c.pricingBadge}</div>
+        <h2 class="display-h2" style="margin-top: 0.75rem; color: #ffffff;">{c.pricingTitle}</h2>
+        <p class="large-paragraph" style="color: rgba(255, 255, 255, 0.85);">
+          {c.pricingSubtitle}
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 2.5rem; max-width: 980px; margin: 0 auto 3rem auto;">
+        
+        <!-- Card 1: Diagnoza sprzętu -->
+        <div class="pricing-card" style="text-align: left; margin: 0 auto; width: 100%;">
+          <div class="pricing-main">
+            <div class="pricing-heading">
+              <div class="section-badge" style="margin-bottom: 0.75rem; background: rgba(211, 47, 47, 0.25); color: #ff6b6b; border: 1px solid rgba(211, 47, 47, 0.4);">{c.card1Badge}</div>
+              <h3 class="display-h4" style="color: #ffffff;">{c.card1Title}</h3>
+            </div>
+            <div class="pricing-description">
+              <div class="price">
+                <h4 class="display-h2" style="color: #d32f2f;">{c.card1Price}</h4>
+                <div class="large-paragraph t---neutral-10" style="color: rgba(255,255,255,0.7);">{c.card1Period}</div>
+              </div>
+              <p class="paragraph t---neutral-10" style="color: rgba(255,255,255,0.85);">{c.card1Desc}</p>
+            </div>
+            <a href={`${prefix}/kontakt`} class="primary-button w-inline-block" style="text-align: center; justify-content: center; color: #ffffff !important;">
+              <div class="button-content">
+                <p class="button-text" style="color: #ffffff !important; margin: 0;">{c.card1Btn}</p>
+              </div>
+            </a>
+          </div>
+          <div class="check-list-wrap">
+            {c.card1Features.map((feat, idx) => (
+              <div class="icon-text">
+                <div class="icon m w-embed">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#d32f2f" viewBox="0 0 256 256">
+                    <path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path>
+                  </svg>
+                </div>
+                <p class="paragraph" style="color: #ffffff;">
+                  {idx === c.card1Features.length - 1 ? <strong style="color: #ffffff;">{feat}</strong> : feat}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Card 2: Naprawa elektroniki -->
+        <div class="pricing-card" style="text-align: left; margin: 0 auto; width: 100%;">
+          <div class="pricing-main">
+            <div class="pricing-heading">
+              <div class="section-badge" style="margin-bottom: 0.75rem; background: rgba(211, 47, 47, 0.25); color: #ff6b6b; border: 1px solid rgba(211, 47, 47, 0.4);">{c.card2Badge}</div>
+              <h3 class="display-h4" style="color: #ffffff;">{c.card2Title}</h3>
+            </div>
+            <div class="pricing-description">
+              <div class="price">
+                <h4 class="display-h2" style="color: #ffffff;">{c.card2Price}</h4>
+                <div class="large-paragraph t---neutral-10" style="color: rgba(255,255,255,0.7);">{c.card2Period}</div>
+              </div>
+              <p class="paragraph t---neutral-10" style="color: rgba(255,255,255,0.85);">{c.card2Desc}</p>
+            </div>
+            <a href="tel:+48505012914" class="primary-button w-inline-block" style="text-align: center; justify-content: center; color: #ffffff !important;">
+              <div class="button-content">
+                <p class="button-text" style="color: #ffffff !important; margin: 0;">{c.card2Btn}</p>
+              </div>
+            </a>
+          </div>
+          <div class="check-list-wrap">
+            {c.card2Features.map((feat, idx) => (
+              <div class="icon-text">
+                <div class="icon m w-embed">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#d32f2f" viewBox="0 0 256 256">
+                    <path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path>
+                  </svg>
+                </div>
+                <p class="paragraph" style="color: #ffffff;">
+                  {idx === c.card2Features.length - 1 ? <strong style="color: #ffffff;">{feat}</strong> : feat}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Centered Cash Notice Box -->
+      <div class="cash-notice-box" style="margin: 0 auto; max-width: 900px; text-align: left;">
+        <div class="cash-notice-title">
+          <span>💵</span> {c.cashTitle}
+        </div>
+        <p class="cash-notice-desc">
+          {c.cashDesc}
+        </p>
+      </div>
+    </div>
+    <div class="overlay-03"></div>
+    <div class="pricing-bg"></div>
+  </section>
+
+  <!-- Process Section: 3 Steps -->
+  <section class="section" style="padding: 4.5rem 0;">
+    <div class="container centered">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 3rem auto;">
+        <div class="section-badge">{c.procBadge}</div>
+        <h2 class="display-h2" style="margin-top: 0.5rem;">{c.procTitle}</h2>
+        <p class="large-paragraph t---neutral-10">{c.procSubtitle}</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.5rem; max-width: 980px; margin: 0 auto;">
+        <div class="subpage-card" style="text-align: left;">
+          <div style="color: #d32f2f; font-weight: 800; font-size: 1.75rem; margin-bottom: 0.5rem;">01</div>
+          <h3 class="display-h5" style="margin-bottom: 0.5rem;">{c.step1Title}</h3>
+          <p class="paragraph t---neutral-10">{c.step1Desc}</p>
+        </div>
+
+        <div class="subpage-card" style="text-align: left;">
+          <div style="color: #d32f2f; font-weight: 800; font-size: 1.75rem; margin-bottom: 0.5rem;">02</div>
+          <h3 class="display-h5" style="margin-bottom: 0.5rem;">{c.step2Title}</h3>
+          <p class="paragraph t---neutral-10">{c.step2Desc}</p>
+        </div>
+
+        <div class="subpage-card" style="text-align: left;">
+          <div style="color: #d32f2f; font-weight: 800; font-size: 1.75rem; margin-bottom: 0.5rem;">03</div>
+          <h3 class="display-h5" style="margin-bottom: 0.5rem;">{c.step3Title}</h3>
+          <p class="paragraph t---neutral-10">{c.step3Desc}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Hubs Section -->
+  <section class="section" style="padding: 4.5rem 0;">
+    <div class="container centered" style="max-width: 1200px; margin: 0 auto;">
+      <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto 2.5rem auto; width: 100%;">
+        <div class="section-badge" style="margin: 0 auto;">{c.hubsBadge}</div>
+        <h2 class="display-h3" style="margin-top: 0.5rem; text-align: center;">{c.hubsTitle}</h2>
+        <p class="paragraph t---neutral-10" style="max-width: 600px; margin: 0.5rem auto 0 auto; text-align: center;">{c.hubsSubtitle}</p>
+      </div>
+
+      <div class="subpage-grid-4">
+        <a href={`${prefix}/serwis-telewizorow`} class="subpage-card" style="text-decoration: none; color: inherit; display: flex; flex-flow: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.75rem;">📺</div>
+            <h3 class="display-h5" style="margin-bottom: 0.5rem;">{c.hubTv}</h3>
+            <p class="paragraph t---neutral-10">{c.hubTvDesc}</p>
+          </div>
+          <span style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 700; color: #d32f2f; margin-top: 1rem;">{c.detailsLink}</span>
+        </a>
+
+        <a href={`${prefix}/serwis-laptopow`} class="subpage-card" style="text-decoration: none; color: inherit; display: flex; flex-flow: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.75rem;">💻</div>
+            <h3 class="display-h5" style="margin-bottom: 0.5rem;">{c.hubLaptop}</h3>
+            <p class="paragraph t---neutral-10">{c.hubLaptopDesc}</p>
+          </div>
+          <span style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 700; color: #d32f2f; margin-top: 1rem;">{c.detailsLink}</span>
+        </a>
+
+        <a href={`${prefix}/serwis-komputerow`} class="subpage-card" style="text-decoration: none; color: inherit; display: flex; flex-flow: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.75rem;">🖥️</div>
+            <h3 class="display-h5" style="margin-bottom: 0.5rem;">{c.hubPc}</h3>
+            <p class="paragraph t---neutral-10">{c.hubPcDesc}</p>
+          </div>
+          <span style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 700; color: #d32f2f; margin-top: 1rem;">{c.detailsLink}</span>
+        </a>
+
+        <a href={`${prefix}/serwis-konsol`} class="subpage-card" style="text-decoration: none; color: inherit; display: flex; flex-flow: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.75rem;">🎮</div>
+            <h3 class="display-h5" style="margin-bottom: 0.5rem;">{c.hubConsole}</h3>
+            <p class="paragraph t---neutral-10">{c.hubConsoleDesc}</p>
+          </div>
+          <span style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 700; color: #d32f2f; margin-top: 1rem;">{c.detailsLink}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unified Footer -->
+  <Footer lang={lang} />
+</Layout>

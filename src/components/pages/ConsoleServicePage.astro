@@ -1,0 +1,555 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../Navbar.astro";
+import Footer from "../Footer.astro";
+import type { Lang } from "../../i18n/translations";
+import "../../styles/ix/index.css";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pl" } = Astro.props;
+const prefix = lang === "pl" ? "" : `/${lang}`;
+const currentPath = `${prefix}/serwis-konsol`;
+
+const content = {
+  pl: {
+    seoTitle: "Serwis Konsol Bydgoszcz | Naprawa PS5, Xbox, Switch, HDMI | Multi-Servis",
+    seoDesc: "Profesjonalny serwis konsol w Bydgoszczy (Ku Wiatrakom 18). Wymiana gniazda HDMI PS5/Xbox, ciekły metal, czyszczenie, zasilacze, Nintendo Switch. Diagnoza 50 zł, gwarancja 3 m-ce.",
+    heroBadge: "Bydgoszcz • PlayStation • Xbox • Nintendo • Ku Wiatrakom 18",
+    heroTitle: "Serwis i Naprawa Konsol do Gier w Bydgoszczy",
+    heroSubtitle: "Profesjonalna naprawa konsol Sony PlayStation 5, PS4, Microsoft Xbox Series X/S, Xbox One oraz Nintendo Switch. Specjalizujemy się w precyzyjnej wymianie uszkodzonych gniazd HDMI, naprawie układów zasilania, czyszczeniu oraz wymianie ciekłego metalu.",
+    pills: ["💵 Płatność tylko gotówka", "🔍 Diagnoza usterki 50 zł", "🤝 Uczciwa wycena przed naprawą", "🛡️ Gwarancja 3 miesiące", "⚡ Szybka realizacja", "😊 Miła i fachowa obsługa"],
+    ctaCall: "Zadzwoń: 505 012 914",
+    ctaContact: "Dojazd i kontakt",
+    metricsBadge: "Standard serwisu konsol",
+    metricsTitle: "Dlaczego warto naprawić konsolę w Multi-Servis?",
+    metricsSubtitle: "Specjalistyczne stanowisko do lutowania HDMI, oryginalny ciekły metal i testy obciążeniowe 4K.",
+    m1Val: "50 zł",
+    m1Label: "Diagnoza konsoli",
+    m1Desc: "Rozbieramy konsolę, sprawdzamy zasilacz, płytę główną i porty. Płatność wyłącznie gotówką.",
+    m2Val: "3 m-ce",
+    m2Label: "Pisemna gwarancja",
+    m2Desc: "Na każdą wymianę portu HDMI, naprawę zasilacza czy regenerację chłodzenia otrzymujesz pisemną gwarancję.",
+    m3Val: "Gotówka",
+    m3Label: "Płatność w warsztacie",
+    m3Desc: "W serwisie stacjonarnym przyjmujemy wyłącznie gotówkę. Bankomaty w odległości 100 m.",
+    sympBadge: "Typowe usterki konsol",
+    sympTitle: "Najczęstsze awarie konsol usuwane w Multi-Servis",
+    sympSubtitle: "Serwisujemy PlayStation 5, PlayStation 4, Xbox Series X/S, Xbox One oraz Nintendo Switch.",
+    symp1Title: "🔌 Wymiana wyłamanego gniazda HDMI (PS5, PS4, Xbox)",
+    symp1Desc: "Szarpnięcie kabla lub wpinanie przewodu na siłę prowadzi do pogięcia pinów w porcie HDMI lub wyrwania ścieżek z laminatu. Wymieniamy gniazdo HDMI w technologii mikrolutowania, odbudowujemy uszkodzone pady i w razie potrzeby wymieniamy układ retimera HDMI.",
+    symp2Title: "🔥 Przegrzewanie i wyłączanie się PS5 (Ciekły metal)",
+    symp2Desc: "Konsola wyłącza się po kilkunastu minutach gry w tytuły graficzne nowej generacji bez żadnego komunikatu lub wentylator wyje jak odkurzacz. Usuwamy utlenione resztki ciekłego metalu, polerujemy powierzchnię APU i radiatora, aplikujemy świeży ciekły metal oraz czyścimy zapchany zasilacz.",
+    symp3Title: "⚡ Brak zasilania, konsola nie włącza się (Brak piknięcia)",
+    symp3Desc: "Przepięcie po burzy lub awaria wewnętrznego zasilacza 12V. Wykonujemy naprawy na poziomie komponentów: wymieniamy przebite diody Schottky'ego, mosfety, filtry przeciwzakłóceniowe oraz kontrolery standby.",
+    symp4Title: "🎮 Nintendo Switch: brak ładowania, wyłamany USB-C",
+    symp4Desc: "Używanie nieoryginalnych ładowarek często pali układ zarządzania energią M92T36 lub układ ładowania BQ24193. Wymieniamy uszkodzone układy IC, gniazda USB-C oraz naprawiamy czytniki kart gier.",
+    symp5Title: "💿 Konsola nie przyjmuje płyt, błąd odczytu napędu Blu-Ray",
+    symp5Desc: "Zużyty laser optyczny (brak odczytu gier z płyt) lub uszkodzenie mechanizmu wciągania płyty. Wymieniamy mechanizmy lasera na fabrycznie nowe z zachowaniem oryginalnej elektroniki sparowanej z płytą główną.",
+    symp6Title: "🕹️ Naprawa padów (DualSense PS5, Xbox, Joy-Con)",
+    symp6Desc: "Znoszenie postaci lub kamery (drifting analogów). Wymieniamy zużyte potencjometry analogów, wlutowujemy nowe moduły z czujnikami Halla oraz naprawiamy gniazda ładowania padów.",
+    modelsBadge: "Obsługiwane konsole",
+    modelsTitle: "Platformy, które naprawiamy na co dzień",
+    faqBadge: "Pytania o naprawę konsol",
+    faqTitle: "Pytania o naprawę konsol w Bydgoszczy",
+    ctaBadge: "Twoja konsola nie działa?",
+    ctaTitle: "Zadzwoń do serwisu konsol Multi-Servis",
+    ctaDesc: "Zadzwoń lub przyjdź: ul. Ku Wiatrakom 18, Bydgoszcz. Diagnoza 50 zł, płatność wyłącznie gotówką.",
+    ctaAddressBtn: "Sprawdź adres i godziny",
+    relBadge: "Kompleksowy serwis w Bydgoszczy",
+    relTitle: "Pozostałe usługi serwisu Multi-Servis",
+    relDesc: "W naszym warsztacie przy ul. Ku Wiatrakom 18 naprawiamy pełen przekrój elektroniki użytkowej.",
+    detailsLink: "Szczegóły →",
+    pricingLink: "Zobacz cennik →",
+    faqs: [
+      {
+        q: "Konsola PS5 działa, świeci na biało, ale nie ma obrazu na telewizorze. Co to oznacza?",
+        a: "Jeśli dioda konsoli zmienia kolor z niebieskiego na stały biały, system startuje poprawnie, lecz tor wideo jest zablokowany. W 90% przypadków winne jest mechaniczne wyłamanie styków portu HDMI lub uszkodzenie transmitera HDMI (retimera/encodera wideo). Wymieniamy port HDMI i regenerujemy układ wideo."
+      },
+      {
+        q: "Kiedy należy wymienić ciekły metal w PlayStation 5?",
+        a: "W konsolach PS5 pracujących w pozycji pionowej lub eksploatowanych intensywnie przez ponad 2 lata ciekły metal potrafi spłynąć z rdzenia APU, tworząc tzw. 'suche plamy'. Skutkuje to głośną pracą wentylatora i wyłączaniem się konsoli po 10-15 minutach gry. Rozprowadzamy ciekły metal na nowo, czyścimy radiator i zabezpieczamy barierę ochronną."
+      },
+      {
+        q: "Ile kosztuje sprawdzenie i diagnoza konsoli?",
+        a: "Koszt diagnostyki konsoli w warsztacie Multi-Servis w Bydgoszczy wynosi 50 zł (płatne gotówką). Po rozebraniu sprzętu dzwonimy z dokładnym kosztorysem naprawy."
+      },
+      {
+        q: "Czy naprawiacie konsole Nintendo Switch, które nie ładują się lub nie włączają?",
+        a: "Tak. W Nintendo Switch bardzo częstą usterką po użyciu nieoryginalnej ładowarki jest uszkodzenie kontrolera ładowania M92T36 lub BQ24193 oraz wygięcie pinów w porcie USB-C. Wymieniamy te układy mikrolutowniczo pod mikroskopem."
+      }
+    ]
+  },
+  en: {
+    seoTitle: "Game Console Repair Bydgoszcz | PS5, Xbox, Switch, HDMI | Multi-Servis",
+    seoDesc: "Professional console repair in Bydgoszcz (Ku Wiatrakom 18). HDMI port replacement PS5/Xbox, liquid metal repasting, cooling cleaning, power supplies, Nintendo Switch. 50 PLN diagnosis, 3-month warranty.",
+    heroBadge: "Bydgoszcz • PlayStation • Xbox • Nintendo • Ku Wiatrakom 18",
+    heroTitle: "Gaming Console Repair Service in Bydgoszcz",
+    heroSubtitle: "Professional repair for Sony PlayStation 5, PS4, Microsoft Xbox Series X/S, Xbox One, and Nintendo Switch. We specialize in micro-soldered HDMI port replacements, power supply repairs, liquid metal renewal, and deep cooling maintenance.",
+    pills: ["💵 Cash only payment", "🔍 Fault diagnosis 50 PLN", "🤝 Fair quote before repair", "🛡️ 3-month warranty", "⚡ Fast turnaround", "😊 Friendly & professional service"],
+    ctaCall: "Call: 505 012 914",
+    ctaContact: "Directions & Contact",
+    metricsBadge: "Console Service Standards",
+    metricsTitle: "Why repair your console at Multi-Servis?",
+    metricsSubtitle: "Dedicated HDMI micro-soldering station, authentic thermal liquid metal, and 4K stress test validation.",
+    m1Val: "50 PLN",
+    m1Label: "Console diagnosis",
+    m1Desc: "We disassemble the console, inspect power rails, logic board, and video ports. Cash only payment.",
+    m2Val: "3 months",
+    m2Label: "Written warranty",
+    m2Desc: "You receive a written warranty covering every HDMI port swap, power supply repair, or thermal restoration.",
+    m3Val: "Cash only",
+    m3Label: "In-shop payment",
+    m3Desc: "We only accept cash at our service shop. ATMs located within 100 meters.",
+    sympBadge: "Typical Console Issues",
+    sympTitle: "Common gaming console problems we solve",
+    sympSubtitle: "We service PlayStation 5, PlayStation 4, Xbox Series X/S, Xbox One, and Nintendo Switch.",
+    symp1Title: "🔌 Broken HDMI port replacement (PS5, PS4, Xbox)",
+    symp1Desc: "Yanked cables or forced insertion leads to bent pins or ripped PCB pads. We install new OEM HDMI ports with micro-soldering, rebuild damaged pads, and replace HDMI retimer ICs when needed.",
+    symp2Title: "🔥 PS5 Overheating & shutdown (Liquid metal renewal)",
+    symp2Desc: "Console shuts down abruptly during next-gen gameplay or fan runs at maximum speed. We remove oxidized residue, resurface APU & heatsink, reapply fresh liquid metal, and clean the internal PSU.",
+    symp3Title: "⚡ No power, console won't turn on (No beep)",
+    symp3Desc: "Power surge from storms or internal 12V supply failure. We replace blown Schottky diodes, MOSFETs, EMI filters, and standby controller ICs.",
+    symp4Title: "🎮 Nintendo Switch: not charging, broken USB-C",
+    symp4Desc: "Third-party chargers frequently fry the M92T36 or BQ24193 charging ICs. We micro-solder new power management chips, replace bent USB-C ports, and repair cartridge readers.",
+    symp5Title: "💿 Won't read discs, Blu-Ray drive error",
+    symp5Desc: "Worn optical laser diode or damaged disc drive feed mechanism. We replace laser assemblies with brand new optical pickups while retaining paired drive electronics.",
+    symp6Title: "🕹️ Controller drift repair (DualSense PS5, Xbox, Joy-Con)",
+    symp6Desc: "Drifting analog thumbsticks. We replace worn potentiometers, solder magnetic Hall-effect joystick modules (immune to mechanical wear), and repair USB charging ports.",
+    modelsBadge: "Supported Platforms",
+    modelsTitle: "Consoles we repair every day",
+    faqBadge: "Console FAQs",
+    faqTitle: "Questions about console repair in Bydgoszcz",
+    ctaBadge: "Is your console broken?",
+    ctaTitle: "Call Multi-Servis console repair shop",
+    ctaDesc: "Call or visit us at Ku Wiatrakom 18, Bydgoszcz. Diagnosis 50 PLN, cash only payment.",
+    ctaAddressBtn: "Check address & hours",
+    relBadge: "Full-spectrum repair in Bydgoszcz",
+    relTitle: "Other services by Multi-Servis",
+    relDesc: "At our workshop on Ku Wiatrakom 18, we repair a wide range of consumer electronics.",
+    detailsLink: "Details →",
+    pricingLink: "View pricing →",
+    faqs: [
+      {
+        q: "PS5 turns on with solid white light, but there is no image on TV. What does it mean?",
+        a: "A solid white light means the OS booted successfully, but video output is disrupted. In 90% of cases, this is caused by a physically damaged HDMI port or a blown HDMI retimer/encoder chip. We replace the port and repair video circuitry."
+      },
+      {
+        q: "When should liquid metal be replaced in PlayStation 5?",
+        a: "In consoles placed vertically or heavily used for over 2 years, liquid metal can oxidize and pool at the bottom, creating dry spots. This triggers rapid thermal throttling and shutdowns after 10–15 minutes. We clean the APU, reapply liquid metal, and reseal the barrier."
+      },
+      {
+        q: "How much is console diagnosis at Multi-Servis?",
+        a: "Console diagnosis in our Bydgoszcz workshop costs 50 PLN (cash only). After disassembling the unit, we call you with an exact repair cost."
+      },
+      {
+        q: "Do you fix Nintendo Switch consoles that won't charge or turn on?",
+        a: "Yes. Non-original chargers commonly fry the M92T36 or BQ24193 chips and bend USB-C pins. We replace these ICs using precision micro-soldering under a microscope."
+      }
+    ]
+  },
+  uk: {
+    seoTitle: "Ремонт ігрових консолей у Бидгощі | PS5, Xbox, Switch, HDMI | Multi-Servis",
+    seoDesc: "Професійний ремонт консолей у Бидгощі (Ku Wiatrakom 18). Заміна роз'ємів HDMI PS5/Xbox, рідкий метал, чистка, блоки живлення, Nintendo Switch. Діагностика 50 zł, гарантія 3 міс.",
+    heroBadge: "Бидгощ • PlayStation • Xbox • Nintendo • Ku Wiatrakom 18",
+    heroTitle: "Сервіс та ремонт ігрових консолей у Бидгощі",
+    heroSubtitle: "Професійний ремонт консолей Sony PlayStation 5, PS4, Microsoft Xbox Series X/S, Xbox One та Nintendo Switch. Спеціалізуємося на заміні портів HDMI, ремонті блоків живлення, чистці та заміні рідкого металу.",
+    pills: ["💵 Оплата тільки готівкою", "🔍 Діагностика несправності 50 zł", "🤝 Чесна оцінка до ремонту", "🛡️ Гарантія 3 місяці", "⚡ Швидке виконання", "😊 Привітне та професійне обслуговування"],
+    ctaCall: "Зателефонувати: 505 012 914",
+    ctaContact: "Маршрут і контакти",
+    metricsBadge: "Стандарт сервісу консолей",
+    metricsTitle: "Чому варто відремонтувати консоль у Multi-Servis?",
+    metricsSubtitle: "Спеціалізоване робоче місце для пайки HDMI, оригінальний рідкий метал та навантажувальні 4K-тести.",
+    m1Val: "50 zł",
+    m1Label: "Діагностика консолі",
+    m1Desc: "Розбираємо консоль, перевіряємо блок живлення, плату та роз'єми. Оплата виключно готівкою.",
+    m2Val: "3 міс.",
+    m2Label: "Письмова гарантія",
+    m2Desc: "На кожну заміну HDMI, ремонт блоку живлення чи заміну термоінтерфейсу надається гарантія.",
+    m3Val: "Готівка",
+    m3Label: "Оплата в майстерні",
+    m3Desc: "У стаціонарному сервісі приймаємо виключно готівку. Банкомати за 100 метрів.",
+    sympBadge: "Типові несправності консолей",
+    sympTitle: "Найчастіші поломки консолей, які ми усуваємо",
+    sympSubtitle: "Обслуговуємо PlayStation 5, PlayStation 4, Xbox Series X/S, Xbox One та Nintendo Switch.",
+    symp1Title: "🔌 Заміна виламаного гнізда HDMI (PS5, PS4, Xbox)",
+    symp1Desc: "Ривок кабелю або вставляння силою гне контакти або відриває доріжки від плати. Замінюємо порт HDMI мікропайкою, відновлюємо контактні майданчики і за потреби міняємо чип ретаймера HDMI.",
+    symp2Title: "🔥 Перегрів та вимкнення PS5 (Рідкий метал)",
+    symp2Desc: "Консоль вимикається через 10-15 хвилин гри у вимогливі ігри без попередження або кулер гуде як пилосос. Видаляємо старий окислений рідкий метал, поліруємо APU, наносимо новий рідкий метал та чистимо блок живлення.",
+    symp3Title: "⚡ Немає живлення, консоль не вмикається (Немає сигналу)",
+    symp3Desc: "Перепад напруги після грози чи поломка внутрішнього 12V блоку живлення. Міняємо пробиті діоди Шотткі, MOSFET-транзистори та контролери чергового живлення.",
+    symp4Title: "🎮 Nintendo Switch: не заряджається, зламаний USB-C",
+    symp4Desc: "Неоригінальні зарядки часто виводять з ладу чип керування живленням M92T36 або контролер BQ24193. Замінюємо ці мікросхеми, роз'єми USB-C та відновлюємо слоти карт пам'яті.",
+    symp5Title: "💿 Не приймає диски, помилка приводу Blu-Ray",
+    symp5Desc: "Зношений оптичний лазер або пошкоджений механізм завантаження диска. Встановлюємо нові оригінальні лазерні головки зі збереженням заводської прив'язки плати.",
+    symp6Title: "🕹️ Ремонт геймпадів (DualSense PS5, Xbox, Joy-Con)",
+    symp6Desc: "Дрифт стіків (самовільний рух камери). Замінюємо зношені потенціометри, встановлюємо нові магнітні датчики Холла (без механічного зносу) та лагодимо гнізда зарядки.",
+    modelsBadge: "Підтримувані платформи",
+    modelsTitle: "Консолі, які ми ремонтуємо щодня",
+    faqBadge: "Часті запитання про консолі",
+    faqTitle: "Запитання про ремонт консолей у Бидгощі",
+    ctaBadge: "Консоль не працює?",
+    ctaTitle: "Зателефонуйте до сервісу Multi-Servis",
+    ctaDesc: "Зателефонуйте або завітайте: вул. Ku Wiatrakom 18, Бидгощ. Діагностика 50 zł, оплата лише готівкою.",
+    ctaAddressBtn: "Адреса та графік роботи",
+    relBadge: "Комплексний сервіс у Бидгощі",
+    relTitle: "Інші послуги сервісу Multi-Servis",
+    relDesc: "У нашій майстерні на Ku Wiatrakom 18 ми ремонтуємо повний спектр споживчої електроніки.",
+    detailsLink: "Детальніше →",
+    pricingLink: "Переглянути прайс →",
+    faqs: [
+      {
+        q: "Консоль PS5 світить білим, але немає зображення на телевізорі. Що це означає?",
+        a: "Якщо індикатор стає білим, система завантажується нормально, але відеосигнал перерваний. У 90% випадків це пошкоджений порт HDMI або вигорілий ретаймер/енкодер HDMI. Ми замінюємо порт і відновлюємо відеотракт."
+      },
+      {
+        q: "Коли потрібно замінювати рідкий метал у PlayStation 5?",
+        a: "Якщо консоль стоїть вертикально більше 2 років або активно експлуатується, рідкий метал може стекти з кристала APU. Це призводить до перегріву та вимкнення через 10-15 хвилин. Ми наносимо новий рідкий метал і герметизуємо контур."
+      },
+      {
+        q: "Скільки коштує перевірка та діагностика консолі?",
+        a: "Вартість діагностики в майстерні Multi-Servis становить 50 zł (готівка). Після розбирання ми обов'язково телефонуємо для узгодження вартості."
+      },
+      {
+        q: "Чи ремонтуєте ви Nintendo Switch, якщо вона не заряджається?",
+        a: "Так. Використання неякісних зарядок часто спалює чипи M92T36 або BQ24193 і гне ніжки в USB-C. Ми виконуємо делікатну мікропайку під мікроскопом."
+      }
+    ]
+  }
+};
+
+const c = content[lang] || content.pl;
+
+const consoleList = [
+  "Sony PlayStation 5 (Standard, Digital, Slim)",
+  "Sony PlayStation 4 (Pro, Slim, Fat)",
+  "Microsoft Xbox Series X",
+  "Microsoft Xbox Series S",
+  "Microsoft Xbox One (X, S, Fat)",
+  "Nintendo Switch (OLED, V1, V2, Lite)",
+  "Kontrolery DualSense i Xbox Wireless"
+];
+
+// Service + FAQPage + BreadcrumbList JSON-LD
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": `https://multi-servis.pl${prefix}/serwis-konsol#service`,
+      "name": c.seoTitle,
+      "description": c.seoDesc,
+      "url": `https://multi-servis.pl${prefix}/serwis-konsol`,
+      "provider": { "@id": "https://multi-servis.pl/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Wyżyny, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Fordon, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Bartodzieje, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Bielawy, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Szwederowo, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Wzgórze Wolności, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Błonie, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Kapuściska, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Śródmieście, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Osowa Góra, Bydgoszcz" },
+        { "@type": "AdministrativeArea", "name": "Solec Kujawski" },
+        { "@type": "AdministrativeArea", "name": "Białe Błota" },
+        { "@type": "AdministrativeArea", "name": "Osielsko" },
+        { "@type": "AdministrativeArea", "name": "Nowa Wieś Wielka" },
+        { "@type": "AdministrativeArea", "name": "Województwo kujawsko-pomorskie" }
+      ],
+      "serviceType": lang === "pl" ? "Serwis konsol do gier" : (lang === "en" ? "Game Console Repair" : "Сервіс ігрових консолей"),
+      "offers": {
+        "@type": "Offer",
+        "name": lang === "pl" ? "Diagnoza sprzętu" : (lang === "en" ? "Device Diagnostics" : "Діагностика"),
+        "price": "50",
+        "priceCurrency": "PLN"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `https://multi-servis.pl${prefix}/serwis-konsol#faq`,
+      "mainEntity": c.faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": { "@type": "Answer", "text": item.a }
+      }))
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": lang === "pl" ? "Strona główna" : (lang === "en" ? "Home" : "Головна"), "item": `https://multi-servis.pl${prefix || "/"}` },
+        { "@type": "ListItem", "position": 2, "name": lang === "pl" ? "Serwis Konsol" : (lang === "en" ? "Console Repair" : "Сервіс Консолей"), "item": `https://multi-servis.pl${prefix}/serwis-konsol` }
+      ]
+    }
+  ]
+});
+---
+
+<Layout
+  title={c.seoTitle}
+  description={c.seoDesc}
+  wfPage="serwis-konsol"
+  ogImage="/images/social-20preview.avif"
+  lang={lang}
+  keywords={lang === "pl" ? "serwis konsol Bydgoszcz, naprawa PS5, naprawa Xbox, wymiana HDMI konsola, Multi-Servis" : (lang === "en" ? "console repair Bydgoszcz, PS5 repair, Xbox repair, HDMI replacement, Multi-Servis" : "ремонт консолей Бидгощ, ремонт PS5, ремонт Xbox, заміна HDMI, Multi-Servis")}
+>
+  <script slot="head" type="application/ld+json" is:inline set:html={serviceSchema} />
+
+  <!-- Unified Navbar -->
+  <Navbar lang={lang} currentPath={currentPath} />
+
+  <!-- Hero Section -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 3.5rem;">
+    <div class="container centered">
+      <div class="page-header" style="text-align: center; max-width: 860px; margin: 0 auto;">
+        <nav aria-label="Breadcrumb" style="margin-bottom: 1rem; font-size: 0.875rem;">
+          <ol style="list-style: none; padding: 0; margin: 0; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <li><a href={prefix || "/"} style="color: inherit; opacity: 0.75; text-decoration: none;">{lang === "pl" ? "Główna" : (lang === "en" ? "Home" : "Головна")}</a></li>
+            <li aria-hidden="true" style="opacity: 0.4; font-size: 0.75rem;">/</li>
+            <li aria-current="page" style="color: #d32f2f; font-weight: 600;">{lang === "pl" ? "Serwis Konsol" : (lang === "en" ? "Console Repair" : "Сервіс Консолей")}</li>
+          </ol>
+        </nav>
+        <div class="section-badge">{c.heroBadge}</div>
+        <h1 class="display-h1" style="margin-top: 0.75rem; margin-bottom: 1.25rem;">
+          {c.heroTitle}
+        </h1>
+        <p class="large-paragraph t---neutral-10" style="max-width: 760px; margin: 0 auto 2rem auto;">
+          {c.heroSubtitle}
+        </p>
+
+        <!-- Trust Mini-Okienka Pills -->
+        <div class="hero-quick-stats" style="justify-content: center; margin: 0 auto 2rem auto;">
+          {c.pills.map((pill, i) => (
+            <div class={`hero-stat-pill ${i === 0 ? 'pill-cash-red' : ''}`}>
+              {pill}
+            </div>
+          ))}
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="tel:+48505012914" class="primary-button w-inline-block" style="color: #ffffff !important;">
+            <div class="button-content">
+              <span class="button-text" style="color: #ffffff !important;">{c.ctaCall}</span>
+            </div>
+          </a>
+          <a href={`${prefix}/kontakt`} class="outline-button w-inline-block">
+            <div class="button-content">
+              <span class="button-text">{c.ctaContact}</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Parameters Bento Auto-Layout -->
+  <section class="section" style="padding: 4.5rem 0;">
+    <div class="container centered">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
+        <div class="section-badge">{c.metricsBadge}</div>
+        <h2 class="display-h2" style="margin-top: 0.75rem;">{c.metricsTitle}</h2>
+        <p class="large-paragraph t---neutral-10">{c.metricsSubtitle}</p>
+      </div>
+
+      <div class="subpage-metrics-grid" style="max-width: 1040px; margin: 0 auto;">
+        <div class="subpage-card">
+          <div>
+            <div class="subpage-metrics-val">{c.m1Val}</div>
+            <div class="subpage-metrics-label">{c.m1Label}</div>
+          </div>
+          <div class="subpage-metrics-desc">{c.m1Desc}</div>
+        </div>
+        <div class="subpage-card">
+          <div>
+            <div class="subpage-metrics-val">{c.m2Val}</div>
+            <div class="subpage-metrics-label">{c.m2Label}</div>
+          </div>
+          <div class="subpage-metrics-desc">{c.m2Desc}</div>
+        </div>
+        <div class="subpage-card">
+          <div>
+            <div class="subpage-metrics-val">{c.m3Val}</div>
+            <div class="subpage-metrics-label">{c.m3Label}</div>
+          </div>
+          <div class="subpage-metrics-desc">{c.m3Desc}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Issues Section -->
+  <section class="section" style="padding: 4.5rem 0;">
+    <div class="container centered">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
+        <div class="section-badge">{c.sympBadge}</div>
+        <h2 class="display-h2" style="margin-top: 0.75rem;">{c.sympTitle}</h2>
+        <p class="large-paragraph t---neutral-10">{c.sympSubtitle}</p>
+      </div>
+
+      <div class="subpage-grid-3">
+        <div class="subpage-card">
+          <h3 class="display-h5" style="color: #d32f2f; margin-bottom: 0.5rem;">{c.symp1Title}</h3>
+          <p class="paragraph t---neutral-10">{c.symp1Desc}</p>
+        </div>
+
+        <div class="subpage-card">
+          <h3 class="display-h5" style="color: #d32f2f; margin-bottom: 0.5rem;">{c.symp2Title}</h3>
+          <p class="paragraph t---neutral-10">{c.symp2Desc}</p>
+        </div>
+
+        <div class="subpage-card">
+          <h3 class="display-h5" style="color: #d32f2f; margin-bottom: 0.5rem;">{c.symp3Title}</h3>
+          <p class="paragraph t---neutral-10">{c.symp3Desc}</p>
+        </div>
+
+        <div class="subpage-card">
+          <h3 class="display-h5" style="color: #d32f2f; margin-bottom: 0.5rem;">{c.symp4Title}</h3>
+          <p class="paragraph t---neutral-10">{c.symp4Desc}</p>
+        </div>
+
+        <div class="subpage-card">
+          <h3 class="display-h5" style="color: #d32f2f; margin-bottom: 0.5rem;">{c.symp5Title}</h3>
+          <p class="paragraph t---neutral-10">{c.symp5Desc}</p>
+        </div>
+
+        <div class="subpage-card">
+          <h3 class="display-h5" style="color: #d32f2f; margin-bottom: 0.5rem;">{c.symp6Title}</h3>
+          <p class="paragraph t---neutral-10">{c.symp6Desc}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Models Section -->
+  <section class="section" style="padding: 4rem 0;">
+    <div class="container centered">
+      <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto 2.5rem auto;">
+        <div class="section-badge">{c.modelsBadge}</div>
+        <h2 class="display-h2" style="margin-top: 0.75rem;">{c.modelsTitle}</h2>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;">
+        {consoleList.map((b) => (
+          <div class="customer-logo-badge" style="margin: 0.25rem;">
+            <span class="badge-dot"></span>
+            <span>{b}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" style="padding: 4.5rem 0;">
+    <div class="container centered faq-centered-container" style="max-width: 900px; margin: 0 auto;">
+      <div class="section-header faq-section-header" style="text-align: center; max-width: 800px; margin: 0 auto 2.5rem auto; width: 100%;">
+        <div class="section-badge" style="margin: 0 auto;">{c.faqBadge}</div>
+        <h2 class="display-h2" style="margin-top: 0.75rem; text-align: center;">{c.faqTitle}</h2>
+      </div>
+
+      <div class="faq-list-wrap" style="display: flex; flex-flow: column; gap: 1.25rem; width: 100%; max-width: 860px; margin: 0 auto;">
+        {c.faqs.map((faq) => (
+          <div class="subpage-card faq-card-item" style="padding: 1.5rem 1.75rem; width: 100%; box-sizing: border-box;">
+            <h3 class="display-h5" style="margin-bottom: 0.5rem; color: #d32f2f;">{faq.q}</h3>
+            <p class="paragraph t---neutral-10" style="margin: 0; line-height: 1.6;">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section inverse" style="padding: 4.5rem 0;">
+    <div class="container">
+      <div class="cta-glass-card" style="max-width: 860px; margin: 0 auto; padding: clamp(2.25rem, 5vw, 3.5rem) 2rem; text-align: center;">
+        <div class="section-badge" style="background: rgba(255,255,255,0.1); color: #ffffff;">{c.ctaBadge}</div>
+        <h2 class="display-h2" style="margin-top: 1rem; margin-bottom: 1rem; color: #ffffff;">{c.ctaTitle}</h2>
+        <p class="large-paragraph" style="max-width: 600px; margin: 0 auto 2rem auto; color: rgba(255,255,255,0.85);">
+          {c.ctaDesc}
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="tel:+48505012914" class="primary-button w-inline-block" style="color: #ffffff !important;">
+            <span class="button-text" style="color: #ffffff !important;">{c.ctaCall}</span>
+          </a>
+          <a href={`${prefix}/kontakt`} class="outline-button w-inline-block" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+            <span class="button-text">{c.ctaAddressBtn}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="overlay-03"></div>
+    <div class="contact-bg"></div>
+  </section>
+
+  <!-- Related Services Mesh -->
+  <section class="section" style="padding: 4.5rem 0;">
+    <div class="container centered">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 2.5rem auto;">
+        <div class="section-badge">{c.relBadge}</div>
+        <h2 class="display-h3" style="margin-top: 0.5rem;">{c.relTitle}</h2>
+        <p class="paragraph t---neutral-10" style="max-width: 600px; margin: 0.5rem auto 0 auto;">{c.relDesc}</p>
+      </div>
+
+      <div class="subpage-grid-4">
+        <a href={`${prefix}/serwis-komputerow`} class="subpage-card" style="text-decoration: none; color: inherit; display: flex; flex-flow: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.75rem;">🖥️</div>
+            <h3 class="display-h5" style="margin-bottom: 0.5rem;">{lang === 'pl' ? 'Serwis Komputerów PC' : lang === 'en' ? 'PC Computer Repair' : 'Ремонт комп\'ютерів PC'}</h3>
+            <p class="paragraph t---neutral-10">
+              {lang === 'pl' ? 'Diagnostyka płyt głównych, usuwanie zwarć VRM, serwis komputerów gamingowych, modernizacja i czyszczenie.' :
+               lang === 'en' ? 'Motherboard diagnostics, VRM short removal, gaming PC service, upgrades, and thermal cleaning.' :
+               'Діагностика материнських плат, усунення замикань VRM, ремонт ігрових ПК, модернізація та чистка.'}
+            </p>
+          </div>
+          <span style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 700; color: #d32f2f; margin-top: 1rem;">{c.detailsLink}</span>
+        </a>
+
+        <a href={`${prefix}/serwis-laptopow`} class="subpage-card" style="text-decoration: none; color: inherit; display: flex; flex-flow: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.75rem;">💻</div>
+            <h3 class="display-h5" style="margin-bottom: 0.5rem;">{lang === 'pl' ? 'Serwis Laptopów' : lang === 'en' ? 'Laptop Repair' : 'Ремонт ноутбуків'}</h3>
+            <p class="paragraph t---neutral-10">
+              {lang === 'pl' ? 'Naprawa laptopów po zalaniu, myjka ultradźwiękowa, lutowanie BGA, wymiana matryc, gniazd i układów chłodzenia.' :
+               lang === 'en' ? 'Liquid damage restoration, ultrasonic cleaning, BGA soldering, screen and cooling repairs.' :
+               'Ремонт після залиття, ультразвукова чистка, BGA-пайка, заміна матриць та систем охолодження.'}
+            </p>
+          </div>
+          <span style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 700; color: #d32f2f; margin-top: 1rem;">{c.detailsLink}</span>
+        </a>
+
+        <a href={`${prefix}/serwis-telewizorow`} class="subpage-card" style="text-decoration: none; color: inherit; display: flex; flex-flow: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.75rem;">📺</div>
+            <h3 class="display-h5" style="margin-bottom: 0.5rem;">{lang === 'pl' ? 'Serwis Telewizorów' : lang === 'en' ? 'TV Repair' : 'Ремонт телевізорів'}</h3>
+            <p class="paragraph t---neutral-10">
+              {lang === 'pl' ? 'Wymiana podświetlenia LED, naprawa zasilaczy i płyt głównych TV Samsung, LG, Philips, Sony. Diagnoza 50 zł.' :
+               lang === 'en' ? 'LED backlight replacement, power board & logic board repairs for Samsung, LG, Philips, Sony TV.' :
+               'Заміна LED-підсвічування, ремонт блоків живлення та материнських плат Samsung, LG, Philips, Sony.'}
+            </p>
+          </div>
+          <span style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 700; color: #d32f2f; margin-top: 1rem;">{c.detailsLink}</span>
+        </a>
+
+        <a href={`${prefix}/cennik`} class="subpage-card" style="text-decoration: none; color: inherit; display: flex; flex-flow: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.75rem;">💵</div>
+            <h3 class="display-h5" style="margin-bottom: 0.5rem;">{lang === 'pl' ? 'Cennik i Diagnoza 50 zł' : lang === 'en' ? 'Pricing & Diagnosis 50 PLN' : 'Прайс та діагностика 50 zł'}</h3>
+            <p class="paragraph t---neutral-10">
+              {lang === 'pl' ? 'Jasne reguły: rzetelna diagnoza 50 zł, wycena przed przystąpieniem do naprawy i 3 miesiące pisemnej gwarancji.' :
+               lang === 'en' ? 'Clear rules: thorough 50 PLN diagnosis, price quote before repair, and 3-month written warranty.' :
+               'Прозорі умови: точна діагностика 50 zł, оцінка до початку ремонту та 3 місяці гарантії.'}
+            </p>
+          </div>
+          <span style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 700; color: #d32f2f; margin-top: 1rem;">{c.pricingLink}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unified Footer -->
+  <Footer lang={lang} />
+</Layout>

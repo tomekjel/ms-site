@@ -1,0 +1,74 @@
+# Multi-Servis Tomasz Jeliński – Serwis Elektroniki w Bydgoszczy
+
+> Profesjonalny, stacjonarny serwis elektroniki użytkowej prowadzony przez elektronika z ponad 20-letnim doświadczeniem w Bydgoszczy (osiedle Wyżyny, ul. Ku Wiatrakom 18). Specjalizacja: naprawa telewizorów (LED/OLED/QLED), laptopów i MacBooków, komputerów stacjonarnych i gamingowych PC oraz konsol do gier (PS5, Xbox, Nintendo Switch).
+
+## Informacje podstawowe
+- **Nazwa serwisu:** Multi-Servis Tomasz Jeliński
+- **Adres:** ul. Ku Wiatrakom 18, 85-856 Bydgoszcz (Wyżyny), Polska
+- **Współrzędne GPS:** 53.108951, 18.040959
+- **Telefon bezpośredni:** +48 505 012 914
+- **E-mail:** kontakt@multi-servis.pl
+- **Strona WWW:** https://multi-servis.pl
+- **Godziny otwarcia:** Poniedziałek – Piątek: 10:00 – 17:00 (Sobota – Niedziela: Nieczynne)
+- **Warunki płatności:** Wyłącznie gotówka (Bankomaty w odległości 100-300 m)
+- **Koszt diagnozy sprzętowej:** 50 zł (płatne gotówką przy pozostawieniu sprzętu; dzwonimy z kosztorysem przed rozpoczęciem naprawy)
+- **Gwarancja:** 3 miesiące pisemnej gwarancji na każdą wykonaną naprawę i wymienione komponenty
+
+## Obszar obsługi (Geotargeting)
+Obsługujemy mieszkańców całej Bydgoszczy oraz aglomeracji i województwa kujawsko-pomorskiego:
+- **Dzielnice Bydgoszczy:** Wyżyny, Wzgórze Wolności, Szwederowo, Bartodzieje, Fordon, Błonie, Kapuściska, Śródmieście, Bielawy, Bocianowo, Osowa Góra, Czyżkówko, Jary, Okole, Miedzyń, Glinki.
+- **Okolice i gminy ościenne:** Solec Kujawski, Białe Błota, Osielsko, Nowa Wieś Wielka, Sicienko, Koronowo, Nakło nad Notecią, Toruń.
+
+## Główne usługi i rozwiązywane problemy
+
+### 1. Serwis Laptopów i MacBook (https://multi-servis.pl/serwis-laptopow)
+- **Typowe usterki i objawy:**
+  - Laptop strasznie muli, wolno chodzi, długo się włącza, zawiesza się na pulpicie.
+  - Wentylator głośno chodzi, laptop parzy w kolana, sam się wyłącza pod obciążeniem (przegrzewanie).
+  - Laptop po zalaniu (kawa, herbata, woda, sok) – mycie ultradźwiękowe, odbudowa zjedzonych ścieżek.
+  - Nie reaguje na włącznik, nie ładuje baterii, uszkodzone gniazdo zasilania DC-IN / USB-C PD.
+  - Czarny ekran, brak obrazu po włączeniu, wiatraki kręcą (awaria BIOS, BGA, uszkodzenie taśmy matrycy).
+  - Pęknięta matryca LCD/IPS/OLED, brak podświetlenia.
+  - Połamane zawiasy, wyrwane tuleje mocujące z obudowy i klapy.
+  - Przyspieszanie: wymiana starego dysku HDD na szybki dysk SSD NVMe M.2 z zachowaniem danych.
+- **Marki:** Lenovo (Legion, ThinkPad), Dell, Asus (ROG, TUF), HP, Apple MacBook (Air/Pro), Acer, MSI.
+
+### 2. Serwis Telewizorów (https://multi-servis.pl/serwis-telewizorow)
+- **Typowe usterki i objawy:**
+  - Jest dźwięk, a brak obrazu (czarny/ciemny ekran z widocznym zarysem pod latarką) – wymiana listew podświetlenia LED na nowe aluminiowe.
+  - Telewizor nie włącza się, miga dioda czuwania (awaria zasilacza PSU, zwarcia po burzy).
+  - Ciągły restart na logo (bootloop, błąd pamięci eMMC/NAND na płycie głównej Main Board).
+  - Pionowe lub poziome paski, zniekształcone kolory (uszkodzenie T-CON, taśm LVDS/COF).
+  - Wyrwane lub uszkodzone gniazda HDMI i antenowe.
+  - *Uwaga:* W przypadku mechanicznie rozbitego/stłuczonego szkła matrycy naprawa jest nieopłacalna.
+- **Marki:** Samsung, LG, Philips (z Ambilight), Sony Bravia, TCL, Panasonic, Hisense, Xiaomi, Sharp.
+
+### 3. Serwis Komputerów PC i Gaming (https://multi-servis.pl/serwis-komputerow)
+- **Typowe usterki i objawy:**
+  - Komputer nie wstaje, brak reakcji na przycisk Power, restartuje się po sekundzie.
+  - Brak sygnału na monitorze, wentylatory kręcą się na 100%.
+  - Blue Screen (BSOD), restarty w trakcie gier, kolorowe paski/artefakty karty graficznej GPU.
+  - Głośna praca chłodzenia, wysokie temperatury CPU/GPU (wymiana pasty termoprzewodzącej, czyszczenie).
+  - Komputer wolno działa – montaż dysków SSD NVMe, klonowanie systemu Windows bez utraty danych.
+  - Modernizacja starszych komputerów PC i dobór podzespołów.
+
+### 4. Serwis Konsol do Gier (https://multi-servis.pl/serwis-konsol)
+- **Typowe usterki i objawy:**
+  - PS5 wyłącza się po 15-20 minutach gry bez ostrzeżenia – degradacja ciekłego metalu na APU, zapchany radiator.
+  - Wyłamane gniazdo HDMI w PS5, PS4, Xbox Series X/S (brak sygnału na TV, biała dioda świeci).
+  - Konsola nie włącza się (uszkodzenie zasilacza wewnętrznego po burzy/przepięciu).
+  - Nintendo Switch: brak ładowania, wyłamany port USB-C, spalony układ zasilania M92T36.
+  - Naprawa padów (drifting analogów, wymiana na sensory z efektem Halla).
+- **Platformy:** Sony PlayStation 5 / PS4, Microsoft Xbox Series X / Series S / One, Nintendo Switch.
+
+## Cennik i Zasady
+- **Diagnoza usterki:** 50 zł (płatna gotówką w warsztacie).
+- **Wycena:** Zawsze przed naprawą kontaktujemy się telefonicznie z klientem i podajemy ostateczny koszt.
+- **Forma płatności:** Wyłącznie gotówka.
+- **Gwarancja:** 3 miesiące pisemnej gwarancji.
+
+## Szczegółowa dokumentacja
+- Pełna baza wiedzy dla AI: https://multi-servis.pl/llms-full.txt
+- Cennik usług: https://multi-servis.pl/cennik
+- Kontakt i dojazd: https://multi-servis.pl/kontakt
+- Mapa witryny: https://multi-servis.pl/sitemap-index.xml

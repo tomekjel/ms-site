@@ -1,0 +1,355 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../Navbar.astro";
+import Footer from "../Footer.astro";
+import type { Lang } from "../../i18n/translations";
+import "../../styles/ix/index.css";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pl" } = Astro.props;
+const prefix = lang === "pl" ? "" : `/${lang}`;
+const currentPath = `${prefix}/about`;
+
+const content = {
+  pl: {
+    seoTitle: "O nas - Multi-Servis Tomasz Jeliński | Serwis Elektroniki Bydgoszcz",
+    seoDesc: "Poznaj Multi-Servis - ponad 20 lat doświadczenia w naprawie telewizorów, laptopów i elektroniki precyzyjnej w Bydgoszczy (Ku Wiatrakom 18). Tomasz Jeliński, tel: 505 012 914.",
+    heroBadge: "Ponad 20 lat doświadczenia",
+    heroTitle: "O Multi-Servis w Bydgoszczy",
+    heroSubtitle: "Profesjonalny serwis elektroniki prowadzony przez Tomasza Jelińskiego przy ul. Ku Wiatrakom 18. Ratujemy sprzęt, którego inni nie potrafią naprawić.",
+    pills: ["💵 Płatność tylko gotówka", "⚡ Szybka realizacja", "😊 Miła i fachowa obsługa", "🔍 Diagnoza usterki 50 zł", "🛡️ Gwarancja 3 miesiące", "🤝 Uczciwa wycena przed naprawą"],
+    missionBadge: "Filozofia pracy",
+    missionTitle: "Nasza misja w Multi-Servis",
+    missionSubtitle: "Wierzymy w rzetelną naprawę zamiast pochopnego wyrzucania sprzętu. Dzięki zaawansowanej diagnostyce na poziomie komponentów BGA, SMD i mikrolutowania przywracamy do pełnej sprawności telewizory, laptopy i komputery, oszczędzając Twoje pieniądze.",
+    m1Val: "20+ lat",
+    m1Label: "Doświadczenia w Bydgoszczy",
+    m1Desc: "Nieprzerwanie na rynku serwisu elektroniki użytkowej przy ul. Ku Wiatrakom 18. Tysiące pomyślnie zrealizowanych napraw.",
+    m2Val: "3 m-ce",
+    m2Label: "Pisemna gwarancja",
+    m2Desc: "Pisemna gwarancja jakości na każdą wykonaną usługę i wymienione nowe komponenty elektroniczne.",
+    m3Val: "50 zł",
+    m3Label: "Diagnoza usterki",
+    m3Desc: "Rzetelne sprawdzenie uszkodzenia w warsztacie, telefon z wyceną robocizny i części. Płatność wyłącznie gotówką.",
+    tomaszBadge: "Doświadczenie & Pasja",
+    tomaszTitle: "Tomasz Jeliński",
+    tomaszDesc: "Wieloletni praktyk elektroniki użytkowej, specjalista w diagnozowaniu trudnych usterek płyt głównych, zasilaczy telewizyjnych, matryc LED/OLED oraz mikrolutowania procesorów i układów BGA.",
+    tomaszRole: "Właściciel serwisu & Główny elektronik",
+    contactBadge: "Kontakt z serwisem",
+    contactTitle: "Zgłoś sprzęt do serwisu",
+    contactSubtitle: "Zadzwoń lub napisz — odpowiemy natychmiast i przedstawimy wstępną ocenę usterki.",
+    fieldName: "Imię i nazwisko",
+    fieldContact: "Numer telefonu / Email*",
+    fieldDesc: "Opis usterki i model sprzętu*",
+    btnSubmit: "Wyślij zgłoszenie",
+    successMsg: "Dziękujemy! Twoje zgłoszenie zostało wysłane. Skontaktujemy się telefonicznie.",
+    phoneLabel: "Telefon:",
+    ownerLabel: "Właściciel serwisu:",
+    addressLabel: "Adres serwisu:",
+    hoursLabel: "Godziny otwarcia:",
+    hoursVal: "Pon. - Pt. 10:00 - 17:00",
+    cashNote: "💵 Płatność wyłącznie gotówką",
+    rodoNotice: "Administratorem Twoich danych jest Multi-Servis Tomasz Jeliński (Ku Wiatrakom 18, Bydgoszcz). Dane przetwarzamy wyłącznie w celu odpowiedzi na zgłoszenie i wyceny naprawy."
+  },
+  en: {
+    seoTitle: "About Us - Multi-Servis Tomasz Jeliński | Electronics Repair Bydgoszcz",
+    seoDesc: "About Multi-Servis: over 20 years of experience repairing TVs, laptops, and precision electronics in Bydgoszcz (Ku Wiatrakom 18). Tomasz Jeliński, tel: 505 012 914.",
+    heroBadge: "Over 20 Years of Experience",
+    heroTitle: "About Multi-Servis in Bydgoszcz",
+    heroSubtitle: "Professional electronics service shop run by Tomasz Jeliński at Ku Wiatrakom 18. We salvage equipment that other workshops declare unfixable.",
+    pills: ["💵 Cash only payment", "⚡ Fast turnaround", "😊 Friendly & professional service", "🔍 Fault diagnosis 50 PLN", "🛡️ 3-month warranty", "🤝 Fair quote before repair"],
+    missionBadge: "Work Philosophy",
+    missionTitle: "Our Mission at Multi-Servis",
+    missionSubtitle: "We believe in honest repair instead of prematurely discarding electronics. Through advanced BGA/SMD component-level diagnostics and micro-soldering, we restore TVs, laptops, and PCs to peak condition while saving you money.",
+    m1Val: "20+ years",
+    m1Label: "Experience in Bydgoszcz",
+    m1Desc: "Serving the local community at Ku Wiatrakom 18 for over two decades. Thousands of successfully restored devices.",
+    m2Val: "3 months",
+    m2Label: "Written warranty",
+    m2Desc: "Written quality guarantee covering every repaired board and newly installed electronic component.",
+    m3Val: "50 PLN",
+    m3Label: "Fault diagnosis",
+    m3Desc: "Thorough electronic inspection in our workshop, phone call with repair cost. Cash payment only.",
+    tomaszBadge: "Experience & Dedication",
+    tomaszTitle: "Tomasz Jeliński",
+    tomaszDesc: "Master electronics technician specializing in complex motherboard troubleshooting, TV power supplies, LED/OLED matrix drivers, and BGA micro-soldering.",
+    tomaszRole: "Shop Owner & Lead Electronic Specialist",
+    contactBadge: "Contact Workshop",
+    contactTitle: "Submit a Repair Request",
+    contactSubtitle: "Call or send us a message — we respond quickly with initial advice.",
+    fieldName: "Full Name",
+    fieldContact: "Phone number / Email*",
+    fieldDesc: "Fault description and device model*",
+    btnSubmit: "Send Request",
+    successMsg: "Thank you! Your message has been sent. We will contact you shortly.",
+    phoneLabel: "Phone:",
+    ownerLabel: "Shop Owner:",
+    addressLabel: "Workshop Address:",
+    hoursLabel: "Opening Hours:",
+    hoursVal: "Mon. - Fri. 10:00 - 17:00",
+    cashNote: "💵 Cash only payment"
+  },
+  uk: {
+    seoTitle: "Про нас - Multi-Servis Томаш Єлінський | Ремонт електроніки Бидгощ",
+    seoDesc: "Дізнайтеся більше про Multi-Servis: понад 20 років досвіду ремонту телевізорів, ноутбуків та складної електроніки у Бидгощі (Ku Wiatrakom 18). Томаш Єлінський, тел: 505 012 914.",
+    heroBadge: "Понад 20 років досвіду",
+    heroTitle: "Про Multi-Servis у Бидгощі",
+    heroSubtitle: "Професійний сервіс електроніки під керівництвом Томаша Єлінського на вул. Ku Wiatrakom 18. Відновлюємо техніку, за яку інші сервіси не беруться.",
+    pills: ["💵 Оплата тільки готівкою", "⚡ Швидке виконання", "😊 Привітне та професійне обслуговування", "🔍 Діагностика несправності 50 zł", "🛡️ Гарантія 3 місяці", "🤝 Чесна оцінка до ремонту"],
+    missionBadge: "Філософія роботи",
+    missionTitle: "Наша місія в Multi-Servis",
+    missionSubtitle: "Ми віримо у чесний ремонт замість передчасного викидання техніки. Завдяки компонентній діагностиці BGA/SMD та мікропайці ми повертаємо до життя телевізори, ноутбуки та комп'ютери, заощаджуючи ваші кошти.",
+    m1Val: "20+ років",
+    m1Label: "Досвіду в Бидгощі",
+    m1Desc: "Безперервна робота на ринку ремонту електроніки на вул. Ku Wiatrakom 18. Тисячі успішно відремонтованих пристроїв.",
+    m2Val: "3 міс.",
+    m2Label: "Письмова гарантія",
+    m2Desc: "Письмова гарантія якості на кожну виконану роботу та замінені електронні компоненти.",
+    m3Val: "50 zł",
+    m3Label: "Діагностика несправності",
+    m3Desc: "Точна перевірка пошкоджень у майстерні, дзвінок із вартістю ремонту та деталей. Оплата лише готівкою.",
+    tomaszBadge: "Досвід та майстерність",
+    tomaszTitle: "Томаш Єлінський",
+    tomaszDesc: "Багаторічний практик у сфері електроніки, спеціаліст із діагностики материнських плат, блоків живлення телевізорів, LED/OLED матриць та BGA-пайки.",
+    tomaszRole: "Власник сервісу та головний інженер",
+    contactBadge: "Зв'язок із сервісом",
+    contactTitle: "Залишити заявку на ремонт",
+    contactSubtitle: "Зателефонуйте або напишіть нам — ми швидко зв'яжемося для попередньої консультації.",
+    fieldName: "Ім'я та прізвище",
+    fieldContact: "Номер телефону / Email*",
+    fieldDesc: "Опис несправності та модель техніки*",
+    btnSubmit: "Надіслати заявку",
+    successMsg: "Дякуємо! Вашу заявку надіслано. Ми зателефонуємо найближчим часом.",
+    phoneLabel: "Телефон:",
+    ownerLabel: "Власник сервісу:",
+    addressLabel: "Адреса майстерні:",
+    hoursLabel: "Графік роботи:",
+    hoursVal: "Пн. - Пт. 10:00 - 17:00",
+    cashNote: "💵 Оплата виключно готівкою",
+    rodoNotice: "Адміністратором ваших даних є Multi-Servis Tomasz Jeliński (Ku Wiatrakom 18, Бидгощ). Дані використовуються виключно для відповіді на запит та оцінки ремонту."
+  }
+};
+
+const c = content[lang] || content.pl;
+
+// Person + BreadcrumbList JSON-LD
+const aboutSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://multi-servis.pl/#founder",
+      "name": "Tomasz Jeliński",
+      "jobTitle": lang === "pl" ? "Właściciel & Główny Serwisant Elektroniki" : "Owner & Lead Electronics Technician",
+      "description": lang === "pl" ? "Elektronik z ponad 20-letnim doświadczeniem w diagnozie i naprawie telewizorów, laptopów, komputerów i konsol w Bydgoszczy." : "Electronics technician with 20+ years experience in Bydgoszcz.",
+      "worksFor": { "@id": "https://multi-servis.pl/#organization" },
+      "telephone": "+48505012914",
+      "email": "kontakt@multi-servis.pl",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ku Wiatrakom 18",
+        "addressLocality": "Bydgoszcz",
+        "postalCode": "85-856",
+        "addressRegion": "Kujawsko-Pomorskie",
+        "addressCountry": "PL"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": lang === "pl" ? "Strona główna" : (lang === "en" ? "Home" : "Головна"), "item": `https://multi-servis.pl${prefix || "/"}` },
+        { "@type": "ListItem", "position": 2, "name": lang === "pl" ? "O nas" : (lang === "en" ? "About" : "Про нас"), "item": `https://multi-servis.pl${prefix}/about` }
+      ]
+    }
+  ]
+});
+---
+
+<Layout
+  title={c.seoTitle}
+  description={c.seoDesc}
+  wfPage="about"
+  ogImage="/images/social-20preview.avif"
+  lang={lang}
+  keywords={lang === "pl" ? "Multi-Servis Bydgoszcz, Tomasz Jeliński, serwis elektroniki, o nas, Ku Wiatrakom 18" : (lang === "en" ? "Multi-Servis Bydgoszcz, Tomasz Jelinski, electronics repair, about us" : "Multi-Servis Бидгощ, Томаш Єлінський, ремонт електроніки, про нас")}
+>
+  <script slot="head" type="application/ld+json" is:inline set:html={aboutSchema} />
+
+  <!-- Unified Navbar -->
+  <Navbar lang={lang} currentPath={currentPath} />
+
+  <!-- Page Header -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 3.5rem;">
+    <div class="container centered">
+      <div class="page-header" style="text-align: center; max-width: 860px; margin: 0 auto;">
+        <nav aria-label="Breadcrumb" style="margin-bottom: 1rem; font-size: 0.875rem;">
+          <ol style="list-style: none; padding: 0; margin: 0; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <li><a href={prefix || "/"} style="color: inherit; opacity: 0.75; text-decoration: none;">{lang === "pl" ? "Główna" : (lang === "en" ? "Home" : "Головна")}</a></li>
+            <li aria-hidden="true" style="opacity: 0.4; font-size: 0.75rem;">/</li>
+            <li aria-current="page" style="color: #d32f2f; font-weight: 600;">{lang === "pl" ? "O nas" : (lang === "en" ? "About" : "Про нас")}</li>
+          </ol>
+        </nav>
+        <div class="section-badge">{c.heroBadge}</div>
+        <h1 class="display-h1" style="margin-top: 0.75rem; margin-bottom: 1.25rem;">
+          {c.heroTitle}
+        </h1>
+        <div class="page-subheading">
+          <div class="large-paragraph t---neutral-10" style="max-width: 740px; margin: 0 auto 2rem auto;">
+            {c.heroSubtitle}
+          </div>
+        </div>
+
+        <!-- Trust Mini-Okienka Pills -->
+        <div class="hero-quick-stats" style="justify-content: center; margin: 0 auto 2rem auto;">
+          {c.pills.map((pill, i) => (
+            <div class={`hero-stat-pill ${i === 0 ? 'pill-cash-red' : ''}`}>
+              {pill}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Experience -->
+  <section class="section" style="padding: 4.5rem 0;">
+    <div class="container centered">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
+        <div class="section-badge">{c.missionBadge}</div>
+        <h2 class="display-h2" style="margin-top: 0.75rem;">{c.missionTitle}</h2>
+        <p class="large-paragraph t---neutral-10">
+          {c.missionSubtitle}
+        </p>
+      </div>
+
+      <div class="subpage-metrics-grid" style="max-width: 1040px; margin: 0 auto;">
+        <div class="subpage-card">
+          <div>
+            <div class="subpage-metrics-val">{c.m1Val}</div>
+            <div class="subpage-metrics-label">{c.m1Label}</div>
+          </div>
+          <div class="subpage-metrics-desc">{c.m1Desc}</div>
+        </div>
+
+        <div class="subpage-card">
+          <div>
+            <div class="subpage-metrics-val">{c.m2Val}</div>
+            <div class="subpage-metrics-label">{c.m2Label}</div>
+          </div>
+          <div class="subpage-metrics-desc">{c.m2Desc}</div>
+        </div>
+
+        <div class="subpage-card">
+          <div>
+            <div class="subpage-metrics-val">{c.m3Val}</div>
+            <div class="subpage-metrics-label">{c.m3Label}</div>
+          </div>
+          <div class="subpage-metrics-desc">{c.m3Desc}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tomasz Jeliński Section -->
+  <section class="section" style="padding: 4.5rem 0;">
+    <div class="container">
+      <div class="column-layout" style="max-width: 1040px; margin: 0 auto;">
+        <div class="fixed-section-header">
+          <div class="section-header">
+            <div class="section-badge">{c.tomaszBadge}</div>
+            <h2 class="display-h2" style="margin-top: 0.75rem;">{c.tomaszTitle}</h2>
+            <div class="large-paragraph t---neutral-10" style="margin-top: 1rem;">
+              {c.tomaszDesc}
+            </div>
+          </div>
+        </div>
+
+        <div class="team-profiles">
+          <div class="team-profile-wrap subpage-card" style="padding: 2rem;">
+            <div class="team-brand-card" style="margin-bottom: 1.5rem;">
+              <img src="/images/multi-servis-logo.png" loading="lazy" alt="Multi-Servis Tomasz Jeliński" class="team-brand-logo" style="max-height: 50px;" />
+            </div>
+            <div class="team-profile-info">
+              <div class="display-h4" style="margin-bottom: 0.25rem;">Tomasz Jeliński</div>
+              <div class="paragraph t---neutral-10">{c.tomaszRole}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section inverse" style="padding: 5rem 0;">
+    <div class="container">
+      <div class="contact-section-wrap" style="max-width: 1040px; margin: 0 auto;">
+        <div class="contact-header" style="text-align: center; margin-bottom: 3rem;">
+          <div class="section-badge" style="background: rgba(255,255,255,0.1); color: #ffffff;">{c.contactBadge}</div>
+          <h2 class="display-h2" style="margin-top: 0.75rem; color: #ffffff;">{c.contactTitle}</h2>
+          <div class="large-paragraph" style="color: rgba(255, 255, 255, 0.85); margin-top: 0.5rem;">
+            {c.contactSubtitle}
+          </div>
+        </div>
+
+        <div class="contact-grid-body">
+          <div class="contact-form-wrap w-form">
+            <form method="get" name="wf-form-Form" data-name="Form" class="contact-form">
+              <div class="field-wrapper">
+                <div class="input-field">
+                  <label for="name" class="input-label">{c.fieldName}</label>
+                  <input class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Jan Kowalski" type="text" required="" />
+                </div>
+                <div class="input-field">
+                  <label for="Email-address" class="input-label">{c.fieldContact}</label>
+                  <input class="text-field w-input" maxlength="256" name="Email-address" data-name="Email address" placeholder="np. 500 123 456" type="text" required="" />
+                </div>
+                <div class="input-field">
+                  <label for="field" class="input-label">{c.fieldDesc}</label>
+                  <textarea required="" placeholder="np. Samsung 55 - brak obrazu, jest dźwięk" maxlength="5000" id="field" name="field" data-name="Field" class="text-area w-input"></textarea>
+                </div>
+              </div>
+              <input type="submit" data-wait="Wysyłanie..." class="filled-button main w-button" style="color: #ffffff !important;" value={c.btnSubmit} />
+              <p style="font-size: 0.8125rem; color: rgba(255, 255, 255, 0.7); margin-top: 1rem; line-height: 1.4; text-align: center;">
+                🔒 {c.rodoNotice}
+              </p>
+            </form>
+            <div class="success-message w-form-done">
+              <div class="paragraph">{c.successMsg}</div>
+            </div>
+          </div>
+
+          <div class="contact-info-wrap">
+            <div class="contact-info-card">
+              <div class="large-paragraph" style="color: rgba(255, 255, 255, 0.9);">
+                <strong style="color: #ffffff;">{c.phoneLabel} </strong> 
+                <a href="tel:+48505012914" style="color: #ffffff; text-decoration: underline; font-weight: 700;">505 012 914</a>
+              </div>
+              <div class="large-paragraph" style="color: rgba(255, 255, 255, 0.9);">
+                <strong style="color: #ffffff;">{c.ownerLabel} </strong> Tomasz Jeliński
+              </div>
+              <div class="large-paragraph" style="color: rgba(255, 255, 255, 0.9);">
+                <strong style="color: #ffffff;">{c.addressLabel} </strong> Ku Wiatrakom 18, 85-856 Bydgoszcz (Wyżyny)
+              </div>
+              <div class="large-paragraph" style="color: rgba(255, 255, 255, 0.9);">
+                <strong style="color: #ffffff;">{c.hoursLabel} </strong> {c.hoursVal}
+              </div>
+              <div class="large-paragraph" style="color: #ff5252; font-weight: 700;">
+                {c.cashNote}
+              </div>
+              <div class="display-h5" style="margin-top: 0.5rem; color: #ffffff;">
+                <a href="mailto:kontakt@multi-servis.pl" style="color: #ffffff; text-decoration: none;">kontakt@multi-servis.pl</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="overlay-03"></div>
+    <div class="contact-bg"></div>
+  </section>
+
+  <!-- Modern Clean Footer -->
+  <Footer lang={lang} />
+</Layout>

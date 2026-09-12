@@ -1,0 +1,136 @@
+---
+import type { Lang } from "../i18n/translations";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+
+interface Props {
+  lang?: Lang;
+  currentPath?: string;
+}
+
+const { lang = "pl", currentPath = Astro.url.pathname } = Astro.props;
+
+const homePath = lang === "pl" ? "/" : `/${lang}`;
+const prefix = lang === "pl" ? "" : `/${lang}`;
+
+const navItems = [
+  {
+    path: `${prefix}/serwis-telewizorow`,
+    label: lang === "pl" ? "Telewizory" : (lang === "en" ? "TV Repair" : "Телевізори"),
+    icon: "📺",
+    fullLabel: lang === "pl" ? "Serwis Telewizorów (LED/OLED)" : (lang === "en" ? "TV Repair (LED/OLED)" : "Ремонт Телевізорів (LED/OLED)"),
+  },
+  {
+    path: `${prefix}/serwis-laptopow`,
+    label: lang === "pl" ? "Laptopy" : (lang === "en" ? "Laptops" : "Ноутбуки"),
+    icon: "💻",
+    fullLabel: lang === "pl" ? "Serwis Laptopów" : (lang === "en" ? "Laptop Repair" : "Ремонт Ноутбуків"),
+  },
+  {
+    path: `${prefix}/serwis-komputerow`,
+    label: lang === "pl" ? "Komputery" : (lang === "en" ? "Computers" : "Комп’ютери"),
+    icon: "🖥️",
+    fullLabel: lang === "pl" ? "Serwis Komputerów PC" : (lang === "en" ? "PC & Desktop Repair" : "Ремонт Комп’ютерів ПК"),
+  },
+  {
+    path: `${prefix}/serwis-konsol`,
+    label: lang === "pl" ? "Konsole" : (lang === "en" ? "Consoles" : "Консолі"),
+    icon: "🎮",
+    fullLabel: lang === "pl" ? "Serwis Konsol PS5 / Xbox" : (lang === "en" ? "Console Repair PS5 / Xbox" : "Сервіс Консолей PS5 / Xbox"),
+  },
+  {
+    path: `${prefix}/cennik`,
+    label: lang === "pl" ? "Cennik" : (lang === "en" ? "Pricing" : "Ціни"),
+    icon: "💵",
+    fullLabel: lang === "pl" ? "Cennik i Diagnoza 50 zł" : (lang === "en" ? "Pricing & Diagnosis 50 PLN" : "Ціни та Діагностика 50 зл"),
+  },
+  {
+    path: `${prefix}/about`,
+    label: lang === "pl" ? "O nas" : (lang === "en" ? "About" : "Про нас"),
+    icon: "ℹ️",
+    fullLabel: lang === "pl" ? "O nas (20+ lat doświadczenia)" : (lang === "en" ? "About (20+ Years Experience)" : "Про нас (20+ років досвіду)"),
+  },
+  {
+    path: `${prefix}/faq`,
+    label: "FAQ",
+    icon: "❓",
+    fullLabel: lang === "pl" ? "Baza wiedzy FAQ" : (lang === "en" ? "FAQ Knowledge Base" : "Часті запитання FAQ"),
+  },
+  {
+    path: `${prefix}/kontakt`,
+    label: lang === "pl" ? "Kontakt" : (lang === "en" ? "Contact" : "Контакти"),
+    icon: "📍",
+    fullLabel: lang === "pl" ? "Kontakt i Ku Wiatrakom 18" : (lang === "en" ? "Contact & Workshop Location" : "Контакти та Майстерня"),
+  },
+];
+
+// Normalize clean current path
+const cleanPath = currentPath.endsWith("/") && currentPath.length > 1 ? currentPath.slice(0, -1) : currentPath;
+const isCurrent = (itemPath: string) => {
+  const cleanItemPath = itemPath.endsWith("/") && itemPath.length > 1 ? itemPath.slice(0, -1) : itemPath;
+  return cleanPath === cleanItemPath;
+};
+const isHomePage = cleanPath === "" || cleanPath === "/" || cleanPath === "/en" || cleanPath === "/uk";
+---
+
+<div class="nav-wrap">
+  <div class="navbar">
+    <div class="nav-wrapper">
+      <div class="brand-wrapper">
+        <a href={homePath} aria-current={isHomePage ? "page" : undefined} class={`brand w-inline-block ${isHomePage ? "w--current" : ""}`}>
+          <img src="/images/multi-servis-logo.png" loading="lazy" alt="Multi-Servis" class="nav-logo" />
+        </a>
+      </div>
+
+      <div class="nav-menu">
+        {navItems.map((item) => (
+          <a
+            href={item.path}
+            aria-current={isCurrent(item.path) ? "page" : undefined}
+            class={`navbar-link w-inline-block ${isCurrent(item.path) ? "w--current" : ""}`}
+          >
+            <div class="nav">{item.label}</div>
+          </a>
+        ))}
+      </div>
+
+      <div class="nav-actions-group">
+        <a href="tel:+48505012914" class="nav-phone-btn">
+          <span class="phone-icon">📞</span>
+          <span class="phone-text">505 012 914</span>
+        </a>
+
+        <LanguageSwitcher currentLang={lang} currentPath={cleanPath} />
+        <ThemeToggle />
+
+        <div class="nav-menu-button-wrap">
+          <div href="#" data-figma-id="156:103" data-w-id="aa6612f2-b0d5-f83c-935e-76485f130b37" class="nav-menu-button">
+            <div class="button-content">
+              <p data-figma-id="96:188" class="button-text">Menu</p>
+            </div>
+          </div>
+          <div href="#" data-figma-id="156:103" data-w-id="61563fd7-9f8a-5a95-991f-c86f85d98fab" class="nav-menu-button close">
+            <div class="button-content">
+              <p data-figma-id="96:188" class="button-text">X</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-dropdown-menu">
+        <a href={homePath} class={`navbar-link in-menu w-inline-block ${isHomePage ? "w--current" : ""}`}>
+          <div class="nav">🏠 {lang === "pl" ? "Strona główna" : (lang === "en" ? "Home" : "Головна")}</div>
+        </a>
+        {navItems.map((item) => (
+          <a
+            href={item.path}
+            aria-current={isCurrent(item.path) ? "page" : undefined}
+            class={`navbar-link in-menu w-inline-block ${isCurrent(item.path) ? "w--current" : ""}`}
+          >
+            <div class="nav">{item.icon} {item.fullLabel}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
