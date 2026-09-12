@@ -3562,9 +3562,10 @@ html:not([data-theme="dark"]) .section.inverse input[type="submit"] {
 }
 
 /* ==========================================================================
-   Pricing Cards Auto-Layout Grid
+   Pricing & Case Studies Auto-Layout Grids
    ========================================================================== */
-.pricing-cards-grid {
+.pricing-cards-grid,
+.case-study-cms-list {
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)) !important;
   gap: clamp(1.25rem, 3vw, 2.5rem) !important;
@@ -3573,7 +3574,8 @@ html:not([data-theme="dark"]) .section.inverse input[type="submit"] {
 }
 
 @media (max-width: 680px) {
-  .pricing-cards-grid {
+  .pricing-cards-grid,
+  .case-study-cms-list {
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;
   }
