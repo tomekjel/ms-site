@@ -103,21 +103,28 @@ const isHomePage = cleanPath === "" || cleanPath === "/" || cleanPath === "/en" 
         <LanguageSwitcher currentLang={lang} currentPath={cleanPath} />
         <ThemeToggle />
 
-        <div class="nav-menu-button-wrap" aria-label="Menu">
-          <div href="#" data-figma-id="156:103" data-w-id="aa6612f2-b0d5-f83c-935e-76485f130b37" class="nav-menu-button">
-            <div class="button-content">
-              <p data-figma-id="96:188" class="button-text">Menu</p>
-            </div>
-          </div>
-          <div href="#" data-figma-id="156:103" data-w-id="61563fd7-9f8a-5a95-991f-c86f85d98fab" class="nav-menu-button close">
-            <div class="button-content">
-              <p data-figma-id="96:188" class="button-text">X</p>
-            </div>
-          </div>
-        </div>
+        <!-- 3 Kreski / Hamburger Button -->
+        <button
+          type="button"
+          class="mobile-hamburger-btn"
+          id="mobile-menu-btn"
+          aria-label={lang === "pl" ? "Menu nawigacji (3 kreski)" : (lang === "en" ? "Navigation menu" : "Меню навігації")}
+          aria-expanded="false"
+        >
+          <span class="hamburger-icon-wrap" aria-hidden="true">
+            <span class="hamburger-bar bar-1"></span>
+            <span class="hamburger-bar bar-2"></span>
+            <span class="hamburger-bar bar-3"></span>
+          </span>
+          <span class="hamburger-label">Menu</span>
+        </button>
       </div>
 
-      <div class="nav-dropdown-menu">
+      <div class="nav-dropdown-menu" id="nav-dropdown-menu">
+        <div class="dropdown-header-bar">
+          <span class="dropdown-header-title">Menu serwisu</span>
+          <button type="button" class="dropdown-close-btn" aria-label="Zamknij menu">✕</button>
+        </div>
         <div class="dropdown-phone-cta">
           <a href="tel:+48505012914" class="nav-phone-btn dropdown-phone-btn">
             <span class="phone-icon">📞</span>
@@ -140,3 +147,98 @@ const isHomePage = cleanPath === "" || cleanPath === "/" || cleanPath === "/en" 
     </div>
   </div>
 </div>
+
+<script is:inline>
+  (function() {
+    function bindNavbar() {
+      var navbars = document.querySelectorAll('.navbar');
+      navbars.forEach(function(navbar) {
+        var btn = navbar.querySelector('.mobile-hamburger-btn');
+        var closeBtn = navbar.querySelector('.dropdown-close-btn');
+        var dropdown = navbar.querySelector('.nav-dropdown-menu');
+        if (!btn || !dropdown) return;
+
+        var lastToggleTime = 0;
+        function toggle(e) {
+          var now = Date.now();
+          if (now - lastToggleTime < 350) {
+            if (e) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+            return;
+          }
+          lastToggleTime = now;
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          var isOpen = navbar.classList.contains('is-open');
+          if (isOpen) {
+            navbar.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+            btn.classList.remove('is-active');
+          } else {
+            navbar.classList.add('is-open');
+            btn.setAttribute('aria-expanded', 'true');
+            btn.classList.add('is-active');
+          }
+        }
+
+        function close(e) {
+          if (e && e.stopPropagation) {
+            e.stopPropagation();
+          }
+          navbar.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.classList.remove('is-active');
+        }
+
+        if (!btn.dataset.bound) {
+          btn.dataset.bound = 'true';
+          btn.addEventListener('click', toggle);
+          btn.addEventListener('touchend', toggle);
+        }
+
+        if (closeBtn && !closeBtn.dataset.bound) {
+          closeBtn.dataset.bound = 'true';
+          closeBtn.addEventListener('click', close);
+          closeBtn.addEventListener('touchend', close);
+        }
+
+        dropdown.querySelectorAll('a').forEach(function(link) {
+          if (!link.dataset.bound) {
+            link.dataset.bound = 'true';
+            link.addEventListener('click', close);
+          }
+        });
+
+        if (!navbar.dataset.outsideBound) {
+          navbar.dataset.outsideBound = 'true';
+          document.addEventListener('click', function(e) {
+            if (!navbar.contains(e.target)) {
+              close();
+            }
+          });
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+              close();
+            }
+          });
+          window.addEventListener('resize', function() {
+            if (window.innerWidth >= 1200) {
+              close();
+            }
+          });
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', bindNavbar);
+    } else {
+      bindNavbar();
+    }
+    document.addEventListener('astro:page-load', bindNavbar);
+  })();
+</script>

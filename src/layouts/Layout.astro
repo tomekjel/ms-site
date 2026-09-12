@@ -229,67 +229,8 @@ const ogLocaleAlt2 = lang === "uk" ? "en_US" : "uk_UA";
 				updateAria();
 			}
 
-			function setupMobileMenu() {
-				var navbars = document.querySelectorAll(".navbar");
-				navbars.forEach(function (navbar) {
-					var burgerWrap = navbar.querySelector(".nav-menu-button-wrap");
-					var dropdown = navbar.querySelector(".nav-dropdown-menu");
-					if (!burgerWrap || !dropdown) return;
-
-					function toggleMenu(e) {
-						if (e) {
-							e.preventDefault();
-							e.stopPropagation();
-						}
-						var isOpen = navbar.classList.contains("is-open");
-						if (isOpen) {
-							navbar.classList.remove("is-open");
-						} else {
-							navbar.classList.add("is-open");
-						}
-					}
-
-					function closeMenu() {
-						navbar.classList.remove("is-open");
-					}
-
-					if (!burgerWrap.dataset.menuBound) {
-						burgerWrap.dataset.menuBound = "true";
-						burgerWrap.addEventListener("click", toggleMenu);
-					}
-
-					dropdown.querySelectorAll("a").forEach(function (link) {
-						if (!link.dataset.clickBound) {
-							link.dataset.clickBound = "true";
-							link.addEventListener("click", function () {
-								closeMenu();
-							});
-						}
-					});
-
-					document.addEventListener("click", function (e) {
-						if (!navbar.contains(e.target)) {
-							closeMenu();
-						}
-					});
-
-					document.addEventListener("keydown", function (e) {
-						if (e.key === "Escape") {
-							closeMenu();
-						}
-					});
-
-					window.addEventListener("resize", function () {
-						if (window.innerWidth >= 1200) {
-							closeMenu();
-						}
-					});
-				});
-			}
-
 			function initLayout() {
 				setupThemeToggle();
-				setupMobileMenu();
 			}
 
 			if (document.readyState === "loading") {
