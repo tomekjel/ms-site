@@ -10,9 +10,15 @@
     overflow-x: hidden !important;
     max-width: 100vw !important;
     width: 100% !important;
+    position: relative;
+    -webkit-text-size-adjust: 100%;
   }
 
-  img, picture, video, svg {
+  *, *:before, *:after {
+    box-sizing: border-box !important;
+  }
+
+  img, picture, video, svg, iframe {
     max-width: 100% !important;
     height: auto !important;
   }
@@ -22,6 +28,77 @@
     padding-right: clamp(14px, 4vw, 24px) !important;
     max-width: 100% !important;
     width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .section {
+    padding-top: clamp(2.5rem, 5vh, 3.5rem) !important;
+    padding-bottom: clamp(2.5rem, 5vh, 3.5rem) !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Typography wrapping safeguards */
+  h1, h2, h3, h4, h5, h6,
+  .display-h1, .display-h2, .display-h3, .display-h4, .display-h5, .display-h6,
+  p, .paragraph, .large-paragraph, .small-paragraph {
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    box-sizing: border-box !important;
+  }
+
+  .display-h1,
+  .hero-heading .display-h1 {
+    font-size: clamp(1.6rem, 5.8vw, 2.25rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  .display-h2 {
+    font-size: clamp(1.35rem, 4.5vw, 1.85rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  .display-h3 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem) !important;
+    line-height: 1.3 !important;
+  }
+
+  .display-h4 {
+    font-size: clamp(1.1rem, 3.5vw, 1.3rem) !important;
+    line-height: 1.35 !important;
+  }
+
+  .display-h5 {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .display-h6 {
+    font-size: 0.9375rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .large-paragraph {
+    font-size: 0.9375rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .paragraph {
+    font-size: 0.875rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .small-paragraph {
+    font-size: 0.8125rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Buttons text wrapping */
+  .button,
+  .primary-button,
+  .outline-button,
+  .button-content,
+  .button-text {
+    white-space: normal !important;
     box-sizing: border-box !important;
   }
 
@@ -82,7 +159,6 @@
     gap: 7px !important;
   }
 
-  /* 3 Kreski icon */
   .nav-hamburger-icon {
     display: flex !important;
     flex-direction: column !important;
@@ -207,84 +283,208 @@
 
   /* 3. Hero Section on Mobile / Tablet */
   .section.hero {
-    padding-top: 40px !important;
-    padding-bottom: clamp(1.25rem, 3vh, 2rem) !important;
+    padding-top: 50px !important;
+    padding-bottom: clamp(1.5rem, 4vh, 2.5rem) !important;
   }
 
   .hero-wrap {
     margin-top: 0 !important;
     padding-top: 0 !important;
     gap: 1.25rem !important;
+    width: 100% !important;
   }
 
   .hero-heading {
     margin-top: 0 !important;
     padding-top: 0 !important;
     gap: 0.6rem !important;
+    text-align: center !important;
+    align-items: center !important;
+    width: 100% !important;
   }
 
   .hero {
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    gap: 2rem !important;
+    gap: 1.75rem !important;
+    width: 100% !important;
   }
 
-  .hero-content {
+  .hero-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .hero-quick-stats {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    margin: 1.25rem auto 0.5rem auto !important;
     width: 100% !important;
     max-width: 100% !important;
   }
 
-  .hero-quick-stats {
-    justify-content: center !important;
-    gap: 8px !important;
-    margin: 1.25rem 0 0.5rem 0 !important;
-    width: 100% !important;
-  }
-
   .hero-stat-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     padding: 6px 12px !important;
     font-size: 0.8125rem !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .hero-buttons {
+    display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
     max-width: 320px !important;
-    margin: 1rem auto 0 auto !important;
-    gap: 8px !important;
+    margin: 1.25rem auto 0 auto !important;
+    gap: 10px !important;
   }
 
   .hero-buttons .button,
+  .hero-buttons .primary-button,
+  .hero-buttons .outline-button,
   .hero-buttons a {
     width: 100% !important;
     justify-content: center !important;
+    text-align: center !important;
   }
 
+  /* Hero UI Window Cards ("okna") - No floating off-screen */
   .hero-ui {
     width: 100% !important;
-    max-width: 380px !important;
+    max-width: 360px !important;
     margin: 1.5rem auto 0 auto !important;
+    position: relative !important;
+  }
+
+  .hero-ui-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    position: relative !important;
   }
 
   .hero-ui-card.hero-ui-logo {
     width: 100% !important;
+    max-width: 100% !important;
     padding: 1.5rem 1.25rem !important;
     transform: none !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
   }
 
   .hero-ui-card-2.hero-info-card {
     position: relative !important;
     width: 100% !important;
-    bottom: auto !important;
+    max-width: 100% !important;
+    top: auto !important;
     right: auto !important;
-    margin-top: 10px !important;
+    bottom: auto !important;
+    left: auto !important;
+    margin: 12px auto 0 auto !important;
+    transform: none !important;
+    padding: 14px 16px !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+
+  .hero-ticker {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    margin-top: 1.25rem !important;
+  }
+
+  .ticker-h {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* 4. Process Section (3 Steps) */
+  .process {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  .process-card,
+  .process-card:hover,
+  .process-card.is-expanded {
+    width: 100% !important;
+    flex: none !important;
+    min-height: auto !important;
+    padding: 1.25rem 1rem !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
     transform: none !important;
   }
 
-  /* 4. "Co robimy w Multi-Servis" tabs and buttons */
+  .process-image-wrap {
+    display: none !important;
+  }
+
+  .process-card-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+    min-height: auto !important;
+    padding: 0 !important;
+  }
+
+  .process-content-wrap {
+    width: 100% !important;
+  }
+
+  /* 5. "Co robimy w Multi-Servis" tabs and buttons */
+  .tab-wrap {
+    width: 100% !important;
+  }
+
+  .tab-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    width: 100% !important;
+    padding: 6px !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  .tab-item {
+    flex: 1 1 calc(50% - 6px) !important;
+    min-width: 130px !important;
+    padding: 8px 10px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .tab-item-text {
+    font-size: 0.8125rem !important;
+    text-align: center !important;
+  }
+
   .tab-content,
   .feature-tab-content {
+    display: flex !important;
     flex-direction: column !important;
     gap: 1.5rem !important;
     width: 100% !important;
@@ -295,93 +495,234 @@
     max-width: 100% !important;
   }
 
-  .section-image {
+  .feature-tab-ui {
     width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
+    height: clamp(200px, 48vw, 300px) !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+
+  .feature-tab-photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
   }
 
   .feature-content .primary-button {
     width: 100% !important;
-    max-width: 340px !important;
+    max-width: 320px !important;
     text-align: center !important;
     justify-content: center !important;
     white-space: normal !important;
-    word-break: break-word !important;
+    word-break: normal !important;
     display: flex !important;
   }
 
   .feature-content .primary-button .button-text {
     white-space: normal !important;
-    word-break: break-word !important;
+    word-break: normal !important;
     text-align: center !important;
   }
 
-  /* 5. Pricing Section */
-  .tabs-menu {
-    flex-wrap: wrap !important;
+  /* 6. Pricing Section (#cennik on homepage and /cennik) */
+  .pricing-content-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
     width: 100% !important;
-    justify-content: center !important;
-    gap: 6px !important;
+  }
+
+  .pricing-tab {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .pricing-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .pricing-header .section-header {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .tabs-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 8px !important;
+    padding: 0 !important;
   }
 
   .pricing-menu-item {
-    flex: 1 1 calc(50% - 8px) !important;
-    min-width: 130px !important;
-    padding: 8px !important;
-    text-align: center !important;
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    padding: 12px 14px !important;
+    text-align: left !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .tabs-content {
+    width: 100% !important;
+    position: relative !important;
+    overflow: visible !important;
+    min-height: auto !important;
+  }
+
+  /* Strict Tab Pane Isolation for Mobile - Zero jumping/overlap */
+  .w-tab-pane {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .w-tab-pane:not(.w--tab-active) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .w-tab-pane.w--tab-active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    pointer-events: auto !important;
+    animation: tabPaneFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  }
+
+  /* Pricing Cards on both Homepage and /cennik */
+  .pricing-cards-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 2.5rem auto !important;
+    box-sizing: border-box !important;
   }
 
   .pricing-card {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-flow: column !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 1.5rem 1.25rem !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+
+  .pricing-card:hover {
+    transform: none !important;
+  }
+
+  .pricing-main {
+    display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    padding: 1.5rem 1.25rem !important;
+    flex-grow: 0 !important;
+  }
+
+  .check-list-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    gap: 0.625rem !important;
   }
 
   .pricing-card .primary-button {
     width: 100% !important;
     max-width: 100% !important;
     justify-content: center !important;
+    text-align: center !important;
     white-space: normal !important;
-    word-break: break-word !important;
+    word-break: normal !important;
     display: flex !important;
   }
 
   .pricing-card .primary-button .button-text {
     white-space: normal !important;
-    word-break: break-word !important;
+    word-break: normal !important;
+    text-align: center !important;
   }
 
-  /* 6. Grids and subpages */
-  .pricing-cards-grid,
-  .case-study-cms-list,
+  /* 7. All Grids and Subpages */
+  .subpage-grid-2,
   .subpage-grid-3,
   .subpage-grid-4,
-  .column-layout {
+  .subpage-metrics-grid,
+  .case-study-cms-list,
+  .column-layout,
+  .contact-grid-body {
+    display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;
     width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .contact-box,
-  .contact-form {
-    padding: 1.25rem 1rem !important;
+  .subpage-card,
+  .subpage-metrics-card,
+  .case-study {
     width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1.5rem 1.25rem !important;
   }
 
-  .display-h1,
-  .hero-heading .display-h1 {
-    font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important;
-    line-height: 1.2 !important;
+  /* Contact boxes and forms */
+  .contact-box,
+  .contact-form,
+  .contact-info-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.25rem 1rem !important;
+    box-sizing: border-box !important;
   }
 
-  .display-h2 {
-    font-size: clamp(1.3rem, 4.5vw, 1.8rem) !important;
-    line-height: 1.25 !important;
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select,
+  .form-input,
+  .text-field {
+    width: 100% !important;
+    font-size: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* FAQ Accordion */
+  .accordion-item {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .accordion-title {
+    padding: 12px 14px !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .accordion-body {
+    padding: 0 14px 14px 14px !important;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
   }
 }
 
-/* 7. Small mobile phones (< 480px) */
+/* 8. Small mobile phones (< 480px) */
 @media screen and (max-width: 480px) {
   .nav-wrap {
     padding: 0 8px !important;
@@ -419,9 +760,26 @@
     font-size: 0.75rem !important;
     height: 32px !important;
   }
+
+  .tab-item {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+
+  .pricing-card {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .pricing-card .price .display-h2 {
+    font-size: 1.75rem !important;
+  }
+
+  .hero-ui {
+    max-width: 310px !important;
+  }
 }
 
-/* 8. Extra small mobile phones (< 400px down to 320px) */
+/* 9. Extra small mobile phones (< 400px down to 320px) */
 @media screen and (max-width: 400px) {
   .nav-phone-btn .phone-text {
     display: none !important;
@@ -460,12 +818,12 @@
   }
 
   .hero-stat-pill {
-    padding: 4px 8px !important;
-    font-size: 0.7rem !important;
+    padding: 5px 8px !important;
+    font-size: 0.75rem !important;
   }
 
   .hero-ui {
-    max-width: 290px !important;
+    max-width: 280px !important;
   }
 }
 

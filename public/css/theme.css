@@ -1601,11 +1601,85 @@ html[data-theme="dark"] .feature-tag .tag {
   overflow: visible !important;
 }
 
+.pricing-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 2.25rem !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  max-width: 1060px !important;
+  margin: 0 auto 3.5rem auto !important;
+  box-sizing: border-box !important;
+}
+
 .pricing-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  padding: 2.25rem 2rem !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+.pricing-main {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  flex-grow: 1 !important;
+}
+
+.check-list-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  margin-top: 1.75rem !important;
+  gap: 0.75rem !important;
+}
+
+/* Strict Tab Pane Isolation - Eliminates any overlapping animations */
+.w-tab-content {
+  position: relative !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+.w-tab-pane {
   width: 100% !important;
   box-sizing: border-box !important;
-  padding: 2.25rem !important;
-  border-radius: 16px !important;
+}
+
+.w-tab-pane:not(.w--tab-active) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.w-tab-pane.w--tab-active {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  pointer-events: auto !important;
+  animation: tabPaneFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes tabPaneFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 860px) {
@@ -1627,7 +1701,7 @@ html[data-theme="dark"] .feature-tag .tag {
     flex: 1 1 100% !important;
   }
   .pricing-card {
-    padding: 1.5rem !important;
+    padding: 1.5rem 1.25rem !important;
   }
 }
 

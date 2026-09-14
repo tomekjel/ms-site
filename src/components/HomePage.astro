@@ -397,7 +397,7 @@ const brands = [
         <div data-w-id="43e163e0-a4bf-51fc-16fd-fc73e02b563a" class="large-paragraph t---neutral-10">{t.services.sectionSubtitle}</div>
       </div>
 
-      <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tab-wrap w-tabs">
+      <div data-current="Tab 1" data-easing="ease" data-duration-in="0" data-duration-out="0" class="tab-wrap ms-tabs">
         <div id="w-node-d1ab5cee-5f58-fa45-8302-636b2739224b-6f38eea6" class="tab-menu w-tab-menu">
           <!-- Tab 1: TV -->
           <a data-w-tab="Tab 1" class="tab-item w-inline-block w-tab-link w--current">
@@ -573,7 +573,7 @@ const brands = [
           </div>
         </div>
 
-        <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="pricing-tab w-tabs">
+        <div data-current="Tab 1" data-easing="ease" data-duration-in="0" data-duration-out="0" class="pricing-tab ms-tabs">
           <div id="w-node-_3253794b-4fc3-5580-4b0c-dcb6ee5c2b4e-6f38eea6" class="tabs-menu w-tab-menu">
             <a data-w-tab="Tab 1" class="pricing-menu-item w-inline-block w-tab-link w--current">
               <div class="pricing-menu-text">
@@ -708,6 +708,52 @@ const brands = [
     </div>
     <div class="overlay-03"></div>
     <div class="pricing-bg"></div>
+
+    <script is:inline>
+      (function() {
+        function bindTabs() {
+          var tabWidgets = document.querySelectorAll('.ms-tabs, .w-tabs');
+          tabWidgets.forEach(function(widget) {
+            var links = widget.querySelectorAll('.w-tab-link');
+            var panes = widget.querySelectorAll('.w-tab-pane');
+            links.forEach(function(link) {
+              if (link.dataset.tabBound) return;
+              link.dataset.tabBound = 'true';
+              link.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+                var targetTab = link.getAttribute('data-w-tab');
+                if (!targetTab) return;
+                links.forEach(function(l) { l.classList.remove('w--current'); });
+                link.classList.add('w--current');
+                panes.forEach(function(pane) {
+                  if (pane.getAttribute('data-w-tab') === targetTab) {
+                    pane.classList.add('w--tab-active');
+                    pane.style.setProperty('display', 'block', 'important');
+                    pane.style.setProperty('opacity', '1', 'important');
+                    pane.style.setProperty('visibility', 'visible', 'important');
+                    pane.style.setProperty('position', 'relative', 'important');
+                  } else {
+                    pane.classList.remove('w--tab-active');
+                    pane.style.setProperty('display', 'none', 'important');
+                    pane.style.setProperty('opacity', '0', 'important');
+                    pane.style.setProperty('visibility', 'hidden', 'important');
+                    pane.style.setProperty('position', 'absolute', 'important');
+                  }
+                });
+              }, true);
+            });
+          });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', bindTabs);
+        } else {
+          bindTabs();
+        }
+        document.addEventListener('astro:page-load', bindTabs);
+      })();
+    </script>
   </section>
 
   <!-- FAQ Section -->
