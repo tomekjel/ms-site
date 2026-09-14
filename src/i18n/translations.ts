@@ -163,7 +163,7 @@ export const translations: Record<Lang, TranslationData> = {
     flag: '🇵🇱',
     seo: {
       title: 'Multi-Servis Bydgoszcz | Naprawa Telewizorów, Laptopów, PC i Montaż Monitoringu',
-      description: 'Serwis elektroniki w Bydgoszczy (Ku Wiatrakom 18). Naprawa TV, laptopów, komputerów oraz montaż monitoringu CCTV. Diagnoza 50 zł, płatność gotówką. Tel: 505 012 914.',
+      description: 'Serwis elektroniki w Bydgoszczy (Ku Wiatrakom 18). Naprawa TV, laptopów, komputerów oraz montaż monitoringu CCTV. Rzetelna diagnoza i indywidualna wycena. Tel: 505 012 914.',
       keywords: 'naprawa telewizorów Bydgoszcz, serwis laptopów Bydgoszcz, montaż monitoringu Bydgoszcz, naprawa komputerów, Tomasz Jeliński',
     },
     nav: {
@@ -180,20 +180,20 @@ export const translations: Record<Lang, TranslationData> = {
     hero: {
       badge: 'Ponad 20 lat doświadczenia w Bydgoszczy',
       title: 'Naprawa TV, laptopów i PC oraz montaż monitoringu',
-      subtitle: 'Ku Wiatrakom 18, Bydgoszcz. Diagnoza usterki za 50 zł, wycena przed naprawą. Płatność wyłącznie gotówką.',
+      subtitle: 'Ku Wiatrakom 18, Bydgoszcz. Rzetelna diagnoza usterki, indywidualna wycena przed naprawą i 3 miesiące gwarancji.',
       ctaPhone: 'Zadzwoń: 505 012 914 ',
       ctaContact: 'Zgłoś usterkę',
       statsYears: '20+ lat',
       statsYearsLabel: 'Doświadczenia',
-      statsGuarantee: '50 zł',
-      statsGuaranteeLabel: 'Koszt diagnozy',
-      statsSuccess: 'Gotówka',
-      statsSuccessLabel: 'Tylko płatność gotówką',
-      cashNotice: 'Płatność w serwisie wyłącznie gotówką',
-      pillCash: '💵 Płatność tylko gotówka',
+      statsGuarantee: 'Indywidualna',
+      statsGuaranteeLabel: 'Wycena usterki',
+      statsSuccess: '100%',
+      statsSuccessLabel: 'Uczciwa wycena',
+      cashNotice: '',
+      pillCash: '📍 Bydgoszcz Wyżyny',
       pillFast: '⚡ Szybka realizacja',
       pillService: '😊 Miła i fachowa obsługa',
-      pillDiagnosis: '🔍 Diagnoza usterki 50 zł',
+      pillDiagnosis: '🔍 Diagnoza i wycena usterki',
       pillGuarantee: '🛡️ Gwarancja 3 miesiące',
       pillQuote: '🤝 Uczciwa wycena przed naprawą',
     },
@@ -210,55 +210,55 @@ export const translations: Record<Lang, TranslationData> = {
         'Gwarancja 3 miesiące'
       ],
       laptopTitle: 'Naprawa Laptopów',
-      laptopDesc: 'Naprawy elektroniczne na poziomie płyty głównej oraz mechaniczne.',
+      laptopDesc: 'Zaawansowana diagnostyka płyt głównych, mikrolutowanie BGA oraz wymiana uszkodzonych matryc i gniazd.',
       laptopPoints: [
         'Lutowanie i reballing układów BGA',
-        'Naprawa płyt po zalaniu cieczą',
+        'Czyszczenie po zalaniu (myjka ultradźwiękowa)',
         'Wymiana matryc, klawiatur i gniazd zasilania',
-        'Czyszczenie chłodzenia i wymiana pasty'
+        'Konserwacja chłodzenia i wymiana past'
       ],
       pcTitle: 'Naprawa Komputerów PC',
-      pcDesc: 'Kompleksowy serwis stacji roboczych oraz komputerów gamingowych.',
+      pcDesc: 'Kompleksowy serwis jednostek stacjonarnych, komputerów gamingowych i biurowych.',
       pcPoints: [
-        'Diagnoza problemów z uruchamianiem',
-        'Wymiana uszkodzonych podzespołów',
-        'Modernizacja i składanie nowych jednostek',
-        'Instalacja i czyszczenie systemów Windows'
+        'Diagnostyka problemów z uruchamianiem',
+        'Wymiana podzespołów (zasilacze, GPU, RAM)',
+        'Modernizacja i składanie komputerów',
+        'Czyszczenie i optymalizacja Windows'
       ],
       cctvTitle: 'Montaż Monitoringu CCTV',
-      cctvDesc: 'Profesjonalny montaż i konfiguracja systemów kamer dla domów i firm (nie prowadzimy napraw starych kamer).',
+      cctvDesc: 'Projektowanie i profesjonalny montaż nowoczesnych systemów kamer (montujemy nowe instalacje, nie naprawiamy starych kamer).',
       cctvPoints: [
-        'Instalacja nowoczesnych kamer IP i 4K',
-        'Konfiguracja rejestratora i dysków',
-        'Podgląd na żywo na smartfonie i tablecie',
-        'Dobór sprzętu dopasowany do posesji'
+        'Nowoczesne kamery IP i 4K',
+        'Konfiguracja rejestratora NVR i dysków',
+        'Podgląd na żywo w aplikacji na telefonie',
+        'Dobór sprzętu dopasowany do obiektu'
       ],
     },
     process: {
-      sectionBadge: 'Jak działamy?',
-      sectionTitle: 'Proces w 3 prostych krokach',
+      sectionBadge: 'Jasne zasady',
+      sectionTitle: '3 proste kroki',
       sectionSubtitle: 'Przejrzyste zasady bez ukrytych opłat. Zawsze wiesz, na czym stoisz przed podjęciem decyzji.',
-      step1Title: 'Diagnoza (50 zł)',
+      step1Title: 'Rzetelna diagnoza',
       step1Desc: 'Przynosisz sprzęt na ul. Ku Wiatrakom 18 w Bydgoszczy. Sprawdzamy dokładnie, co jest uszkodzone.',
       step2Title: 'Kontakt i Wycena',
       step2Desc: 'Dzwonimy do Ciebie z informacją: co uległo usterce, jak należy to naprawić, jaki będzie całkowity koszt i czas oczekiwania.',
       step3Title: 'Decyzja i Odbiór',
-      step3Desc: 'Jeśli się zgadzasz – naprawiamy. Jeśli nie – płacisz tylko 50 zł za diagnozę. Terminy odbioru ustalamy elastycznie. Płatność wyłącznie gotówką.',
+      step3Desc: 'Jeśli się zgadzasz – naprawiamy i otrzymujesz 3 miesiące gwarancji. Jeśli nie – odbierasz sprzęt. Terminy odbioru ustalamy elastycznie.',
     },
     pricing: {
       sectionBadge: 'Przejrzyste zasady',
       sectionTitle: 'Cennik usług',
-      sectionSubtitle: 'Wstępna diagnoza wynosi zawsze 50 zł. O kosztach naprawy decydujesz sam po otrzymaniu wyceny.',
-      cashNotice: 'Uwaga: w serwisie płatność przyjmujemy wyłącznie gotówką.',
+      sectionSubtitle: 'Każda naprawa wyceniana jest indywidualnie po rzetelnej diagnozie. O kosztach decydujesz sam przed rozpoczęciem prac.',
+      cashNotice: '',
       plan1Name: 'Diagnoza sprzętu',
-      plan1Price: '50 zł',
-      plan1Period: 'jednorazowo',
+      plan1Price: 'Indywidualna',
+      plan1Period: 'przed naprawą',
       plan1Desc: 'Dokładne sprawdzenie usterki w warsztacie i telefoniczna wycena.',
       plan1Features: [
         'Lokalizacja uszkodzonego komponentu',
         'Telefon z wyceną części i robocizny',
         'Określenie czasu oczekiwania',
-        'Brak zgody na naprawę = koszt tylko 50 zł'
+        'Wycena przedstawiana przed rozpoczęciem naprawy'
       ],
       plan2Name: 'Naprawa TV / Laptop / PC',
       plan2Price: 'Wycena',
@@ -268,43 +268,43 @@ export const translations: Record<Lang, TranslationData> = {
         'Oryginalne lub sprawdzone części OEM',
         'Pisemna gwarancja na 3 miesiące',
         'Testy obciążeniowe po wykonaniu usługi',
-        'Płatność gotówką przy odbiorze'
+        'Rozliczenie przy odbiorze sprzętu'
       ],
       plan3Name: 'Montaż Monitoringu CCTV',
       plan3Price: 'Wycena',
       plan3Period: 'za montaż',
-      plan3Desc: 'Instalacja kamer dozorowych dla domów, działek i firm.',
+      plan3Desc: 'Instalacja systemów kamer dla domów i firm.',
       plan3Features: [
-        'Dobór kamer i okablowania',
-        'Precyzyjny montaż zewnętrzny i wewnętrzny',
-        'Zdalny podgląd na żywo w smartfonie',
-        'Szkolenie z obsługi systemu'
+        'Dobór kamer i okablowanie',
+        'Czysty montaż wewnątrz i na zewnątrz',
+        'Konfiguracja podglądu na smartfonie',
+        'Instruktaż obsługi systemu'
       ],
       cta: 'Skontaktuj się',
     },
     caseStudies: {
-      sectionBadge: 'Doświadczenie',
-      sectionTitle: 'Przykładowe realizacje',
-      sectionSubtitle: 'Naprawiamy elektronikę precyzyjną i montujemy systemy kamer na terenie Bydgoszczy.',
+      sectionBadge: 'Realizacje',
+      sectionTitle: 'Przykładowe naprawy',
+      sectionSubtitle: 'Zobacz, jak przywracamy sprzęt do życia w naszym warsztacie w Bydgoszczy.',
       item1Title: 'Wymiana podświetlenia LED - TV Samsung 65"',
-      item1Category: 'Naprawa Telewizora',
-      item1Desc: 'Brak obrazu przy obecnym dźwięku. Wymiana listew LED z regulacją prądową zasilacza.',
+      item1Category: 'Naprawa TV',
+      item1Desc: 'Brak obrazu przy obecnym dźwięku. Wymiana kompletu listew LED na nowe aluminiowe oraz korekta prądu zasilania diod.',
       item2Title: 'Naprawa po zalaniu - Laptop MacBook',
       item2Category: 'Naprawa Laptopa',
-      item2Desc: 'Mycie ultradźwiękowe, mikrolutowanie skorodowanych linii zasilania, przywrócenie sprawności.',
-      item3Title: 'Zwarcie sekcji zasilania - Komputer Gaming PC',
+      item2Desc: 'Mycie płyty w myjce ultradźwiękowej, odbudowa skorodowanych ścieżek zasilania i wymiana przetwornicy.',
+      item3Title: 'Zwarcie w sekcji zasilania - Komputer Gamingowy',
       item3Category: 'Naprawa PC',
-      item3Desc: 'Lokalizacja zwarcia kamerą termowizyjną i wymiana uszkodzonych tranzystorów.',
-      item4Title: 'Montaż monitoringu IP 4K - Posesja Osielsko',
-      item4Category: 'Montaż Kamer',
-      item4Desc: 'Instalacja 6 kamer z doświetleniem nocnym oraz podglądem na żywo w telefonie.',
+      item3Desc: 'Lokalizacja zwarcia przy użyciu kamery termowizyjnej, wymiana tranzystorów MOSFET i regeneracja linii 12V.',
+      item4Title: 'Instalacja 6 kamer IP 4K - Dom jednorodzinny',
+      item4Category: 'Monitoring CCTV',
+      item4Desc: 'Montaż kamer z doświetleniem nocnym, rejestratora z dyskiem 4TB oraz konfiguracja aplikacji mobilnej.',
       viewAll: 'Wszystkie realizacje',
     },
     testimonials: {
-      sectionBadge: 'Opinie klientów',
+      sectionBadge: 'Opinie',
       sectionTitle: 'Co mówią nasi klienci?',
       sectionSubtitle: 'Wieloletnie zaufanie mieszkańców Bydgoszczy i regionu.',
-      t1Quote: 'Szybka diagnoza za 50 zł, telefon z konkretną wyceną i telewizor 65 cali znów świeci jak nowy.',
+      t1Quote: 'Rzetelna diagnoza, szybki telefon z konkretną wyceną i telewizor 65 cali znów świeci jak nowy.',
       t1Author: 'Marek W.',
       t1Role: 'Klient z Bydgoszczy (Wyżyny)',
       t2Quote: 'Laptop po zalaniu kawą uratowany. Bardzo uczciwe podejście – powiedziano mi dokładnie co jest do zrobienia.',
@@ -317,15 +317,15 @@ export const translations: Record<Lang, TranslationData> = {
     faq: {
       sectionBadge: 'FAQ',
       sectionTitle: 'Najczęściej zadawane pytania',
-      sectionSubtitle: 'Wszystko o diagnozie, wycenie, płatności i odbiorze sprzętu.',
+      sectionSubtitle: 'Wszystko o diagnozie, wycenie, gwarancji i odbiorze sprzętu.',
       items: [
         {
-          question: 'Ile kosztuje diagnoza sprzętu?',
-          answer: 'Diagnoza usterki kosztuje 50 zł. W tej cenie dokładnie sprawdzamy urządzenie, dzwonimy do Ciebie, wyjaśniamy co jest uszkodzone, ile wyniesie naprawa i jaki będzie czas oczekiwania. Jeśli nie zdecydujesz się na naprawę, płacisz tylko te 50 zł.'
+          question: 'Jak wygląda diagnoza i wycena sprzętu?',
+          answer: 'Każde urządzenie sprawdzamy indywidualnie. Po rozebraniu sprzętu i zlokalizowaniu usterki dzwonimy do Ciebie, wyjaśniamy co jest uszkodzone, jaki jest koszt naprawy i czas oczekiwania. Pełną wycenę znasz przed podjęciem decyzji o naprawie.'
         },
         {
-          question: 'Jakie formy płatności są akceptowane?',
-          answer: 'W serwisie akceptujemy wyłącznie płatność gotówką. Prosimy o przygotowanie gotówki przy odbiorze sprzętu.'
+          question: 'Jak szybko realizowana jest diagnoza i wycena?',
+          answer: 'Wstępną diagnozę wykonujemy zazwyczaj w ciągu 24-48 godzin od dostarczenia sprzętu do warsztatu przy ul. Ku Wiatrakom 18. Po diagnozie kontaktujemy się telefonicznie z dokładną wyceną.'
         },
         {
           question: 'Czy naprawiacie kamery monitoringu?',
@@ -333,11 +333,11 @@ export const translations: Record<Lang, TranslationData> = {
         },
         {
           question: 'Jak wygląda decyzja o naprawie?',
-          answer: 'Po wykonaniu diagnozy za 50 zł dzwonimy do Ciebie z dokładnym kosztorysem. To Ty podejmujesz decyzję. Jeśli się zgodzisz – wykonujemy naprawę. Jeśli nie – odbierasz sprzęt płacąc tylko 50 zł za diagnozę.'
+          answer: 'Po wykonaniu diagnozy dzwonimy do Ciebie z dokładnym kosztorysem. To Ty podejmujesz decyzję – naprawę realizujemy wyłącznie po Twojej akceptacji kosztów.'
         },
         {
           question: 'Czy terminy odbioru sprzętu są elastyczne?',
-          answer: 'Tak, jesteśmy w pełni elastyczni. Po zakończeniu diagnozy lub naprawy kontaktujemy się z Tobą i wspólnie ustalamy dogodny termin odbioru w godzinach pracy serwisu.'
+          answer: 'Tak, jesteśmy w pełni elastyczni. Po zakończeniu naprawy kontaktujemy się z Tobą i wspólnie ustalamy dogodny termin odbioru w godzinach pracy serwisu.'
         },
         {
           question: 'Jaką gwarancję otrzymuję na naprawę?',
@@ -349,7 +349,7 @@ export const translations: Record<Lang, TranslationData> = {
         },
         {
           question: 'W telewizorze słychać dźwięk, ale ekran jest ciemny/czarny. Czy naprawa jest opłacalna?',
-          answer: 'Zdecydowanie tak! To najczęstsza usterka – uszkodzenie podświetlenia matrycy LED. Wymieniamy komplet listew na fabrycznie nowe aluminiowe listwy, co przywraca pełną sprawność obrazu za ułamek ceny nowego telewizora. Diagnoza to 50 zł.'
+          answer: 'Zdecydowanie tak! To najczęstsza usterka – uszkodzenie podświetlenia matrycy LED. Wymieniamy komplet listew na fabrycznie nowe aluminiowe listwy, co przywraca pełną sprawność obrazu za ułamek ceny nowego telewizora. Przed naprawą przedstawiamy dokładną wycenę.'
         },
         {
           question: 'Konsola PS5 wyłącza się samoczynnie podczas grania w gry. Czy to naprawiacie?',
@@ -376,12 +376,12 @@ export const translations: Record<Lang, TranslationData> = {
       emailVal: 'kontakt@multi-servis.pl',
       ownerLabel: 'Właściciel',
       ownerVal: 'Tomasz Jeliński',
-      paymentLabel: 'Płatność',
-      paymentVal: 'Tylko gotówka',
+      paymentLabel: 'Rozliczenie',
+      paymentVal: 'Przy odbiorze sprzętu',
       rodoNotice: 'Administratorem danych jest Multi-Servis Tomasz Jeliński (ul. Ku Wiatrakom 18, Bydgoszcz). Dane podane w formularzu przetwarzane są wyłącznie w celu kontaktu i wyceny naprawy.',
     },
     footer: {
-      rights: 'Wszelkie prawa zastrzeżone. Płatność wyłącznie gotówką.',
+      rights: 'Wszelkie prawa zastrzeżone.',
     },
   },
 
@@ -391,7 +391,7 @@ export const translations: Record<Lang, TranslationData> = {
     flag: '🇬🇧',
     seo: {
       title: 'Multi-Servis Bydgoszcz | TV, Laptop & PC Repair | CCTV Installation',
-      description: 'Electronics repair shop in Bydgoszcz (Ku Wiatrakom 18). TV, laptop, PC repair and CCTV camera installation. Diagnosis 50 PLN, cash only. Tel: +48 505 012 914.',
+      description: 'Electronics repair shop in Bydgoszcz (Ku Wiatrakom 18). TV, laptop, PC repair and CCTV camera installation. Accurate diagnosis and individual quote. Tel: +48 505 012 914.',
       keywords: 'TV repair Bydgoszcz, laptop repair Bydgoszcz, CCTV installation Bydgoszcz, Tomasz Jeliński',
     },
     nav: {
@@ -408,20 +408,20 @@ export const translations: Record<Lang, TranslationData> = {
     hero: {
       badge: '20+ Years Experience in Bydgoszcz',
       title: 'TV, Laptop & PC Repair + CCTV Camera Installation',
-      subtitle: 'Ku Wiatrakom 18, Bydgoszcz. Defect diagnosis for 50 PLN, quote before repair. Cash payment only.',
+      subtitle: 'Ku Wiatrakom 18, Bydgoszcz. Defect diagnosis, individual quote before repair, and 3-month warranty.',
       ctaPhone: 'Call: 505 012 914 ',
       ctaContact: 'Report defect',
       statsYears: '20+ yrs',
       statsYearsLabel: 'Experience',
-      statsGuarantee: '50 PLN',
-      statsGuaranteeLabel: 'Diagnosis fee',
-      statsSuccess: 'Cash',
-      statsSuccessLabel: 'Cash payment only',
-      cashNotice: 'Cash payment only',
-      pillCash: '💵 Cash payment only',
+      statsGuarantee: 'Individual',
+      statsGuaranteeLabel: 'Repair quote',
+      statsSuccess: '100%',
+      statsSuccessLabel: 'Fair pricing',
+      cashNotice: '',
+      pillCash: '📍 Bydgoszcz Wyżyny',
       pillFast: '⚡ Fast turnaround',
       pillService: '😊 Friendly & expert service',
-      pillDiagnosis: '🔍 Diagnosis fee 50 PLN',
+      pillDiagnosis: '🔍 Fault diagnosis & quote',
       pillGuarantee: '🛡️ 3 months warranty',
       pillQuote: '🤝 Honest quote before repair',
     },
@@ -466,27 +466,27 @@ export const translations: Record<Lang, TranslationData> = {
       sectionBadge: 'Simple Workflow',
       sectionTitle: '3 Simple Steps',
       sectionSubtitle: 'Clear rules with no hidden costs. You decide after receiving our inspection quote.',
-      step1Title: 'Diagnosis (50 PLN)',
+      step1Title: 'Thorough Diagnosis',
       step1Desc: 'Bring your device to Ku Wiatrakom 18 in Bydgoszcz. We inspect and find the exact defect.',
       step2Title: 'Contact & Quote',
       step2Desc: 'We call you explaining what is broken, how to fix it, total cost, and estimated turnaround. You decide.',
       step3Title: 'Decision & Pickup',
-      step3Desc: 'Agree: we fix it. Decline: you pay only 50 PLN for diagnosis. Flexible pickup times. Cash only.',
+      step3Desc: 'Agree: we fix it with 3-month warranty. Decline: you pick up your equipment. Flexible pickup times.',
     },
     pricing: {
       sectionBadge: 'Pricing',
       sectionTitle: 'Transparent Pricing',
-      sectionSubtitle: 'Diagnosis fee is always 50 PLN. Repair proceeds only after your explicit approval.',
-      cashNotice: 'Notice: Cash payment only at the workshop.',
+      sectionSubtitle: 'Each repair is priced individually after diagnosis. Work proceeds only after your explicit approval.',
+      cashNotice: '',
       plan1Name: 'Device Diagnosis',
-      plan1Price: '50 PLN',
-      plan1Period: 'flat fee',
+      plan1Price: 'Individual',
+      plan1Period: 'before repair',
       plan1Desc: 'Detailed defect diagnosis and phone consultation.',
       plan1Features: [
         'Faulty component identification',
         'Phone quote for parts & labor',
         'Turnaround time estimate',
-        'If repair declined = only 50 PLN fee'
+        'Quote provided before starting work'
       ],
       plan2Name: 'TV / Laptop / PC Repair',
       plan2Price: 'By Quote',
@@ -496,7 +496,7 @@ export const translations: Record<Lang, TranslationData> = {
         'Original or high-grade OEM parts',
         '3 months written warranty',
         'Burn-in & load testing',
-        'Cash payment upon pickup'
+        'Payment upon device pickup'
       ],
       plan3Name: 'CCTV Installation',
       plan3Price: 'By Quote',
@@ -532,7 +532,7 @@ export const translations: Record<Lang, TranslationData> = {
       sectionBadge: 'Reviews',
       sectionTitle: 'Customer Feedback',
       sectionSubtitle: 'Over 20 years of trusted electronics service in Bydgoszcz.',
-      t1Quote: 'Quick diagnosis for 50 PLN, straightforward phone quote, and my 65" TV works like new.',
+      t1Quote: 'Accurate diagnosis, straightforward phone quote, and my 65" TV works like new.',
       t1Author: 'Marek W.',
       t1Role: 'Customer from Bydgoszcz (Wyżyny)',
       t2Quote: 'Saved my liquid-damaged laptop. Very honest approach, explained every detail.',
@@ -545,15 +545,15 @@ export const translations: Record<Lang, TranslationData> = {
     faq: {
       sectionBadge: 'FAQ',
       sectionTitle: 'Frequently Asked Questions',
-      sectionSubtitle: 'Diagnosis fee, quotes, payment terms, and pickup policy.',
+      sectionSubtitle: 'Diagnosis, repair quotes, warranty, and pickup policy.',
       items: [
         {
-          question: 'How much does diagnosis cost?',
-          answer: 'Diagnosis costs 50 PLN. We inspect the device, call you with exact repair options, cost, and estimated time. If you decide not to repair, you pay only 50 PLN.'
+          question: 'How does the device diagnosis and quote work?',
+          answer: 'Each device is inspected individually in our workshop. We disassemble the equipment, locate the root cause, and call you with an exact price and turnaround time before proceeding with any repair.'
         },
         {
-          question: 'What payment methods do you accept?',
-          answer: 'We accept CASH ONLY at the workshop. Please have cash ready upon picking up your device.'
+          question: 'How fast is diagnosis completed?',
+          answer: 'Initial diagnosis is typically performed within 24 to 48 hours after dropping off your device at Ku Wiatrakom 18. We then contact you by phone with a complete cost estimate.'
         },
         {
           question: 'Do you repair CCTV security cameras?',
@@ -561,7 +561,7 @@ export const translations: Record<Lang, TranslationData> = {
         },
         {
           question: 'How does the repair decision work?',
-          answer: 'After the 50 PLN diagnosis, we call you with the quote. You decide. If you approve, we fix it. If you decline, you pay only 50 PLN and pick up your device.'
+          answer: 'After diagnosis, we call you with the quote. You decide. We only proceed with repairs after your explicit approval.'
         },
         {
           question: 'Are pickup times flexible?',
@@ -577,7 +577,7 @@ export const translations: Record<Lang, TranslationData> = {
         },
         {
           question: 'My TV has sound but black screen (no picture). Is it worth repairing?',
-          answer: 'Yes! This is the most common TV failure – damaged LED backlight strips. We replace the entire set of LED bars with brand-new aluminum strips, restoring perfect brightness at a fraction of a new TV cost. Diagnosis is 50 PLN.'
+          answer: 'Yes! This is the most common TV failure – damaged LED backlight strips. We replace the entire set of LED bars with brand-new aluminum strips, restoring perfect brightness at a fraction of a new TV cost. An exact quote is provided prior to repair.'
         },
         {
           question: 'My PS5 console shuts down automatically while gaming. Can you fix it?',
@@ -605,11 +605,11 @@ export const translations: Record<Lang, TranslationData> = {
       ownerLabel: 'Owner',
       ownerVal: 'Tomasz Jeliński',
       paymentLabel: 'Payment',
-      paymentVal: 'Cash only',
+      paymentVal: 'Upon device pickup',
       rodoNotice: 'Your data controller is Multi-Servis Tomasz Jeliński (Ku Wiatrakom 18, Bydgoszcz). Data submitted is used exclusively to contact you and provide a repair quote.',
     },
     footer: {
-      rights: 'All rights reserved. Cash payment only.',
+      rights: 'All rights reserved.',
     },
   },
 
@@ -619,7 +619,7 @@ export const translations: Record<Lang, TranslationData> = {
     flag: '🇺🇦',
     seo: {
       title: 'Multi-Servis Бидгощ | Ремонт телевізорів, ноутбуків, ПК та монтаж камер CCTV',
-      description: 'Сервіс електроніки у Бидгощі (Ku Wiatrakom 18). Ремонт ТБ, ноутбуків, комп’ютерів та монтаж відеоспостереження. Діагностика 50 зл, оплата готівкою. Тел: +48 505 012 914.',
+      description: 'Сервіс електроніки у Бидгощі (Ku Wiatrakom 18). Ремонт ТБ, ноутбуків, комп’ютерів та монтаж відеоспостереження. Точна діагностика та індивідуальна оцінка. Тел: +48 505 012 914.',
       keywords: 'ремонт телевізорів Бидгощ, ремонт ноутбуків Бидгощ, монтаж камер відеоспостереження Бидгощ, Tomasz Jeliński',
     },
     nav: {
@@ -636,20 +636,20 @@ export const translations: Record<Lang, TranslationData> = {
     hero: {
       badge: 'Понад 20 років досвіду у Бидгощі',
       title: 'Ремонт ТБ, ноутбуків, ПК та монтаж відеоспостереження',
-      subtitle: 'Ku Wiatrakom 18, Бидгощ. Діагностика 50 злотих, узгодження вартості до ремонту. Оплата тільки готівкою.',
+      subtitle: 'Ku Wiatrakom 18, Бидгощ. Точна діагностика несправності, індивідуальна оцінка вартості до ремонту та 3 місяці гарантії.',
       ctaPhone: 'Тел: 505 012 914 ',
       ctaContact: 'Замовити ремонт',
       statsYears: '20+ р.',
       statsYearsLabel: 'Досвіду',
-      statsGuarantee: '50 зл',
-      statsGuaranteeLabel: 'Вартість діагностики',
-      statsSuccess: 'Готівка',
-      statsSuccessLabel: 'Оплата тільки готівкою',
-      cashNotice: 'Оплата в сервісі тільки готівкою',
-      pillCash: '💵 Оплата тільки готівкою',
+      statsGuarantee: 'Індивідуальна',
+      statsGuaranteeLabel: 'Оцінка ремонту',
+      statsSuccess: '100%',
+      statsSuccessLabel: 'Чесні умови',
+      cashNotice: '',
+      pillCash: '📍 Bydgoszcz Wyżyny',
       pillFast: '⚡ Швидке виконання',
       pillService: '😊 Ввічливе та якісне обслуговування',
-      pillDiagnosis: '🔍 Діагностика 50 зл',
+      pillDiagnosis: '🔍 Діагностика та оцінка несправності',
       pillGuarantee: '🛡️ Гарантія 3 місяці',
       pillQuote: '🤝 Чесна оцінка перед ремонтом',
     },
@@ -694,27 +694,27 @@ export const translations: Record<Lang, TranslationData> = {
       sectionBadge: 'Простий порядок',
       sectionTitle: 'Процес у 3 простих кроки',
       sectionSubtitle: 'Прозорі умови без прихованих платежів. Ви завжди знаєте точну ціну до початку робіт.',
-      step1Title: 'Діагностика (50 зл)',
+      step1Title: 'Точна діагностика',
       step1Desc: 'Приносите пристрій за адресою Ku Wiatrakom 18 у Бидгощі. Ми детально перевіряємо, що саме зламано.',
       step2Title: 'Дзвінок і Оцінка',
       step2Desc: 'Дзвонимо вам і повідомляємо: що пошкоджено, як ремонтувати, скільки це коштуватиме і термін очікування.',
       step3Title: 'Рішення та Отримання',
-      step3Desc: 'Згода – ремонтуємо. Відмова – сплачуєте лише 50 зл за діагностику. Час отримання гнучкий. Оплата тільки готівкою.',
+      step3Desc: 'Згода – ремонтуємо з гарантією на 3 місяці. Відмова – забираєте техніку. Час отримання гнучкий.',
     },
     pricing: {
       sectionBadge: 'Прайс-лист',
       sectionTitle: 'Прозорі ціни',
-      sectionSubtitle: 'Діагностика завжди коштує 50 зл. Ви самі вирішуєте, чи робити ремонт після узгодження вартості.',
-      cashNotice: 'Увага: оплата в сервісі приймається виключно готівкою.',
+      sectionSubtitle: 'Кожен ремонт оцінюється індивідуально після діагностики. Ви самі вирішуєте, чи робити ремонт після узгодження вартості.',
+      cashNotice: '',
       plan1Name: 'Діагностика пристрою',
-      plan1Price: '50 зл',
-      plan1Period: 'разово',
+      plan1Price: 'Індивідуальна',
+      plan1Period: 'до ремонту',
       plan1Desc: 'Детальна перевірка несправності в майстерні та узгодження телефоном.',
       plan1Features: [
         'Визначення пошкодженого вузла',
         'Дзвінок з точною ціною деталей і роботи',
         'Визначення терміну ремонту',
-        'У разі відмови від ремонту = лише 50 зл'
+        'Оцінка надається до початку будь-яких робіт'
       ],
       plan2Name: 'Ремонт ТБ / Ноутбука / ПК',
       plan2Price: 'За оцінкою',
@@ -724,7 +724,7 @@ export const translations: Record<Lang, TranslationData> = {
         'Оригінальні або перевірені деталі OEM',
         'Письмова гарантія на 3 місяці',
         'Стрес-тести перед видачею',
-        'Оплата готівкою при отриманні'
+        'Розрахунок при отриманні техніки'
       ],
       plan3Name: 'Монтаж Відеоспостереження',
       plan3Price: 'За оцінкою',
@@ -760,7 +760,7 @@ export const translations: Record<Lang, TranslationData> = {
       sectionBadge: 'Відгуки',
       sectionTitle: 'Що кажуть клієнти?',
       sectionSubtitle: 'Багаторічна довіра жителів Бидгоща.',
-      t1Quote: 'Швидка діагностика за 50 злотих, дзвінок із ціною, і телевізор 65 дюймів знову показує відмінно.',
+      t1Quote: 'Швидка діагностика, дзвінок із точною ціною, і телевізор 65 дюймів знову показує відмінно.',
       t1Author: 'Марек В.',
       t1Role: 'Клієнт з Бидгоща (Вижини)',
       t2Quote: 'Врятували ноутбук після залиття кавою. Дуже чесний підхід майстра.',
@@ -773,15 +773,15 @@ export const translations: Record<Lang, TranslationData> = {
     faq: {
       sectionBadge: 'FAQ',
       sectionTitle: 'Часті запитання',
-      sectionSubtitle: 'Діагностика, погодження цін, оплата та отримання техніки.',
+      sectionSubtitle: 'Діагностика, погодження цін, гарантія та отримання техніки.',
       items: [
         {
-          question: 'Скільки коштує діагностика техніки?',
-          answer: 'Діагностика коштує 50 злотих. Ми перевіряємо техніку, дзвонимо вам, пояснюємо що зламалося, скільки коштуватиме ремонт і термін. Якщо ви не бажаєте ремонтувати, сплачуєте лише ці 50 злотих.'
+          question: 'Як відбувається діагностика та оцінка техніки?',
+          answer: 'Кожен пристрій ми перевіряємо індивідуально в майстерні. Після розбирання та локалізації несправності телефонуємо вам, пояснюємо причину поломки, точну вартість і терміни до початку робіт.'
         },
         {
-          question: 'Які способи оплати приймаються?',
-          answer: 'У сервісі приймається ВИКЛЮЧНО ГОТІВКА. Будь ласка, підготуйте готівку при отриманні техніки.'
+          question: 'Як швидко проводиться діагностика?',
+          answer: 'Зазвичай діагностика триває 24–48 годин з моменту доставки техніки до майстерні на вул. Ku Wiatrakom 18. Після цього ми одразу телефонуємо з детальною інформацією.'
         },
         {
           question: 'Чи ремонтуєте ви камери відеоспостереження?',
@@ -789,7 +789,7 @@ export const translations: Record<Lang, TranslationData> = {
         },
         {
           question: 'Як відбувається погодження ремонту?',
-          answer: 'Після діагностики за 50 зл ми дзвонимо вам із точним кошторисом. Ви вирішуєте: якщо погоджуєтеся – ремонтуємо, якщо ні – сплачуєте 50 зл за діагностику.'
+          answer: 'Після діагностики ми дзвонимо вам із точним кошторисом. Ви вирішуєте – ремонт виконується лише після вашої згоди.'
         },
         {
           question: 'Чи гнучкий графік видачі техніки?',
@@ -804,8 +804,8 @@ export const translations: Record<Lang, TranslationData> = {
           answer: 'Так! У Multi-Servis на вул. Ku Wiatrakom 18 у Бидгощі ми замінюємо старі диски на надшвидкі SSD NVMe, клонуємо систему без втрати файлів та проводимо чистку охолодження із заміною термопасти. Ноутбук запускатиметься за секунди та працюватиме тихо.'
         },
         {
-          question: 'У телевізорі є звук, але чорний екran (немає зображення). Чи варто ремонтувати?',
-          answer: 'Однозначно так! Це найпоширеніша несправність – перегорання LED підсвічування. Ми замінюємо комплект планок на нові алюмінієві, повертаючи яскравість за значно менші гроші, ніж покупка нового ТВ. Діагностика 50 зл.'
+          question: 'У телевізорі є звук, але чорний екран (немає зображення). Чи варто ремонтувати?',
+          answer: 'Однозначно так! Це найпоширеніша несправність – перегорання LED підсвічування. Ми замінюємо комплект планок на нові алюмінієві, повертаючи яскравість за значно менші гроші, ніж покупка нового ТВ. Точну вартість озвучуємо перед ремонтом.'
         },
         {
           question: 'Консоль PS5 вимикається сама під час гри. Чи ремонтуєте ви це?',
@@ -832,12 +832,12 @@ export const translations: Record<Lang, TranslationData> = {
       emailVal: 'kontakt@multi-servis.pl',
       ownerLabel: 'Власник',
       ownerVal: 'Tomasz Jeliński',
-      paymentLabel: 'Оплата',
-      paymentVal: 'Тільки готівка',
+      paymentLabel: 'Розрахунок',
+      paymentVal: 'При отриманні техніки',
       rodoNotice: 'Адміністратором даних є Multi-Servis Tomasz Jeliński (Ku Wiatrakom 18, Бидгощ). Дані використовуються виключно для відповіді на запит та оцінки ремонту.',
     },
     footer: {
-      rights: 'Усі права захищено. Оплата тільки готівкою.',
+      rights: 'Усі права захищено.',
     },
   },
 };

@@ -26,7 +26,7 @@ const prefix = lang === 'pl' ? '' : `/${lang}`;
           {lang === 'uk' && "Сервіс електроніки у Бидгощі від Томаша Єлінського. Ремонт телевізорів LED/OLED, ноутбуків, ПК та монтаж систем відеоспостереження CCTV."}
         </p>
         <div class="footer-badges">
-          <span class="footer-badge red">{t.hero.pillCash}</span>
+          <span class="footer-badge">{t.hero.pillCash}</span>
           <span class="footer-badge">{t.hero.pillDiagnosis}</span>
           <span class="footer-badge">{t.hero.pillFast}</span>
         </div>
@@ -56,7 +56,7 @@ const prefix = lang === 'pl' ? '' : `/${lang}`;
           <li><a href={`${prefix}/serwis-laptopow`}>💻 {lang === 'pl' ? 'Serwis Laptopów' : (lang === 'en' ? 'Laptop Repair' : 'Ремонт Ноутбуків')}</a></li>
           <li><a href={`${prefix}/serwis-komputerow`}>🖥️ {lang === 'pl' ? 'Serwis Komputerów PC' : (lang === 'en' ? 'PC & Desktop Repair' : 'Ремонт Комп’ютерів ПК')}</a></li>
           <li><a href={`${prefix}/serwis-konsol`}>🎮 {lang === 'pl' ? 'Serwis Konsol PS5 / Xbox' : (lang === 'en' ? 'Console Repair PS5 / Xbox' : 'Сервіс Консолей PS5 / Xbox')}</a></li>
-          <li><a href={`${prefix}/cennik`}>🔍 {lang === 'pl' ? 'Diagnoza sprzętu (50 zł)' : (lang === 'en' ? 'Diagnostics (50 PLN)' : 'Діагностика (50 зл)')}</a></li>
+          <li><a href={`${prefix}/cennik`}>🔍 {lang === 'pl' ? 'Diagnoza i wycena' : (lang === 'en' ? 'Diagnosis & Quote' : 'Діагностика та оцінка')}</a></li>
         </ul>
       </div>
 
@@ -82,8 +82,8 @@ const prefix = lang === 'pl' ? '' : `/${lang}`;
           <div>{t.contact.hoursVal}</div>
         </div>
         <div class="footer-contact-item">
-          <span class="footer-icon">💵</span>
-          <div class="cash-red-text" style="font-weight: 700;">{t.contact.paymentVal}</div>
+          <span class="footer-icon">🛡️</span>
+          <div>{lang === 'pl' ? '3 miesiące pisemnej gwarancji' : (lang === 'en' ? '3 months written warranty' : '3 місяці письмової гарантії')}</div>
         </div>
       </div>
     </div>

@@ -356,6 +356,7 @@
   .pricing-cards-grid,
   .case-study-cms-list,
   .subpage-grid-3,
+  .subpage-grid-4,
   .column-layout {
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;

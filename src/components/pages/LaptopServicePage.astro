@@ -16,25 +16,25 @@ const currentPath = `${prefix}/serwis-laptopow`;
 const content = {
   pl: {
     seoTitle: "Serwis Laptopów Bydgoszcz | Naprawa Płyt, Zalań, Matryc | Multi-Servis",
-    seoDesc: "Profesjonalny serwis laptopów w Bydgoszczy (Ku Wiatrakom 18). Naprawa po zalaniu, mikrolutowanie BGA, wymiana matryc, gniazd USB-C/zasilania, czyszczenie. Diagnoza 50 zł, gwarancja 3 m-ce.",
+    seoDesc: "Profesjonalny serwis laptopów w Bydgoszczy (Ku Wiatrakom 18). Naprawa po zalaniu, mikrolutowanie BGA, wymiana matryc, gniazd USB-C/zasilania, czyszczenie. Indywidualna wycena, gwarancja 3 m-ce.",
     heroBadge: "Bydgoszcz • Naprawa Płyt Głównych • Ku Wiatrakom 18",
     heroTitle: "Serwis i Naprawa Laptopów w Bydgoszczy",
     heroSubtitle: "Naprawiamy laptopy, notebooki oraz komputery Apple MacBook na poziomie zaawansowanej elektroniki (mikrolutowanie SMD/BGA, naprawa sekcji zasilania, odbudowa ścieżek po zalaniach). Nie ograniczamy się do wymiany całych podzespołów — naprawiamy oryginalne płyty główne, co pozwala zaoszczędzić setki złotych.",
-    pills: ["💵 Płatność tylko gotówka", "🔍 Diagnoza usterki 50 zł", "🤝 Uczciwa wycena przed naprawą", "🛡️ Gwarancja 3 miesiące", "⚡ Szybka realizacja", "😊 Miła i fachowa obsługa"],
+    pills: ["⚡ Szybka realizacja", "🔍 Diagnoza i indywidualna wycena", "🤝 Uczciwa wycena przed naprawą", "🛡️ Gwarancja 3 miesiące", "😊 Miła i fachowa obsługa", "📍 Bydgoszcz Wyżyny"],
     ctaCall: "Zadzwoń: 505 012 914",
     ctaContact: "Dojazd i kontakt",
     metricsBadge: "Standard serwisu laptopów",
     metricsTitle: "Dlaczego warto naprawić laptop w Multi-Servis?",
     metricsSubtitle: "Naprawiamy płyty główne po zalaniach i zwarciach zamiast wymieniać całe moduły za tysiące złotych.",
-    m1Val: "50 zł",
-    m1Label: "Rzetelna diagnoza",
-    m1Desc: "Pomiary oscyloskopem i kamerą termowizyjną. Precyzyjna lokalizacja zwarcia przed podjęciem naprawy. Płatność wyłącznie gotówką.",
+    m1Val: "Indywidualna",
+    m1Label: "Wycena diagnozy",
+    m1Desc: "Pomiary oscyloskopem i kamerą termowizyjną. Precyzyjna lokalizacja usterki i telefon z wyceną przed naprawą.",
     m2Val: "3 m-ce",
     m2Label: "Pisemna gwarancja",
     m2Desc: "Każda wykonana naprawa płyty, wymiana układu zasilania czy gniazda objęta jest pisemną gwarancją jakości.",
-    m3Val: "Gotówka",
-    m3Label: "Płatność w warsztacie",
-    m3Desc: "W serwisie stacjonarnym przyjmujemy wyłącznie gotówkę. Bankomaty w odległości 100 m.",
+    m3Val: "20+ lat",
+    m3Label: "Doświadczenia",
+    m3Desc: "Specjalistyczna wiedza w mikrolutowaniu płyt głównych, układów BGA/SMD oraz naprawach po zalaniu.",
     sympBadge: "Typowe usterki laptopów",
     sympTitle: "Jakie awarie laptopów usuwamy najczęściej?",
     sympSubtitle: "Większość awarii nie wymaga wymiany całej płyty. Naprawiamy elektronikę SMD/BGA.",
@@ -43,9 +43,9 @@ const content = {
     symp2Title: "🔌 Brak reakcji na włącznik, nie ładuje baterii",
     symp2Desc: "Uszkodzenie gniazda zasilania DC-IN (wyłamany bolec, stopiony plastik), przebity MOSFET wejściowy, uszkodzony kontroler ładowania (Charger IC) lub zwarcie w głównej linii 19V / USB-C Power Delivery.",
     symp3Title: "💻 Czarny ekran, brak obrazu, wiatraki kręcą",
-    symp3Desc: "Awaria pamięci BIOS/UEFI, uszkodzenie dedykowanej karty graficznej GPU lub pamięci VRAM, problem z przetwornicą zasilania procesora bądź pęknięta taśma matrycy eDP. Programujemy kości BIOS programatorem.",
-    symp4Title: "🔥 Laptop muli, przegrzewa się, wentylator głośno chodzi",
-    symp4Desc: "Laptop wolno działa, zawiesza się, a wentylator wyje jak odkurzacz? Przyczyną jest wyschnięta pasta termoprzewodząca oraz stary dysk talerzowy. Wykonujemy gruntowne czyszczenie układu chłodzenia, wymieniamy pasty na Arctic MX-6 / Thermal Grizzly oraz przyspieszamy laptopa montując szybki dysk SSD NVMe z klonowaniem systemu bez utraty danych.",
+    symp3Desc: "Uszkodzenie wsadu BIOS/UEFI, awaria układu graficznego lub pamięci VRAM, brak któregoś z napięć wtórnych lub uszkodzona taśma eDP matrycy. Programujemy kości BIOS na programatorze.",
+    symp4Title: "🔥 Przegrzewanie się, głośna praca wentylatora",
+    symp4Desc: "Wyschnięta pasta termoprzewodząca, kurz w radiatorze. Wykonujemy pełny serwis układu chłodzenia z zastosowaniem markowych past (Arctic MX-6 / Thermal Grizzly) oraz nowych termopadów.",
     symp5Title: "🖥️ Pęknięta matryca lub brak podświetlenia",
     symp5Desc: "Wymieniamy rozbite ekrany LCD/IPS (15.6\", 14\", 17.3\", 120Hz, 144Hz, OLED). Dobieramy fabrycznie nowe, oryginalne matryce o identycznych parametrach jasności, odświeżania i barw sRGB.",
     symp6Title: "🔧 Naprawa połamanych zawiasów i kadłubków",
@@ -56,7 +56,7 @@ const content = {
     faqTitle: "Pytania o naprawę laptopów w Bydgoszczy",
     ctaBadge: "Twój laptop nie działa?",
     ctaTitle: "Skonsultuj naprawę telefonicznie",
-    ctaDesc: "Zadzwoń do serwisu Multi-Servis w Bydgoszczy przy ul. Ku Wiatrakom 18. Diagnoza 50 zł, płatność wyłącznie gotówką.",
+    ctaDesc: "Zadzwoń do serwisu Multi-Servis w Bydgoszczy przy ul. Ku Wiatrakom 18. Rzetelna diagnoza i indywidualna wycena przed naprawą.",
     ctaAddressBtn: "Sprawdź adres i godziny",
     relBadge: "Kompleksowy serwis w Bydgoszczy",
     relTitle: "Pozostałe usługi serwisu Multi-Servis",
@@ -78,7 +78,7 @@ const content = {
       },
       {
         q: "Ile kosztuje diagnoza laptopa w Multi-Servis?",
-        a: "Dokładna diagnoza usterki w naszym warsztacie w Bydgoszczy kosztuje 50 zł (płatne gotówką). Po sprawdzeniu płyty głównej i podzespołów dzwonimy z kosztorysem naprawy."
+        a: "Każdy laptop przechodzi szczegółowe sprawdzenie techniczne w naszym warsztacie w Bydgoszczy. Po sprawdzeniu płyty głównej i podzespołów dzwonimy z indywidualnym kosztorysem naprawy do Twojej akceptacji."
       },
       {
         q: "Czy naprawiacie również laptopy Apple MacBook?",
@@ -88,25 +88,25 @@ const content = {
   },
   en: {
     seoTitle: "Laptop Repair Bydgoszcz | Motherboard, Liquid Damage, Screens | Multi-Servis",
-    seoDesc: "Professional laptop repair in Bydgoszcz (Ku Wiatrakom 18). Liquid spill restoration, BGA micro-soldering, screen & DC/USB-C jack replacement, thermal cleaning. Diagnosis 50 PLN, 3-month warranty.",
+    seoDesc: "Professional laptop repair in Bydgoszcz (Ku Wiatrakom 18). Liquid spill restoration, BGA micro-soldering, screen & DC/USB-C jack replacement, thermal cleaning. Transparent diagnosis, 3-month warranty.",
     heroBadge: "Bydgoszcz • Logic Board Repair • Ku Wiatrakom 18",
     heroTitle: "Laptop & MacBook Repair Service in Bydgoszcz",
     heroSubtitle: "We repair laptops, notebooks and Apple MacBooks at the component level (SMD/BGA micro-soldering, power rail diagnostics, liquid damage track restoration). We fix original logic boards instead of replacing whole modules, saving you significant money.",
-    pills: ["💵 Cash only payment", "🔍 Fault diagnosis 50 PLN", "🤝 Fair quote before repair", "🛡️ 3-month warranty", "⚡ Fast turnaround", "😊 Friendly & professional service"],
+    pills: ["⚡ Fast turnaround", "🔍 Diagnosis & individual quote", "🤝 Fair quote before repair", "🛡️ 3-month warranty", "😊 Friendly & professional service", "📍 Bydgoszcz Wyżyny"],
     ctaCall: "Call: 505 012 914",
     ctaContact: "Directions & Contact",
     metricsBadge: "Laptop Service Standards",
     metricsTitle: "Why repair your laptop at Multi-Servis?",
     metricsSubtitle: "We repair logic boards after liquid spills and short circuits instead of costly full module swaps.",
-    m1Val: "50 PLN",
+    m1Val: "Individual",
     m1Label: "Thorough diagnosis",
-    m1Desc: "Oscilloscope and thermal camera measurements. Exact pinpointing of shorts before repair. Cash only payment.",
+    m1Desc: "Oscilloscope and thermal camera measurements. Exact pinpointing of shorts and direct quote before repair.",
     m2Val: "3 months",
     m2Label: "Written warranty",
     m2Desc: "Every motherboard repair, power IC swap or connector replacement is covered by a written warranty.",
-    m3Val: "Cash only",
-    m3Label: "In-shop payment",
-    m3Desc: "We only accept cash at our service shop. ATMs located within 100 meters.",
+    m3Val: "20+ yrs",
+    m3Label: "Experience",
+    m3Desc: "Specialized expertise in motherboard micro-soldering, BGA/SMD rework, and liquid damage recovery.",
     sympBadge: "Typical Laptop Issues",
     sympTitle: "What laptop faults do we resolve most often?",
     sympSubtitle: "Most failures do not require buying an expensive new motherboard. We repair SMD/BGA electronics.",
@@ -128,7 +128,7 @@ const content = {
     faqTitle: "Questions about laptop repairs in Bydgoszcz",
     ctaBadge: "Is your laptop not working?",
     ctaTitle: "Consult your repair by phone",
-    ctaDesc: "Call Multi-Servis in Bydgoszcz at Ku Wiatrakom 18. Diagnosis 50 PLN, cash only payment.",
+    ctaDesc: "Call Multi-Servis in Bydgoszcz at Ku Wiatrakom 18. Thorough diagnosis and individual quote before repair.",
     ctaAddressBtn: "Check address & hours",
     relBadge: "Full-spectrum repair in Bydgoszcz",
     relTitle: "Other services by Multi-Servis",
@@ -146,7 +146,7 @@ const content = {
       },
       {
         q: "How much does a diagnosis cost at Multi-Servis?",
-        a: "A thorough fault diagnosis in our workshop in Bydgoszcz costs 50 PLN (cash only). After testing the motherboard, we call you with an exact price quote."
+        a: "Every laptop undergoes thorough technical testing in our workshop. After checking the motherboard and components, we call you with an individual repair quote for your approval before proceeding."
       },
       {
         q: "Do you also repair Apple MacBooks?",
@@ -156,25 +156,25 @@ const content = {
   },
   uk: {
     seoTitle: "Ремонт ноутбуків у Бидгощі | Материнські плати, залиття, матриці | Multi-Servis",
-    seoDesc: "Професійний ремонт ноутбуків у Бидгощі (Ku Wiatrakom 18). Ремонт після залиття, BGA-пайка, заміна матриць, роз'ємів USB-C/живлення, чистка. Діагностика 50 злотих, гарантія 3 міс.",
+    seoDesc: "Професійний ремонт ноутбуків у Бидгощі (Ku Wiatrakom 18). Ремонт після залиття, BGA-пайка, заміна матриць, роз'ємів USB-C/живлення, чистка. Індивідуальна оцінка, гарантія 3 міс.",
     heroBadge: "Бидгощ • Ремонт материнських плат • Ku Wiatrakom 18",
     heroTitle: "Ремонт та обслуговування ноутбуків у Бидгощі",
     heroSubtitle: "Ремонтуємо ноутбуки та Apple MacBook на компонентному рівні (SMD/BGA мікропайка, відновлення ланцюгів живлення та доріжок після залиття). Ми відновлюємо оригінальні плати замість дорогої заміни модулів.",
-    pills: ["💵 Оплата тільки готівкою", "🔍 Діагностика несправності 50 zł", "🤝 Чесна оцінка до ремонту", "🛡️ Гарантія 3 місяці", "⚡ Швидке виконання", "😊 Привітне та професійне обслуговування"],
+    pills: ["⚡ Швидке виконання", "🔍 Діагностика та оцінка", "🤝 Чесна оцінка до ремонту", "🛡️ Гарантія 3 місяці", "😊 Привітне та професійне обслуговування", "📍 Бидгощ Вижини"],
     ctaCall: "Зателефонувати: 505 012 914",
     ctaContact: "Маршрут і контакти",
     metricsBadge: "Стандарти сервісу",
     metricsTitle: "Чому варто відремонтувати ноутбук у Multi-Servis?",
     metricsSubtitle: "Відновлюємо материнські плати після залиття та замикань замість заміни модулів за великі гроші.",
-    m1Val: "50 zł",
+    m1Val: "Індивідуальна",
     m1Label: "Точна діагностика",
-    m1Desc: "Вимірювання осцилографом та тепловізором. Точна локалізація замикання перед початком ремонту. Оплата лише готівкою.",
+    m1Desc: "Вимірювання осцилографом та тепловізором. Точна локалізація замикання та дзвінок з оцінкою до ремонту.",
     m2Val: "3 міс.",
     m2Label: "Письмова гарантія",
     m2Desc: "Кожен виконаний ремонт плати, заміна мікросхем чи роз'ємів супроводжується гарантією.",
-    m3Val: "Готівка",
-    m3Label: "Оплата в майстерні",
-    m3Desc: "У стаціонарному сервісі приймаємо виключно готівку. Банкомати за 100 метрів.",
+    m3Val: "20+ р.",
+    m3Label: "Досвіду",
+    m3Desc: "Спеціалізовані знання у мікропайці материнських плат, BGA/SMD компонентів та чистці після залиття.",
     sympBadge: "Типові несправності ноутбуків",
     sympTitle: "Які несправності ноутбуків ми усуваємо найчастіше?",
     sympSubtitle: "Більшість несправностей не вимагає покупки нової плати. Ремонтуємо SMD/BGA електроніку.",
@@ -196,7 +196,7 @@ const content = {
     faqTitle: "Запитання про ремонт ноутбуків у Бидгощі",
     ctaBadge: "Ноутбук не працює?",
     ctaTitle: "Проконсультуйтеся щодо ремонту телефоном",
-    ctaDesc: "Зателефонуйте до Multi-Servis у Бидгощі на Ku Wiatrakom 18. Діагностика 50 zł, оплата лише готівкою.",
+    ctaDesc: "Зателефонуйте до Multi-Servis у Бидгощі на Ku Wiatrakom 18. Ретельна діагностика та індивідуальна оцінка перед ремонтом.",
     ctaAddressBtn: "Адреса та графік роботи",
     relBadge: "Комплексний сервіс у Бидгощі",
     relTitle: "Інші послуги сервісу Multi-Servis",
@@ -214,7 +214,7 @@ const content = {
       },
       {
         q: "Скільки коштує діагностика ноутбука в Multi-Servis?",
-        a: "Ретельна діагностика несправності в нашій майстерні в Бидгощі коштує 50 злотих (готівка). Після перевірки ми телефонуємо з точною вартістю ремонту."
+        a: "Кожен ноутбук проходить ретельну діагностику в нашій майстерні в Бидгощі. Після перевірки материнської плати та компонентів ми телефонуємо з індивідуальною оцінкою вартості ремонту."
       },
       {
         q: "Чи ремонтуєте ви також ноутбуки Apple MacBook?",
@@ -271,9 +271,8 @@ const serviceSchema = JSON.stringify({
       "serviceType": lang === "pl" ? "Naprawa laptopów" : (lang === "en" ? "Laptop Repair" : "Ремонт ноутбуків"),
       "offers": {
         "@type": "Offer",
-        "name": lang === "pl" ? "Diagnoza sprzętu" : (lang === "en" ? "Device Diagnostics" : "Діагностика"),
-        "price": "50",
-        "priceCurrency": "PLN"
+        "priceCurrency": "PLN",
+        "availability": "https://schema.org/InStock"
       }
     },
     {
@@ -330,8 +329,8 @@ const serviceSchema = JSON.stringify({
 
         <!-- Trust Mini-Okienka Pills -->
         <div class="hero-quick-stats" style="justify-content: center; margin: 0 auto 2rem auto;">
-          {c.pills.map((pill, i) => (
-            <div class={`hero-stat-pill ${i === 0 ? 'pill-cash-red' : ''}`}>
+          {c.pills.map((pill) => (
+            <div class="hero-stat-pill">
               {pill}
             </div>
           ))}
@@ -507,7 +506,7 @@ const serviceSchema = JSON.stringify({
             <div style="font-size: 2rem; margin-bottom: 0.75rem;">📺</div>
             <h3 class="display-h5" style="margin-bottom: 0.5rem;">{lang === 'pl' ? 'Serwis Telewizorów' : lang === 'en' ? 'TV Repair' : 'Ремонт телевізорів'}</h3>
             <p class="paragraph t---neutral-10">
-              {lang === 'pl' ? 'Wymiana podświetlenia LED, naprawa zasilaczy i płyt głównych TV Samsung, LG, Philips, Sony. Diagnoza 50 zł.' :
+              {lang === 'pl' ? 'Wymiana podświetlenia LED, naprawa zasilaczy i płyt głównych TV Samsung, LG, Philips, Sony. Indywidualna wycena.' :
                lang === 'en' ? 'LED backlight replacement, power board & logic board repairs for Samsung, LG, Philips, Sony TV.' :
                'Заміна LED-підсвічування, ремонт блоків живлення та материнських плат Samsung, LG, Philips, Sony.'}
             </p>
@@ -543,12 +542,12 @@ const serviceSchema = JSON.stringify({
 
         <a href={`${prefix}/cennik`} class="subpage-card" style="text-decoration: none; color: inherit; display: flex; flex-flow: column; justify-content: space-between;">
           <div>
-            <div style="font-size: 2rem; margin-bottom: 0.75rem;">💵</div>
-            <h3 class="display-h5" style="margin-bottom: 0.5rem;">{lang === 'pl' ? 'Cennik i Diagnoza 50 zł' : lang === 'en' ? 'Pricing & Diagnosis 50 PLN' : 'Прайс та діагностика 50 zł'}</h3>
+            <div style="font-size: 2rem; margin-bottom: 0.75rem;">📋</div>
+            <h3 class="display-h5" style="margin-bottom: 0.5rem;">{lang === 'pl' ? 'Cennik i Diagnoza' : lang === 'en' ? 'Pricing & Diagnosis' : 'Прайс та діагностика'}</h3>
             <p class="paragraph t---neutral-10">
-              {lang === 'pl' ? 'Jasne reguły: rzetelna diagnoza 50 zł, wycena przed przystąpieniem do naprawy i 3 miesiące pisemnej gwarancji.' :
-               lang === 'en' ? 'Clear rules: thorough 50 PLN diagnosis, price quote before repair, and 3-month written warranty.' :
-               'Прозорі умови: точна діагностика 50 zł, оцінка до початку ремонту та 3 місяці гарантії.'}
+              {lang === 'pl' ? 'Jasne reguły: rzetelna diagnoza, wycena przed przystąpieniem do naprawy i 3 miesiące pisemnej gwarancji.' :
+               lang === 'en' ? 'Clear rules: thorough diagnosis, price quote before repair, and 3-month written warranty.' :
+               'Прозорі умови: точна діагностика, оцінка до початку ремонту та 3 місяці гарантії.'}
             </p>
           </div>
           <span style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 700; color: #d32f2f; margin-top: 1rem;">{c.pricingLink}</span>

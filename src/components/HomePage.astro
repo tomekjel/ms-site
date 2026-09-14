@@ -37,7 +37,6 @@ const jsonLd = {
       "telephone": "+48505012914",
       "email": "kontakt@multi-servis.pl",
       "priceRange": "$$",
-      "paymentAccepted": "Cash",
       "currenciesAccepted": "PLN",
       "image": "https://multi-servis.pl/images/multi-servis-logo.png",
       "address": {
@@ -235,7 +234,7 @@ const brands = [
 
         <!-- Feature Pills: wide horizontal layout from left to right with red borders and red text -->
         <div class="hero-quick-stats">
-          <div class="hero-stat-pill pill-cash-red">
+          <div class="hero-stat-pill">
             {t.hero.pillCash}
           </div>
           <div class="hero-stat-pill">
@@ -307,9 +306,6 @@ const brands = [
           <div class="section-badge">{t.process.sectionBadge}</div>
           <h2 class="display-h2" style="margin-bottom: 0.5rem;">{t.process.sectionTitle}</h2>
           <p class="large-paragraph t---neutral-10" style="max-width: 620px; margin: 0 auto;">{t.process.sectionSubtitle}</p>
-          <div class="cash-notice-box" style="margin: 1rem auto 0 auto;">
-            💵 {t.pricing.cashNotice}
-          </div>
         </div>
 
         <div data-w-id="52e17c10-f6e2-693e-51ca-ffc09f18755e" class="process">
@@ -516,7 +512,7 @@ const brands = [
                   <li>Precyzyjna wymiana portów HDMI (lutowanie mikroskopowe SMD)</li>
                   <li>Czyszczenie układu chłodzenia i odświeżenie ciekłego metalu w PS5</li>
                   <li>Usuwanie zwarć sekcji zasilania i wymiana portów USB-C w Nintendo Switch</li>
-                  <li>Rzetelna diagnoza 50 zł i 3 miesiące gwarancji</li>
+                  <li>Rzetelna diagnoza, wycena i 3 miesiące gwarancji</li>
                 </ul>
                 <div style="margin-top: 1.5rem;">
                   <a href="/serwis-konsol" class="primary-button w-inline-block" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:#ffffff !important;">
@@ -567,9 +563,6 @@ const brands = [
             <div class="section-badge">{t.pricing.sectionBadge}</div>
             <h2 data-w-id="43e163e0-a4bf-51fc-16fd-fc73e02b5638" class="display-h2">{t.pricing.sectionTitle}</h2>
             <div class="large-paragraph t---neutral-10">{t.pricing.sectionSubtitle}</div>
-            <div class="cash-notice-box">
-              💵 {t.pricing.cashNotice}
-            </div>
             <div style="margin-top: 1.25rem;">
               <a href={lang === 'pl' ? "/cennik" : pricingAnchor} class="primary-button w-inline-block" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color: #ffffff !important;">
                 <div class="button-content">
@@ -846,11 +839,11 @@ const brands = [
                   </div>
                 </div>
 
-                <div class="contact-row contact-row-cash">
-                  <span class="contact-icon">💵</span>
+                <div class="contact-row">
+                  <span class="contact-icon">🤝</span>
                   <div>
                     <span class="contact-row-label">{t.contact.paymentLabel}: </span>
-                    <strong class="cash-red-text">{t.contact.paymentVal}</strong>
+                    <span>{t.contact.paymentVal}</span>
                   </div>
                 </div>
 

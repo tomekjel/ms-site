@@ -10,8 +10,7 @@
 - **E-mail:** kontakt@multi-servis.pl
 - **Strona WWW:** https://multi-servis.pl
 - **Godziny otwarcia:** Poniedziałek – Piątek: 10:00 – 17:00 (Sobota – Niedziela: Nieczynne)
-- **Warunki płatności:** Wyłącznie gotówka (Bankomaty w odległości 100-300 m)
-- **Koszt diagnozy sprzętowej:** 50 zł (płatne gotówką przy pozostawieniu sprzętu; dzwonimy z kosztorysem przed rozpoczęciem naprawy)
+- **Wycena:** Zawsze indywidualna wycena przed przystąpieniem do naprawy (kontakt telefoniczny z klientem i pełna przejrzystość)
 - **Gwarancja:** 3 miesiące pisemnej gwarancji na każdą wykonaną naprawę i wymienione komponenty
 
 ## Obszar obsługi (Geotargeting)
@@ -62,10 +61,9 @@ Obsługujemy mieszkańców całej Bydgoszczy oraz aglomeracji i województwa kuj
 - **Platformy:** Sony PlayStation 5 / PS4, Microsoft Xbox Series X / Series S / One, Nintendo Switch.
 
 ## Cennik i Zasady
-- **Diagnoza usterki:** 50 zł (płatna gotówką w warsztacie).
-- **Wycena:** Zawsze przed naprawą kontaktujemy się telefonicznie z klientem i podajemy ostateczny koszt.
-- **Forma płatności:** Wyłącznie gotówka.
-- **Gwarancja:** 3 miesiące pisemnej gwarancji.
+- **Diagnoza i wycena:** Każda naprawa podlega indywidualnej wycenie po sprawdzeniu sprzętu.
+- **Kontakt z klientem:** Zawsze przed naprawą kontaktujemy się telefonicznie i podajemy ostateczny koszt do akceptacji.
+- **Gwarancja:** 3 miesiące pisemnej gwarancji na każdą usługę i wymienione części.
 
 ## Szczegółowa dokumentacja
 - Pełna baza wiedzy dla AI: https://multi-servis.pl/llms-full.txt
