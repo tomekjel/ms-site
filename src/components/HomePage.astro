@@ -31,7 +31,7 @@ const jsonLd = {
     {
       "@type": ["LocalBusiness", "ElectronicsRepair"],
       "@id": "https://multi-servis.pl/#business",
-      "name": "Multi-Servis Tomasz Jeliński",
+      "name": "Multi-Servis",
       "description": t.seo.description,
       "url": `https://multi-servis.pl${lang === 'pl' ? '' : '/' + lang}`,
       "telephone": "+48505012914",
@@ -60,15 +60,10 @@ const jsonLd = {
           "closes": "17:00"
         }
       ],
-      "founder": {
-        "@type": "Person",
-        "name": "Tomasz Jeliński",
-        "jobTitle": "Właściciel & Serwisant"
-      },
-      "legalName": "Multi-Servis Tomasz Jeliński",
+      "legalName": "Multi-Servis",
       "sameAs": [
-        "https://www.google.com/maps/search/?api=1&query=Multi-Servis+Tomasz+Jeli%C5%84ski+Ku+Wiatrakom+18+Bydgoszcz",
-        "https://maps.google.com/?q=Multi-Servis+Tomasz+Jeli%C5%84ski+Ku+Wiatrakom+18+Bydgoszcz"
+        "https://www.google.com/maps/search/?api=1&query=Multi-Servis+Ku+Wiatrakom+18+Bydgoszcz",
+        "https://maps.google.com/?q=Multi-Servis+Ku+Wiatrakom+18+Bydgoszcz"
       ],
       "areaServed": [
         { "@type": "City", "name": "Bydgoszcz" },
@@ -97,9 +92,6 @@ const jsonLd = {
         "Wymiana dysku HDD na SSD NVMe (przyspieszanie laptopa)",
         "Mikrolutowanie BGA SMD",
         "Serwis komputerów stacjonarnych i PC gaming",
-        "Naprawa konsol PlayStation 5, PS4, Xbox, Nintendo Switch",
-        "Wymiana portu HDMI w konsolach",
-        "Wymiana ciekłego metalu w PS5",
         "Montaż monitoringu CCTV i kamer IP"
       ],
       "hasOfferCatalog": {
@@ -134,14 +126,6 @@ const jsonLd = {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Serwis Konsol do Gier Bydgoszcz",
-              "url": "https://multi-servis.pl/serwis-konsol"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
               "name": "Cennik i Diagnoza Sprzętu",
               "url": "https://multi-servis.pl/cennik"
             }
@@ -152,7 +136,7 @@ const jsonLd = {
     {
       "@type": "FAQPage",
       "@id": `https://multi-servis.pl${lang === 'pl' ? '' : '/' + lang}#faqpage`,
-      "mainEntity": t.faq.items.map((item) => ({
+      "mainEntity": (t.faq.questions || t.faq.items || []).map((item) => ({
         "@type": "Question",
         "name": item.question,
         "acceptedAnswer": {
@@ -414,13 +398,8 @@ const brands = [
             <div class="tab-item-text">🖥️ {t.services.pcTitle}</div>
           </a>
 
-          <!-- Tab 4: Konsole -->
+          <!-- Tab 4: CCTV -->
           <a data-w-tab="Tab 4" class="tab-item w-inline-block w-tab-link">
-            <div class="tab-item-text">🎮 Serwis Konsol</div>
-          </a>
-
-          <!-- Tab 5: CCTV -->
-          <a data-w-tab="Tab 5" class="tab-item w-inline-block w-tab-link">
             <div class="tab-item-text">📹 {t.services.cctvTitle}</div>
           </a>
         </div>
@@ -498,35 +477,8 @@ const brands = [
             </div>
           </div>
 
-          <!-- Pane 4: Konsole -->
+          <!-- Pane 4: CCTV -->
           <div data-w-tab="Tab 4" class="tab-option w-tab-pane">
-            <div class="feature-tab-content">
-              <div class="feature-tab-ui">
-                <img src="/images/service-console-repair.jpg" loading="lazy" alt="Serwis konsol PS5, Xbox, Nintendo Switch Bydgoszcz" class="feature-tab-photo" />
-              </div>
-              <div class="feature-content">
-                <div class="feature-tag"><div class="tag">Serwis Konsol Bydgoszcz</div></div>
-                <h3 class="display-h3">Serwis PlayStation 5, Xbox Series X/S, Nintendo Switch</h3>
-                <div class="paragraph t---neutral-10">Specjalistyczna naprawa konsol do gier w Bydgoszczy. Wymiana wyrwanych portów HDMI, naprawa układów zasilania oraz serwis chłodzenia ciekłym metalem w PS5.</div>
-                <ul style="margin-top: 1rem; padding-left: 1.25rem; color: var(--neutral--neutral-11); line-height: 1.8;">
-                  <li>Precyzyjna wymiana portów HDMI (lutowanie mikroskopowe SMD)</li>
-                  <li>Czyszczenie układu chłodzenia i odświeżenie ciekłego metalu w PS5</li>
-                  <li>Usuwanie zwarć sekcji zasilania i wymiana portów USB-C w Nintendo Switch</li>
-                  <li>Rzetelna diagnoza, wycena i 3 miesiące gwarancji</li>
-                </ul>
-                <div style="margin-top: 1.5rem;">
-                  <a href="/serwis-konsol" class="primary-button w-inline-block" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:#ffffff !important;">
-                    <div class="button-content">
-                      <p class="button-text" style="color:#ffffff !important; margin:0;">Szczegóły serwisu konsol i cennik &rarr;</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pane 5: CCTV -->
-          <div data-w-tab="Tab 5" class="tab-option w-tab-pane">
             <div class="feature-tab-content">
               <div class="feature-tab-ui">
                 <img src="/images/service-cctv-install.jpg" loading="lazy" alt={t.services.cctvTitle} class="feature-tab-photo" />
@@ -779,7 +731,7 @@ const brands = [
         </div>
 
         <div class="accordions">
-          {t.faq.items.map((item) => (
+          {(t.faq.questions || t.faq.items || []).map((item) => (
             <div class="accordion-block icon-plus">
               <div data-delay="0" data-hover="false" class="accordion w-dropdown">
                 <div class="accordion-toggle w-dropdown-toggle">
@@ -857,7 +809,7 @@ const brands = [
               <div class="contact-card-header">
                 <div class="section-badge" style="margin-bottom: 0.5rem;">Multi-Servis Bydgoszcz</div>
                 <h3 class="display-h4" style="margin: 0;">{t.contact.ownerVal}</h3>
-                <p class="paragraph t---neutral-10" style="margin: 0.25rem 0 0 0;">Elektronik z ponad 20-letnim doświadczeniem</p>
+                <p class="paragraph t---neutral-10" style="margin: 0.25rem 0 0 0;">Ponad 20 lat doświadczenia w naprawie elektroniki</p>
               </div>
 
               <div class="contact-card-rows">

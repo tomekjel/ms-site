@@ -164,10 +164,10 @@ export const translations: Record<Lang, TranslationData> = {
     seo: {
       title: 'Multi-Servis Bydgoszcz | Naprawa Telewizorów, Laptopów, PC i Montaż Monitoringu',
       description: 'Serwis elektroniki w Bydgoszczy (Ku Wiatrakom 18). Naprawa TV, laptopów, komputerów oraz montaż monitoringu CCTV. Rzetelna diagnoza i indywidualna wycena. Tel: 505 012 914.',
-      keywords: 'naprawa telewizorów Bydgoszcz, serwis laptopów Bydgoszcz, montaż monitoringu Bydgoszcz, naprawa komputerów, Tomasz Jeliński',
+      keywords: 'naprawa telewizorów Bydgoszcz, serwis laptopów Bydgoszcz, montaż monitoringu Bydgoszcz, naprawa komputerów',
     },
     nav: {
-      home: 'Główna',
+      home: 'Strona główna',
       about: 'O nas',
       services: 'Usługi',
       process: 'Zasady',
@@ -175,12 +175,12 @@ export const translations: Record<Lang, TranslationData> = {
       caseStudies: 'Realizacje',
       faq: 'FAQ',
       contact: 'Kontakt',
-      callUs: 'Zadzwoń',
+      callUs: 'Zadzwoń teraz',
     },
     hero: {
       badge: 'Ponad 20 lat doświadczenia w Bydgoszczy',
       title: 'Naprawa TV, laptopów i PC oraz montaż monitoringu',
-      subtitle: 'Ku Wiatrakom 18, Bydgoszcz. Rzetelna diagnoza usterki, indywidualna wycena przed naprawą i 3 miesiące gwarancji.',
+      subtitle: 'Ku Wiatrakom 18, Bydgoszcz. Rzetelna diagnoza usterki, indywidualna wycena przed naprawą i gwarancja od 3 do 24 m-cy.',
       ctaPhone: 'Zadzwoń: 505 012 914 ',
       ctaContact: 'Zgłoś usterkę',
       statsYears: '20+ lat',
@@ -194,7 +194,7 @@ export const translations: Record<Lang, TranslationData> = {
       pillFast: '⚡ Szybka realizacja',
       pillService: '😊 Miła i fachowa obsługa',
       pillDiagnosis: '🔍 Diagnoza i wycena usterki',
-      pillGuarantee: '🛡️ Gwarancja 3 miesiące',
+      pillGuarantee: '🛡️ Gwarancja 3-24 m-ce',
       pillQuote: '🤝 Uczciwa wycena przed naprawą',
     },
     services: {
@@ -207,7 +207,7 @@ export const translations: Record<Lang, TranslationData> = {
         'Wymiana podświetlenia matrycy LED',
         'Naprawa zasilaczy i przetwornic',
         'Naprawa płyt głównych i modułów T-CON',
-        'Gwarancja 3 miesiące'
+        'Gwarancja od 3 do 24 m-cy'
       ],
       laptopTitle: 'Naprawa Laptopów',
       laptopDesc: 'Zaawansowana diagnostyka płyt głównych, mikrolutowanie BGA oraz wymiana uszkodzonych matryc i gniazd.',
@@ -243,7 +243,7 @@ export const translations: Record<Lang, TranslationData> = {
       step2Title: 'Kontakt i Wycena',
       step2Desc: 'Dzwonimy do Ciebie z informacją: co uległo usterce, jak należy to naprawić, jaki będzie całkowity koszt i czas oczekiwania.',
       step3Title: 'Decyzja i Odbiór',
-      step3Desc: 'Jeśli się zgadzasz – naprawiamy i otrzymujesz 3 miesiące gwarancji. Jeśli nie – odbierasz sprzęt. Terminy odbioru ustalamy elastycznie.',
+      step3Desc: 'Jeśli się zgadzasz – naprawiamy i otrzymujesz od min. 3  do 24 m-cy gwarancji. Jeśli nie wyrażasz zgody – odbierasz sprzęt. Terminy odbioru ustalamy elastycznie.',
     },
     pricing: {
       sectionBadge: 'Przejrzyste zasady',
@@ -266,7 +266,7 @@ export const translations: Record<Lang, TranslationData> = {
       plan2Desc: 'Naprawa realizowana wyłącznie po Twojej wcześniejszej zgodzie.',
       plan2Features: [
         'Oryginalne lub sprawdzone części OEM',
-        'Pisemna gwarancja na 3 miesiące',
+        'Gwarancja od 3 do 24 m-cy',
         'Testy obciążeniowe po wykonaniu usługi',
         'Rozliczenie przy odbiorze sprzętu'
       ],
@@ -278,27 +278,31 @@ export const translations: Record<Lang, TranslationData> = {
         'Dobór kamer i okablowanie',
         'Czysty montaż wewnątrz i na zewnątrz',
         'Konfiguracja podglądu na smartfonie',
-        'Instruktaż obsługi systemu'
+        'Szkolenie z obsługi aplikacji'
       ],
-      cta: 'Skontaktuj się',
+      cta: 'Skontaktuj się z nami',
     },
     caseStudies: {
-      sectionBadge: 'Realizacje',
-      sectionTitle: 'Przykładowe naprawy',
-      sectionSubtitle: 'Zobacz, jak przywracamy sprzęt do życia w naszym warsztacie w Bydgoszczy.',
-      item1Title: 'Wymiana podświetlenia LED - TV Samsung 65"',
-      item1Category: 'Naprawa TV',
-      item1Desc: 'Brak obrazu przy obecnym dźwięku. Wymiana kompletu listew LED na nowe aluminiowe oraz korekta prądu zasilania diod.',
-      item2Title: 'Naprawa po zalaniu - Laptop MacBook',
-      item2Category: 'Naprawa Laptopa',
-      item2Desc: 'Mycie płyty w myjce ultradźwiękowej, odbudowa skorodowanych ścieżek zasilania i wymiana przetwornicy.',
-      item3Title: 'Zwarcie w sekcji zasilania - Komputer Gamingowy',
-      item3Category: 'Naprawa PC',
-      item3Desc: 'Lokalizacja zwarcia przy użyciu kamery termowizyjnej, wymiana tranzystorów MOSFET i regeneracja linii 12V.',
-      item4Title: 'Instalacja 6 kamer IP 4K - Dom jednorodzinny',
-      item4Category: 'Monitoring CCTV',
-      item4Desc: 'Montaż kamer z doświetleniem nocnym, rejestratora z dyskiem 4TB oraz konfiguracja aplikacji mobilnej.',
-      viewAll: 'Wszystkie realizacje',
+      sectionBadge: 'Galeria napraw',
+      sectionTitle: 'Przykładowe realizacje',
+      sectionSubtitle: 'Zobacz, jak przywracamy sprzęt do sprawności w warsztacie na Ku Wiatrakom 18.',
+      beforeLabel: 'Usterka',
+      afterLabel: 'Po naprawie',
+      item1Title: 'Wymiana podświetlenia TV LED',
+      item1Category: 'Telewizory',
+      item1Desc: 'Ciemny ekran pomimo obecności dźwięku. Wymiana kompletu listew LED na nowe podłoże aluminiowe.',
+      item1Duration: '24h',
+      item1Cost: 'Indywidualna wycena',
+      item2Title: 'Naprawa sekcji zasilania laptopa',
+      item2Category: 'Laptopy',
+      item2Desc: 'Brak reakcji na zasilacz po zwarciu w gnieździe USB. Wymiana uszkodzonych tranzystorów MOSFET.',
+      item2Duration: '48h',
+      item2Cost: 'Indywidualna wycena',
+      item3Title: 'Regeneracja karty graficznej PC',
+      item3Category: 'Komputery PC',
+      item3Desc: 'Artefakty i przegrzewanie w grach. Wymiana termopadów, pasty termoprzewodzącej i czyszczenie chłodzenia.',
+      item3Duration: '24h',
+      item3Cost: 'Indywidualna wycena',
     },
     testimonials: {
       sectionBadge: 'Opinie',
@@ -315,33 +319,33 @@ export const translations: Record<Lang, TranslationData> = {
       t3Role: 'Klient z Osielska',
     },
     faq: {
-      sectionBadge: 'FAQ',
-      sectionTitle: 'Najczęściej zadawane pytania',
+      sectionBadge: 'Częste pytania',
+      sectionTitle: 'Baza wiedzy i odpowiedzi',
       sectionSubtitle: 'Wszystko o diagnozie, wycenie, gwarancji i odbiorze sprzętu.',
-      items: [
+      questions: [
         {
-          question: 'Jak wygląda diagnoza i wycena sprzętu?',
-          answer: 'Każde urządzenie sprawdzamy indywidualnie. Po rozebraniu sprzętu i zlokalizowaniu usterki dzwonimy do Ciebie, wyjaśniamy co jest uszkodzone, jaki jest koszt naprawy i czas oczekiwania. Pełną wycenę znasz przed podjęciem decyzji o naprawie.'
+          question: 'Gdzie znajduje się warsztat Multi-Servis i jak dojechać?',
+          answer: 'Nasz warsztat mieści się przy ul. Ku Wiatrakom 18 w Bydgoszczy (osiedle Wyżyny). Przed lokalem dostępny jest bezpłatny parking dla klientów.'
         },
         {
-          question: 'Jak szybko realizowana jest diagnoza i wycena?',
-          answer: 'Wstępną diagnozę wykonujemy zazwyczaj w ciągu 24-48 godzin od dostarczenia sprzętu do warsztatu przy ul. Ku Wiatrakom 18. Po diagnozie kontaktujemy się telefonicznie z dokładną wyceną.'
+          question: 'Czy muszę wcześniej dzwonić przed przyjazdem do serwisu?',
+          answer: 'Zapraszamy od poniedziałku do piątku w godzinach 10:00 – 17:00. Nie musisz się wcześniej umówić na oddanie sprzętu do diagnozy, ale krótki telefon (505 012 914) pozwoli nam wstępnie ocenić usterkę i przygotować się na Twoją wizytę.'
         },
         {
-          question: 'Czy naprawiacie kamery monitoringu?',
-          answer: 'Nie naprawiamy starych kamer. Zajmujemy się profesjonalnym montażem i instalacją nowych systemów monitoringu CCTV (kamery IP, rejestratory, konfiguracja podglądu na telefonie).'
+          question: 'Ile trwa diagnoza usterki i ile kosztuje?',
+          answer: 'Każdą diagnozę i wycenę naprawy przygotowujemy indywidualnie po rozebraniu urządzenia i pomiarach podzespołów. Zawsze dzwonimy do Ciebie z dokładną kwotą przed podjęciem jakichkolwiek działań naprawczych.'
         },
         {
-          question: 'Jak wygląda decyzja o naprawie?',
-          answer: 'Po wykonaniu diagnozy dzwonimy do Ciebie z dokładnym kosztorysem. To Ty podejmujesz decyzję – naprawę realizujemy wyłącznie po Twojej akceptacji kosztów.'
+          question: 'Czy przed rozpoczęciem naprawy poznam dokładny koszt?',
+          answer: 'Tak, zawsze kontaktujemy się telefonicznie po wykonaniu diagnostyki i przedstawiamy całkowity kosztorys usługi oraz niezbędnych podzespołów. Naprawę rozpoczynamy wyłącznie po Twojej akceptacji wyceny. Nie ma żadnych ukrytych kosztów.'
         },
         {
-          question: 'Czy terminy odbioru sprzętu są elastyczne?',
+          question: 'Czy mogę odebrać naprawiony sprzęt w innych godzinach?',
           answer: 'Tak, jesteśmy w pełni elastyczni. Po zakończeniu naprawy kontaktujemy się z Tobą i wspólnie ustalamy dogodny termin odbioru w godzinach pracy serwisu.'
         },
         {
           question: 'Jaką gwarancję otrzymuję na naprawę?',
-          answer: 'Na każdą wykonaną naprawę i wymienione podzespoły udzielamy 3 miesięcy pisemnej gwarancji.'
+          answer: 'Na każdą wykonaną naprawę i wymienione podzespoły udzielamy od 3 do 24 miesięcy gwarancji.'
         },
         {
           question: 'Mój laptop strasznie muli, wolno działa i głośno chodzi. Czy można go przyspieszyć i wyczyścić w Bydgoszczy?',
@@ -350,17 +354,13 @@ export const translations: Record<Lang, TranslationData> = {
         {
           question: 'W telewizorze słychać dźwięk, ale ekran jest ciemny/czarny. Czy naprawa jest opłacalna?',
           answer: 'Zdecydowanie tak! To najczęstsza usterka – uszkodzenie podświetlenia matrycy LED. Wymieniamy komplet listew na fabrycznie nowe aluminiowe listwy, co przywraca pełną sprawność obrazu za ułamek ceny nowego telewizora. Przed naprawą przedstawiamy dokładną wycenę.'
-        },
-        {
-          question: 'Konsola PS5 wyłącza się samoczynnie podczas grania w gry. Czy to naprawiacie?',
-          answer: 'Tak. W konsolach PlayStation 5 przyczyną wyłączania po kilkunastu minutach gry jest najczęściej degradacja ciekłego metalu na procesorze APU oraz zapchany radiator. Usuwamy stary metal, polerujemy układ i aplikujemy nowy ciekły metal oraz czyścimy chłodzenie.'
         }
       ],
     },
     contact: {
       sectionBadge: 'Kontakt',
       sectionTitle: 'Odwiedź nas lub zadzwoń',
-      sectionSubtitle: 'Multi-Servis Tomasz Jeliński • Ku Wiatrakom 18, Bydgoszcz',
+      sectionSubtitle: 'Multi-Servis • Ku Wiatrakom 18, Bydgoszcz',
       namePlaceholder: 'Imię i nazwisko',
       phonePlaceholder: 'Numer telefonu',
       devicePlaceholder: 'Sprzęt (np. TV Samsung 55", Laptop Asus)',
@@ -374,11 +374,11 @@ export const translations: Record<Lang, TranslationData> = {
       hoursVal: 'Pon. - Pt. 10:00 - 17:00 (elastyczny odbiór)',
       emailLabel: 'Email',
       emailVal: 'kontakt@multi-servis.pl',
-      ownerLabel: 'Właściciel',
-      ownerVal: 'Tomasz Jeliński',
+      ownerLabel: 'Serwis',
+      ownerVal: 'Multi-Servis Bydgoszcz',
       paymentLabel: 'Rozliczenie',
       paymentVal: 'Przy odbiorze sprzętu',
-      rodoNotice: 'Administratorem danych jest Multi-Servis Tomasz Jeliński (ul. Ku Wiatrakom 18, Bydgoszcz). Dane podane w formularzu przetwarzane są wyłącznie w celu kontaktu i wyceny naprawy.',
+      rodoNotice: 'Administratorem danych jest Multi-Servis (ul. Ku Wiatrakom 18, Bydgoszcz). Dane podane w formularzu przetwarzane są wyłącznie w celu kontaktu i wyceny naprawy.',
     },
     footer: {
       rights: 'Wszelkie prawa zastrzeżone.',
@@ -392,7 +392,7 @@ export const translations: Record<Lang, TranslationData> = {
     seo: {
       title: 'Multi-Servis Bydgoszcz | TV, Laptop & PC Repair | CCTV Installation',
       description: 'Electronics repair shop in Bydgoszcz (Ku Wiatrakom 18). TV, laptop, PC repair and CCTV camera installation. Accurate diagnosis and individual quote. Tel: +48 505 012 914.',
-      keywords: 'TV repair Bydgoszcz, laptop repair Bydgoszcz, CCTV installation Bydgoszcz, Tomasz Jeliński',
+      keywords: 'TV repair Bydgoszcz, laptop repair Bydgoszcz, CCTV installation Bydgoszcz',
     },
     nav: {
       home: 'Home',
@@ -408,7 +408,7 @@ export const translations: Record<Lang, TranslationData> = {
     hero: {
       badge: '20+ Years Experience in Bydgoszcz',
       title: 'TV, Laptop & PC Repair + CCTV Camera Installation',
-      subtitle: 'Ku Wiatrakom 18, Bydgoszcz. Defect diagnosis, individual quote before repair, and 3-month warranty.',
+      subtitle: 'Ku Wiatrakom 18, Bydgoszcz. Defect diagnosis, individual quote before repair, and 3-24 months warranty.',
       ctaPhone: 'Call: 505 012 914 ',
       ctaContact: 'Report defect',
       statsYears: '20+ yrs',
@@ -422,7 +422,7 @@ export const translations: Record<Lang, TranslationData> = {
       pillFast: '⚡ Fast turnaround',
       pillService: '😊 Friendly & expert service',
       pillDiagnosis: '🔍 Fault diagnosis & quote',
-      pillGuarantee: '🛡️ 3 months warranty',
+      pillGuarantee: '🛡️ 3-24 months warranty',
       pillQuote: '🤝 Honest quote before repair',
     },
     services: {
@@ -435,7 +435,7 @@ export const translations: Record<Lang, TranslationData> = {
         'LED backlight replacement',
         'Power supply & inverter repair',
         'Mainboard & T-CON repairs',
-        '3 months warranty'
+        '3-24 months warranty'
       ],
       laptopTitle: 'Laptop Repair',
       laptopDesc: 'Advanced motherboard diagnostics, BGA soldering, and component replacement.',
@@ -471,7 +471,7 @@ export const translations: Record<Lang, TranslationData> = {
       step2Title: 'Contact & Quote',
       step2Desc: 'We call you explaining what is broken, how to fix it, total cost, and estimated turnaround. You decide.',
       step3Title: 'Decision & Pickup',
-      step3Desc: 'Agree: we fix it with 3-month warranty. Decline: you pick up your equipment. Flexible pickup times.',
+      step3Desc: 'If you agree – we repair and you receive from min. 3 to 24 months warranty. If you do not agree – you pick up your equipment. Pickup times are flexible.',
     },
     pricing: {
       sectionBadge: 'Pricing',
@@ -494,7 +494,7 @@ export const translations: Record<Lang, TranslationData> = {
       plan2Desc: 'Carried out only upon your acceptance of the cost estimate.',
       plan2Features: [
         'Original or high-grade OEM parts',
-        '3 months written warranty',
+        '3-24 months warranty',
         'Burn-in & load testing',
         'Payment upon device pickup'
       ],
@@ -569,7 +569,7 @@ export const translations: Record<Lang, TranslationData> = {
         },
         {
           question: 'What warranty is provided?',
-          answer: 'We provide a 3 months written warranty on repaired devices and installed parts.'
+          answer: 'We provide from 3 to 24 months warranty on repaired devices and installed parts.'
         },
         {
           question: 'My laptop is running extremely slow, freezing and fan is loud. Can you speed it up and clean it in Bydgoszcz?',
@@ -578,17 +578,13 @@ export const translations: Record<Lang, TranslationData> = {
         {
           question: 'My TV has sound but black screen (no picture). Is it worth repairing?',
           answer: 'Yes! This is the most common TV failure – damaged LED backlight strips. We replace the entire set of LED bars with brand-new aluminum strips, restoring perfect brightness at a fraction of a new TV cost. An exact quote is provided prior to repair.'
-        },
-        {
-          question: 'My PS5 console shuts down automatically while gaming. Can you fix it?',
-          answer: 'Yes. Shuts downs on PS5 after 15-20 minutes of gameplay are usually caused by oxidized liquid metal on the APU and clogged power supply vents. We repaste with fresh liquid metal and clean the entire cooling system.'
         }
       ],
     },
     contact: {
       sectionBadge: 'Contact',
       sectionTitle: 'Visit or Call Us',
-      sectionSubtitle: 'Multi-Servis Tomasz Jeliński • Ku Wiatrakom 18, Bydgoszcz',
+      sectionSubtitle: 'Multi-Servis • Ku Wiatrakom 18, Bydgoszcz',
       namePlaceholder: 'Full Name',
       phonePlaceholder: 'Phone Number',
       devicePlaceholder: 'Device (e.g. Samsung 55" TV, Asus Laptop)',
@@ -602,11 +598,11 @@ export const translations: Record<Lang, TranslationData> = {
       hoursVal: 'Mon. - Fri. 10:00 - 17:00 (flexible pickup)',
       emailLabel: 'Email',
       emailVal: 'kontakt@multi-servis.pl',
-      ownerLabel: 'Owner',
-      ownerVal: 'Tomasz Jeliński',
+      ownerLabel: 'Service',
+      ownerVal: 'Multi-Servis Bydgoszcz',
       paymentLabel: 'Payment',
       paymentVal: 'Upon device pickup',
-      rodoNotice: 'Your data controller is Multi-Servis Tomasz Jeliński (Ku Wiatrakom 18, Bydgoszcz). Data submitted is used exclusively to contact you and provide a repair quote.',
+      rodoNotice: 'Your data controller is Multi-Servis (Ku Wiatrakom 18, Bydgoszcz). Data submitted is used exclusively to contact you and provide a repair quote.',
     },
     footer: {
       rights: 'All rights reserved.',
@@ -620,7 +616,7 @@ export const translations: Record<Lang, TranslationData> = {
     seo: {
       title: 'Multi-Servis Бидгощ | Ремонт телевізорів, ноутбуків, ПК та монтаж камер CCTV',
       description: 'Сервіс електроніки у Бидгощі (Ku Wiatrakom 18). Ремонт ТБ, ноутбуків, комп’ютерів та монтаж відеоспостереження. Точна діагностика та індивідуальна оцінка. Тел: +48 505 012 914.',
-      keywords: 'ремонт телевізорів Бидгощ, ремонт ноутбуків Бидгощ, монтаж камер відеоспостереження Бидгощ, Tomasz Jeliński',
+      keywords: 'ремонт телевізорів Бидгощ, ремонт ноутбуків Бидгощ, монтаж камер відеоспостереження Бидгощ',
     },
     nav: {
       home: 'Головна',
@@ -636,7 +632,7 @@ export const translations: Record<Lang, TranslationData> = {
     hero: {
       badge: 'Понад 20 років досвіду у Бидгощі',
       title: 'Ремонт ТБ, ноутбуків, ПК та монтаж відеоспостереження',
-      subtitle: 'Ku Wiatrakom 18, Бидгощ. Точна діагностика несправності, індивідуальна оцінка вартості до ремонту та 3 місяці гарантії.',
+      subtitle: 'Ku Wiatrakom 18, Бидгощ. Точна діагностика несправності, індивідуальна оцінка вартості до ремонту та гарантія від 3 до 24 міс.',
       ctaPhone: 'Тел: 505 012 914 ',
       ctaContact: 'Замовити ремонт',
       statsYears: '20+ р.',
@@ -650,7 +646,7 @@ export const translations: Record<Lang, TranslationData> = {
       pillFast: '⚡ Швидке виконання',
       pillService: '😊 Ввічливе та якісне обслуговування',
       pillDiagnosis: '🔍 Діагностика та оцінка несправності',
-      pillGuarantee: '🛡️ Гарантія 3 місяці',
+      pillGuarantee: '🛡️ Гарантія 3-24 міс.',
       pillQuote: '🤝 Чесна оцінка перед ремонтом',
     },
     services: {
@@ -663,7 +659,7 @@ export const translations: Record<Lang, TranslationData> = {
         'Заміна підсвічування LED матриці',
         'Ремонт блоків живлення та інверторів',
         'Ремонт материнських плат і модулів T-CON',
-        'Гарантія 3 місяці'
+        'Гарантія від 3 до 24 міс.'
       ],
       laptopTitle: 'Ремонт Ноутбуків',
       laptopDesc: 'Компонентний ремонт материнських плат, BGA паяння та механічні заміни.',
@@ -699,7 +695,7 @@ export const translations: Record<Lang, TranslationData> = {
       step2Title: 'Дзвінок і Оцінка',
       step2Desc: 'Дзвонимо вам і повідомляємо: що пошкоджено, як ремонтувати, скільки це коштуватиме і термін очікування.',
       step3Title: 'Рішення та Отримання',
-      step3Desc: 'Згода – ремонтуємо з гарантією на 3 місяці. Відмова – забираєте техніку. Час отримання гнучкий.',
+      step3Desc: 'Якщо ви згодні – ремонтуємо та ви отримуєте від мін. 3 до 24 міс. гарантії. Якщо не даєте згоди – забираєте техніку. Терміни отримання узгоджуємо гнучко.',
     },
     pricing: {
       sectionBadge: 'Прайс-лист',
@@ -722,7 +718,7 @@ export const translations: Record<Lang, TranslationData> = {
       plan2Desc: 'Виконується лише після вашої повної згоди на вартість.',
       plan2Features: [
         'Оригінальні або перевірені деталі OEM',
-        'Письмова гарантія на 3 місяці',
+        'Гарантія від 3 до 24 місяців',
         'Стрес-тести перед видачею',
         'Розрахунок при отриманні техніки'
       ],
@@ -797,7 +793,7 @@ export const translations: Record<Lang, TranslationData> = {
         },
         {
           question: 'Яку гарантію ви надаєте?',
-          answer: 'На всі ремонти та встановлені запчастини надаємо 3 місяці письмової гарантії.'
+          answer: 'На всі ремонти та встановлені запчастини надаємо від 3 до 24 місяців гарантії.'
         },
         {
           question: 'Ноутбук дуже гальмує, повільно працює та шумить кулер. Чи можна прискорити його в Бидгощі?',
@@ -806,17 +802,13 @@ export const translations: Record<Lang, TranslationData> = {
         {
           question: 'У телевізорі є звук, але чорний екран (немає зображення). Чи варто ремонтувати?',
           answer: 'Однозначно так! Це найпоширеніша несправність – перегорання LED підсвічування. Ми замінюємо комплект планок на нові алюмінієві, повертаючи яскравість за значно менші гроші, ніж покупка нового ТВ. Точну вартість озвучуємо перед ремонтом.'
-        },
-        {
-          question: 'Консоль PS5 вимикається сама під час гри. Чи ремонтуєте ви це?',
-          answer: 'Так. Раптове вимкнення PS5 через 15 хвилин гри пов’язане з висиханням рідкого металу на процесорі APU та пилом у радіаторі. Ми оновлюємо рідкий метал та проводимо повну профілактику охолодження.'
         }
       ],
     },
     contact: {
       sectionBadge: 'Контакти',
       sectionTitle: 'Завітайте або зателефонуйте',
-      sectionSubtitle: 'Multi-Servis Tomasz Jeliński • Ku Wiatrakom 18, Bydgoszcz',
+      sectionSubtitle: 'Multi-Servis • Ku Wiatrakom 18, Bydgoszcz',
       namePlaceholder: 'Ім’я та прізвище',
       phonePlaceholder: 'Номер телефону',
       devicePlaceholder: 'Пристрій (напр. TV Samsung 55", Ноутбук Asus)',
@@ -830,11 +822,11 @@ export const translations: Record<Lang, TranslationData> = {
       hoursVal: 'Пн. - Пт. 10:00 - 17:00 (гнучкий прийом)',
       emailLabel: 'Email',
       emailVal: 'kontakt@multi-servis.pl',
-      ownerLabel: 'Власник',
-      ownerVal: 'Tomasz Jeliński',
+      ownerLabel: 'Сервіс',
+      ownerVal: 'Multi-Servis Бидгощ',
       paymentLabel: 'Розрахунок',
       paymentVal: 'При отриманні техніки',
-      rodoNotice: 'Адміністратором даних є Multi-Servis Tomasz Jeliński (Ku Wiatrakom 18, Бидгощ). Дані використовуються виключно для відповіді на запит та оцінки ремонту.',
+      rodoNotice: 'Адміністратором даних є Multi-Servis (Ku Wiatrakom 18, Бидгощ). Дані використовуються виключно для відповіді на запит та оцінки ремонту.',
     },
     footer: {
       rights: 'Усі права захищено.',

@@ -1,17 +1,17 @@
-# Multi-Servis Tomasz Jeliński – Serwis Elektroniki w Bydgoszczy
+# Multi-Servis – Serwis Elektroniki w Bydgoszczy
 
-> Profesjonalny, stacjonarny serwis elektroniki użytkowej prowadzony przez elektronika z ponad 20-letnim doświadczeniem w Bydgoszczy (osiedle Wyżyny, ul. Ku Wiatrakom 18). Specjalizacja: naprawa telewizorów (LED/OLED/QLED), laptopów i MacBooków, komputerów stacjonarnych i gamingowych PC oraz konsol do gier (PS5, Xbox, Nintendo Switch).
+> Profesjonalny, stacjonarny serwis elektroniki użytkowej prowadzony przez elektronika z ponad 20-letnim doświadczeniem w Bydgoszczy (osiedle Wyżyny, ul. Ku Wiatrakom 18). Specjalizacja: naprawa telewizorów (LED/OLED/QLED), laptopów i MacBooków oraz komputerów stacjonarnych i gamingowych PC.
 
 ## Informacje podstawowe
-- **Nazwa serwisu:** Multi-Servis Tomasz Jeliński
+- **Nazwa serwisu:** Multi-Servis
 - **Adres:** ul. Ku Wiatrakom 18, 85-856 Bydgoszcz (Wyżyny), Polska
 - **Współrzędne GPS:** 53.108951, 18.040959
 - **Telefon bezpośredni:** +48 505 012 914
 - **E-mail:** kontakt@multi-servis.pl
 - **Strona WWW:** https://multi-servis.pl
 - **Godziny otwarcia:** Poniedziałek – Piątek: 10:00 – 17:00 (Sobota – Niedziela: Nieczynne)
-- **Wycena:** Zawsze indywidualna wycena przed przystąpieniem do naprawy (kontakt telefoniczny z klientem i pełna przejrzystość)
-- **Gwarancja:** 3 miesiące pisemnej gwarancji na każdą wykonaną naprawę i wymienione komponenty
+- **Wycena:** Zawsze indywidualna wycena przed przystąpieniem do naprawy (kontakt telefoniczny z klientem i pełna przejrzystość). W przypadku rezygnacji z naprawy pobierana jest opłata za przeprowadzoną diagnostykę urządzenia.
+- **Gwarancja:** Gwarancja od 3 do 24 miesięcy na wykonaną naprawę i wymienione komponenty
 
 ## Obszar obsługi (Geotargeting)
 Obsługujemy mieszkańców całej Bydgoszczy oraz aglomeracji i województwa kujawsko-pomorskiego:
@@ -51,19 +51,10 @@ Obsługujemy mieszkańców całej Bydgoszczy oraz aglomeracji i województwa kuj
   - Komputer wolno działa – montaż dysków SSD NVMe, klonowanie systemu Windows bez utraty danych.
   - Modernizacja starszych komputerów PC i dobór podzespołów.
 
-### 4. Serwis Konsol do Gier (https://multi-servis.pl/serwis-konsol)
-- **Typowe usterki i objawy:**
-  - PS5 wyłącza się po 15-20 minutach gry bez ostrzeżenia – degradacja ciekłego metalu na APU, zapchany radiator.
-  - Wyłamane gniazdo HDMI w PS5, PS4, Xbox Series X/S (brak sygnału na TV, biała dioda świeci).
-  - Konsola nie włącza się (uszkodzenie zasilacza wewnętrznego po burzy/przepięciu).
-  - Nintendo Switch: brak ładowania, wyłamany port USB-C, spalony układ zasilania M92T36.
-  - Naprawa padów (drifting analogów, wymiana na sensory z efektem Halla).
-- **Platformy:** Sony PlayStation 5 / PS4, Microsoft Xbox Series X / Series S / One, Nintendo Switch.
-
 ## Cennik i Zasady
-- **Diagnoza i wycena:** Każda naprawa podlega indywidualnej wycenie po sprawdzeniu sprzętu.
+- **Diagnoza i wycena:** Każda naprawa podlega indywidualnej wycenie po sprawdzeniu sprzętu. W przypadku rezygnacji z naprawy pobierana jest opłata za przeprowadzoną diagnostykę urządzenia.
 - **Kontakt z klientem:** Zawsze przed naprawą kontaktujemy się telefonicznie i podajemy ostateczny koszt do akceptacji.
-- **Gwarancja:** 3 miesiące pisemnej gwarancji na każdą usługę i wymienione części.
+- **Gwarancja:** Gwarancja od 3 do 24 miesięcy na każdą usługę i wymienione części.
 
 ## Szczegółowa dokumentacja
 - Pełna baza wiedzy dla AI: https://multi-servis.pl/llms-full.txt

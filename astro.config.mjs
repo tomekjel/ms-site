@@ -9,7 +9,6 @@ const subpages = [
   "/serwis-telewizorow",
   "/serwis-laptopow",
   "/serwis-komputerow",
-  "/serwis-konsol",
   "/cennik",
   "/kontakt",
   "/faq",
@@ -41,6 +40,11 @@ for (const slug of subpages) {
 // https://astro.build/config
 export default defineConfig({
   site: "https://multi-servis.pl",
+  redirects: {
+    "/serwis-konsol": "/",
+    "/en/serwis-konsol": "/en",
+    "/uk/serwis-konsol": "/uk",
+  },
   integrations: [
     sitemap({
       filter: (page) => !page.includes("/admin/"),
