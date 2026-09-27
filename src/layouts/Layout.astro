@@ -6,6 +6,9 @@ interface Props {
 	ogImage?: string;
 	lang?: 'pl' | 'en' | 'uk';
 	keywords?: string;
+	canonical?: string;
+	hideHreflang?: boolean;
+	favicon?: string;
 }
 
 const {
@@ -15,6 +18,9 @@ const {
 	ogImage = "/images/social-20preview.avif",
 	lang = "pl",
 	keywords = "",
+	canonical,
+	hideHreflang = false,
+	favicon,
 } = Astro.props;
 
 const og = ogImage.startsWith("/") || ogImage.startsWith("http")
@@ -23,7 +29,9 @@ const og = ogImage.startsWith("/") || ogImage.startsWith("http")
 
 const rawPath = Astro.url.pathname;
 const cleanPath = rawPath.endsWith("/") && rawPath.length > 1 ? rawPath.slice(0, -1) : rawPath;
-const canonicalURL = new URL(cleanPath === "" ? "/" : cleanPath, Astro.site);
+const canonicalURL = canonical
+	? new URL(canonical, Astro.site)
+	: new URL(cleanPath === "" ? "/" : cleanPath, Astro.site);
 const ogImageURL = new URL(og, Astro.site);
 
 // Compute hreflang URLs for ALL pages (not just homepage)
@@ -131,10 +139,14 @@ const ogLocaleAlt2 = lang === "uk" ? "en_US" : "uk_UA";
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
-		<link rel="alternate" hreflang="pl" href={hreflangPl} />
-		<link rel="alternate" hreflang="en" href={hreflangEn} />
-		<link rel="alternate" hreflang="uk" href={hreflangUk} />
-		<link rel="alternate" hreflang="x-default" href={hreflangPl} />
+		{!hideHreflang && (
+			<>
+				<link rel="alternate" hreflang="pl" href={hreflangPl} />
+				<link rel="alternate" hreflang="en" href={hreflangEn} />
+				<link rel="alternate" hreflang="uk" href={hreflangUk} />
+				<link rel="alternate" hreflang="x-default" href={hreflangPl} />
+			</>
+		)}
 		<link rel="help" type="text/plain" href="https://multi-servis.pl/llms.txt" title="LLM Context" />
 		<meta name="author" content="Multi-Servis Bydgoszcz" />
 		{keywords && <meta name="keywords" content={keywords} />}
@@ -161,9 +173,11 @@ const ogLocaleAlt2 = lang === "uk" ? "en_US" : "uk_UA";
 		<link rel="stylesheet" href="/css/multi-servis.shared.f6c6fca70.css" />
 		<link rel="stylesheet" href="/css/theme.css" />
 		<link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 991px)" />
-		<link rel="icon" type="image/png" href="/images/favicon.png?v=2" />
-		<link rel="shortcut icon" href="/favicon.ico?v=2" />
-		<link rel="apple-touch-icon" href="/images/favicon.png?v=2" />
+		<link rel="icon" type="image/png" sizes="32x32" href={favicon || "/favicon-32x32.png?v=3"} />
+		<link rel="icon" type="image/png" sizes="16x16" href={favicon || "/favicon-16x16.png?v=3"} />
+		<link rel="icon" type="image/png" href={favicon || "/images/favicon.png?v=3"} />
+		<link rel="shortcut icon" href="/favicon.ico?v=3" />
+		<link rel="apple-touch-icon" sizes="180x180" href={favicon || "/apple-touch-icon.png?v=3"} />
 		<script is:inline>
 			(function () {
 				try {

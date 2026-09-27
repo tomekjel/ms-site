@@ -15,16 +15,16 @@ const prefix = lang === "pl" ? "" : `/${lang}`;
 
 const navItems = [
   {
-    path: `${prefix}/serwis-telewizorow`,
-    label: lang === "pl" ? "Telewizory" : (lang === "en" ? "TV Repair" : "Телевізори"),
-    icon: "📺",
-    fullLabel: lang === "pl" ? "Serwis Telewizorów (LED/OLED)" : (lang === "en" ? "TV Repair (LED/OLED)" : "Ремонт Телевізорів (LED/OLED)"),
-  },
-  {
     path: `${prefix}/serwis-laptopow`,
     label: lang === "pl" ? "Laptopy" : (lang === "en" ? "Laptops" : "Ноутбуки"),
     icon: "💻",
     fullLabel: lang === "pl" ? "Serwis Laptopów" : (lang === "en" ? "Laptop Repair" : "Ремонт Ноутбуків"),
+  },
+  {
+    path: `${prefix}/serwis-telewizorow`,
+    label: lang === "pl" ? "Telewizory" : (lang === "en" ? "TV Repair" : "Телевізори"),
+    icon: "📺",
+    fullLabel: lang === "pl" ? "Serwis Telewizorów (LED/OLED)" : (lang === "en" ? "TV Repair (LED/OLED)" : "Ремонт Телевізорів (LED/OLED)"),
   },
   {
     path: `${prefix}/serwis-komputerow`,

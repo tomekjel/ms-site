@@ -84,12 +84,12 @@ const jsonLd = {
         { "@type": "AdministrativeArea", "name": "Województwo kujawsko-pomorskie" }
       ],
       "knowsAbout": [
-        "Naprawa telewizorów LED OLED QLED",
-        "Wymiana podświetlenia matrycy LED",
         "Serwis i naprawa laptopów Bydgoszcz",
         "Naprawa laptopa po zalaniu",
         "Czyszczenie układu chłodzenia laptopa i wymiana pasty",
         "Wymiana dysku HDD na SSD NVMe (przyspieszanie laptopa)",
+        "Naprawa telewizorów LED OLED QLED",
+        "Wymiana podświetlenia matrycy LED",
         "Mikrolutowanie BGA SMD",
         "Serwis komputerów stacjonarnych i PC gaming",
         "Montaż monitoringu CCTV i kamer IP"
@@ -102,16 +102,16 @@ const jsonLd = {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Serwis Telewizorów Bydgoszcz",
-              "url": "https://multi-servis.pl/serwis-telewizorow"
+              "name": "Serwis Laptopów Bydgoszcz",
+              "url": "https://multi-servis.pl/serwis-laptopow"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Serwis Laptopów Bydgoszcz",
-              "url": "https://multi-servis.pl/serwis-laptopow"
+              "name": "Serwis Telewizorów Bydgoszcz",
+              "url": "https://multi-servis.pl/serwis-telewizorow"
             }
           },
           {
@@ -383,14 +383,14 @@ const brands = [
 
       <div data-current="Tab 1" data-easing="ease" data-duration-in="0" data-duration-out="0" class="tab-wrap ms-tabs">
         <div id="w-node-d1ab5cee-5f58-fa45-8302-636b2739224b-6f38eea6" class="tab-menu w-tab-menu">
-          <!-- Tab 1: TV -->
+          <!-- Tab 1: Laptop (Default) -->
           <a data-w-tab="Tab 1" class="tab-item w-inline-block w-tab-link w--current">
-            <div class="tab-item-text">📺 {t.services.tvTitle}</div>
+            <div class="tab-item-text">💻 {t.services.laptopTitle}</div>
           </a>
 
-          <!-- Tab 2: Laptop -->
+          <!-- Tab 2: TV -->
           <a data-w-tab="Tab 2" class="tab-item w-inline-block w-tab-link">
-            <div class="tab-item-text">💻 {t.services.laptopTitle}</div>
+            <div class="tab-item-text">📺 {t.services.tvTitle}</div>
           </a>
 
           <!-- Tab 3: PC -->
@@ -405,32 +405,8 @@ const brands = [
         </div>
 
         <div id="w-node-d1ab5cee-5f58-fa45-8302-636b2739225c-6f38eea6" class="tab-content w-tab-content">
-          <!-- Pane 1: TV -->
+          <!-- Pane 1: Laptop (Default Active) -->
           <div data-w-tab="Tab 1" class="tab-option _1 w-tab-pane w--tab-active">
-            <div class="feature-tab-content">
-              <div class="feature-tab-ui">
-                <img src="/images/service-tv-repair.jpg" loading="lazy" alt={t.services.tvTitle} class="feature-tab-photo" />
-              </div>
-              <div class="feature-content">
-                <div class="feature-tag"><div class="tag">Serwis TV Bydgoszcz</div></div>
-                <h3 class="display-h3">{t.services.tvTitle}</h3>
-                <div class="paragraph t---neutral-10">{t.services.tvDesc}</div>
-                <ul style="margin-top: 1rem; padding-left: 1.25rem; color: var(--neutral--neutral-11); line-height: 1.8;">
-                  {t.services.tvPoints.map((pt) => <li>{pt}</li>)}
-                </ul>
-                <div style="margin-top: 1.5rem;">
-                  <a href="/serwis-telewizorow" class="primary-button w-inline-block" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:#ffffff !important;">
-                    <div class="button-content">
-                      <p class="button-text" style="color:#ffffff !important; margin:0;">Szczegóły serwisu TV i cennik napraw &rarr;</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pane 2: Laptop -->
-          <div data-w-tab="Tab 2" class="tab-option _2 w-tab-pane">
             <div class="feature-tab-content">
               <div class="feature-tab-ui">
                 <img src="/images/service-laptop-repair.jpg" loading="lazy" alt={t.services.laptopTitle} class="feature-tab-photo" />
@@ -446,6 +422,30 @@ const brands = [
                   <a href="/serwis-laptopow" class="primary-button w-inline-block" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:#ffffff !important;">
                     <div class="button-content">
                       <p class="button-text" style="color:#ffffff !important; margin:0;">Szczegóły serwisu laptopów i cennik &rarr;</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pane 2: TV -->
+          <div data-w-tab="Tab 2" class="tab-option _2 w-tab-pane">
+            <div class="feature-tab-content">
+              <div class="feature-tab-ui">
+                <img src="/images/service-tv-repair.jpg" loading="lazy" alt={t.services.tvTitle} class="feature-tab-photo" />
+              </div>
+              <div class="feature-content">
+                <div class="feature-tag"><div class="tag">Serwis TV Bydgoszcz</div></div>
+                <h3 class="display-h3">{t.services.tvTitle}</h3>
+                <div class="paragraph t---neutral-10">{t.services.tvDesc}</div>
+                <ul style="margin-top: 1rem; padding-left: 1.25rem; color: var(--neutral--neutral-11); line-height: 1.8;">
+                  {t.services.tvPoints.map((pt) => <li>{pt}</li>)}
+                </ul>
+                <div style="margin-top: 1.5rem;">
+                  <a href="/serwis-telewizorow" class="primary-button w-inline-block" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:#ffffff !important;">
+                    <div class="button-content">
+                      <p class="button-text" style="color:#ffffff !important; margin:0;">Szczegóły serwisu TV i cennik napraw &rarr;</p>
                     </div>
                   </a>
                 </div>

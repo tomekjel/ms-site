@@ -44,6 +44,9 @@ export default defineConfig({
     "/serwis-konsol": "/",
     "/en/serwis-konsol": "/en",
     "/uk/serwis-konsol": "/uk",
+    "/polityka-prywatnosci": "/polityka-prywatnosci-multi-guard-browser-shield/",
+    "/en/polityka-prywatnosci-multi-guard-browser-shield": "/polityka-prywatnosci-multi-guard-browser-shield/",
+    "/uk/polityka-prywatnosci-multi-guard-browser-shield": "/polityka-prywatnosci-multi-guard-browser-shield/",
   },
   integrations: [
     sitemap({

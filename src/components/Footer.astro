@@ -37,13 +37,14 @@ const prefix = lang === 'pl' ? '' : `/${lang}`;
         <h4 class="footer-heading">{lang === 'pl' ? 'Nawigacja' : (lang === 'en' ? 'Navigation' : 'Навігація')}</h4>
         <ul class="footer-links">
           <li><a href={homePath}>{t.nav.home}</a></li>
-          <li><a href={`${prefix}/serwis-telewizorow`}>{lang === 'pl' ? 'Serwis Telewizorów' : (lang === 'en' ? 'TV Repair' : 'Ремонт Телевізорів')}</a></li>
           <li><a href={`${prefix}/serwis-laptopow`}>{lang === 'pl' ? 'Serwis Laptopów' : (lang === 'en' ? 'Laptop Repair' : 'Ремонт Ноутбуків')}</a></li>
+          <li><a href={`${prefix}/serwis-telewizorow`}>{lang === 'pl' ? 'Serwis Telewizorów' : (lang === 'en' ? 'TV Repair' : 'Ремонт Телевізорів')}</a></li>
           <li><a href={`${prefix}/serwis-komputerow`}>{lang === 'pl' ? 'Serwis Komputerów' : (lang === 'en' ? 'PC & Desktop Repair' : 'Ремонт Комп’ютерів')}</a></li>
           <li><a href={`${prefix}/cennik`}>{lang === 'pl' ? 'Cennik i zasady' : (lang === 'en' ? 'Pricing & Rules' : 'Ціни та правила')}</a></li>
           <li><a href={`${prefix}/about`}>{t.nav.about}</a></li>
           <li><a href={`${prefix}/faq`}>{lang === 'pl' ? 'Baza wiedzy FAQ' : (lang === 'en' ? 'FAQ Knowledge Base' : 'База знань FAQ')}</a></li>
           <li><a href={`${prefix}/kontakt`}>{lang === 'pl' ? 'Kontakt i dojazd' : (lang === 'en' ? 'Contact & Map' : 'Контакти та проїзд')}</a></li>
+          <li><a href="/polityka-prywatnosci-multi-guard-browser-shield/">{lang === 'pl' ? 'Polityka prywatności (Multi-Guard)' : (lang === 'en' ? 'Privacy Policy (Multi-Guard)' : 'Політика конфіденційності (Multi-Guard)')}</a></li>
         </ul>
       </div>
 
@@ -51,8 +52,8 @@ const prefix = lang === 'pl' ? '' : `/${lang}`;
       <div class="footer-col">
         <h4 class="footer-heading">{lang === 'pl' ? 'Usługi w Bydgoszczy' : (lang === 'en' ? 'Services in Bydgoszcz' : 'Послуги у Бидгощі')}</h4>
         <ul class="footer-links">
-          <li><a href={`${prefix}/serwis-telewizorow`}>📺 {lang === 'pl' ? 'Serwis Telewizorów (LED/OLED)' : (lang === 'en' ? 'TV Repair (LED/OLED)' : 'Ремонт Телевізорів (LED/OLED)')}</a></li>
           <li><a href={`${prefix}/serwis-laptopow`}>💻 {lang === 'pl' ? 'Serwis Laptopów' : (lang === 'en' ? 'Laptop Repair' : 'Ремонт Ноутбуків')}</a></li>
+          <li><a href={`${prefix}/serwis-telewizorow`}>📺 {lang === 'pl' ? 'Serwis Telewizorów (LED/OLED)' : (lang === 'en' ? 'TV Repair (LED/OLED)' : 'Ремонт Телевізорів (LED/OLED)')}</a></li>
           <li><a href={`${prefix}/serwis-komputerow`}>🖥️ {lang === 'pl' ? 'Serwis Komputerów PC' : (lang === 'en' ? 'PC & Desktop Repair' : 'Ремонт Комп’ютерів ПК')}</a></li>
           <li><a href={`${prefix}/cennik`}>🔍 {lang === 'pl' ? 'Diagnoza i wycena' : (lang === 'en' ? 'Diagnosis & Quote' : 'Діагностика та оцінка')}</a></li>
         </ul>
@@ -91,7 +92,7 @@ const prefix = lang === 'pl' ? '' : `/${lang}`;
         &copy; 2026 Multi-Servis. {t.footer.rights}
       </div>
       <div class="footer-bottom-notice">
-        Ku Wiatrakom 18, 85-856 Bydgoszcz &bull; Tel: <a href="tel:+48505012914" style="color: inherit; text-decoration: underline;">505 012 914</a>
+        Ku Wiatrakom 18, 85-856 Bydgoszcz &bull; Tel: <a href="tel:+48505012914" style="color: inherit; text-decoration: underline;">505 012 914</a> &bull; <a href="/polityka-prywatnosci-multi-guard-browser-shield/" style="color: inherit; text-decoration: underline;">{lang === 'pl' ? 'Polityka prywatności Multi-Guard' : (lang === 'en' ? 'Privacy Policy' : 'Політика конфіденційності')}</a>
       </div>
     </div>
   </div>
